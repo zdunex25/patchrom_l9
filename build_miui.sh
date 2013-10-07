@@ -286,6 +286,7 @@ find other -name "unsigned-*" | xargs rm -f
 find other -name "signed-*" | xargs rm -f
 
 #cp other/extras/gapps/*.apk out/temp/system/app
+cp -r other/extras/misc out/temp/data/
 cp -f -r other/extras/data/* out/temp/system/media/theme/.data
 cp -f ../miuipolska/Polish/extras/system/etc/apns-conf.xml out/temp/system/etc/apns-conf.xml
 cp -f ../miuipolska/Polish/extras/system/etc/gps.conf out/temp/system/etc/gps.conf
