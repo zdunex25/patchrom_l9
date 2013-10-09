@@ -18243,6 +18243,16 @@
     goto :goto_0
 .end method
 
+.method public isSelectingText()Z
+    .locals 1
+
+    .prologue
+    .line 5495
+    iget-boolean v0, p0, Landroid/webkit/WebViewClassic;->mSelectingText:Z
+
+    return v0
+.end method
+
 .method public loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
     .parameter "data"
