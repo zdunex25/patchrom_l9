@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 33
+    .line 35
     iput-object p1, p0, Lcom/android/camera/ui/InLineSettingSwitch$1;->this$0:Lcom/android/camera/ui/InLineSettingSwitch;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "desiredState"
 
     .prologue
-    .line 36
+    .line 37
     iget-object v1, p0, Lcom/android/camera/ui/InLineSettingSwitch$1;->this$0:Lcom/android/camera/ui/InLineSettingSwitch;
 
     if-eqz p2, :cond_0
@@ -53,10 +53,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/camera/ui/InLineSettingSwitch;->changeIndex(I)Z
 
-    .line 37
+    .line 38
     return-void
 
-    .line 36
+    .line 37
     :cond_0
     const/4 v0, 0x0
 

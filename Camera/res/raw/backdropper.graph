@@ -31,7 +31,7 @@
 @external recordingProfile;
 @external recordingDoneListener;
 
-@external previewSurfaceTexture;
+@external previewSurface;
 @external previewWidth;
 @external previewHeight;
 
@@ -65,10 +65,10 @@
 }
 
 // Display output
-@filter SurfaceTextureTarget display {
-  surfaceTexture = $previewSurfaceTexture;
-  width = $previewWidth;
-  height = $previewHeight;
+@filter SurfaceTargetFilter display {
+  surface = $previewSurface;
+  owidth = $previewWidth;
+  oheight = $previewHeight;
 }
 
 // Recording output
@@ -76,8 +76,6 @@
   recordingProfile = $recordingProfile;
   recordingDoneListener = $recordingDoneListener;
   recording = false;
-  width = $recordingWidth;
-  height = $recordingHeight;
   // outputFile, orientationHint, inputRegion,
   // audioSource, listeners, captureRate
   // will be set when recording starts

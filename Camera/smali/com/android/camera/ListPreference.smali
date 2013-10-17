@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field private final TAG:Ljava/lang/String;
+
 .field private final mDefaultValues:[Ljava/lang/CharSequence;
 
 .field private mEntries:[Ljava/lang/CharSequence;
@@ -30,6 +32,11 @@
 
     .line 44
     invoke-direct {p0, p1, p2}, Lcom/android/camera/CameraPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    .line 34
+    const-string v3, "ListPreference"
+
+    iput-object v3, p0, Lcom/android/camera/ListPreference;->TAG:Ljava/lang/String;
 
     .line 41
     iput-boolean v5, p0, Lcom/android/camera/ListPreference;->mLoaded:Z
@@ -200,98 +207,6 @@
 
 
 # virtual methods
-.method public filterDuplicated()V
-    .locals 6
-
-    .prologue
-    .line 162
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 163
-    .local v0, entries:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    .line 164
-    .local v1, entryValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    iget-object v5, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
-
-    array-length v3, v5
-
-    .local v3, len:I
-    :goto_0
-    if-ge v2, v3, :cond_1
-
-    .line 165
-    iget-object v5, p0, Lcom/android/camera/ListPreference;->mEntries:[Ljava/lang/CharSequence;
-
-    aget-object v5, v5, v2
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_0
-
-    .line 166
-    iget-object v5, p0, Lcom/android/camera/ListPreference;->mEntries:[Ljava/lang/CharSequence;
-
-    aget-object v5, v5, v2
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 167
-    iget-object v5, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
-
-    aget-object v5, v5, v2
-
-    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 164
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 170
-    :cond_1
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    .line 171
-    .local v4, size:I
-    new-array v5, v4, [Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, [Ljava/lang/CharSequence;
-
-    iput-object v5, p0, Lcom/android/camera/ListPreference;->mEntries:[Ljava/lang/CharSequence;
-
-    .line 172
-    new-array v5, v4, [Ljava/lang/CharSequence;
-
-    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, [Ljava/lang/CharSequence;
-
-    iput-object v5, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
-
-    .line 173
-    return-void
-.end method
-
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 6
     .parameter
@@ -569,7 +484,7 @@
     .locals 4
 
     .prologue
-    .line 176
+    .line 162
     const-string v1, "ListPreference"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -610,7 +525,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 177
+    .line 163
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -621,7 +536,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 178
+    .line 164
     const-string v1, "ListPreference"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -658,12 +573,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 177
+    .line 163
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 180
+    .line 166
     :cond_0
     return-void
 .end method

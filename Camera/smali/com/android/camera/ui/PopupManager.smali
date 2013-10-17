@@ -177,3 +177,17 @@
     :cond_1
     return-void
 .end method
+
+.method public setOnOtherPopupShowedListener(Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;)V
+    .locals 1
+    .parameter "listener"
+
+    .prologue
+    .line 50
+    iget-object v0, p0, Lcom/android/camera/ui/PopupManager;->mListeners:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 51
+    return-void
+.end method

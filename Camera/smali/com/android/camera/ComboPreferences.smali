@@ -194,7 +194,7 @@
     .parameter "key"
 
     .prologue
-    .line 77
+    .line 76
     const-string v0, "pref_video_time_lapse_frame_interval_key"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -264,7 +264,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 138
+    .line 130
     iget-object v1, p0, Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
 
     invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
@@ -273,12 +273,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 140
+    .line 132
     :cond_0
     :goto_0
     return v0
 
-    .line 139
+    .line 131
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
@@ -288,7 +288,7 @@
 
     if-nez v1, :cond_0
 
-    .line 140
+    .line 132
     const/4 v0, 0x0
 
     goto :goto_0
@@ -298,7 +298,7 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 222
     new-instance v0, Lcom/android/camera/ComboPreferences$MyEditor;
 
     invoke-direct {v0, p0}, Lcom/android/camera/ComboPreferences$MyEditor;-><init>(Lcom/android/camera/ComboPreferences;)V
@@ -319,7 +319,7 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 72
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -333,7 +333,7 @@
     .parameter "defValue"
 
     .prologue
-    .line 123
+    .line 117
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
@@ -348,7 +348,7 @@
 
     if-nez v0, :cond_1
 
-    .line 124
+    .line 118
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
@@ -356,7 +356,7 @@
 
     move-result v0
 
-    .line 126
+    .line 120
     :goto_0
     return v0
 
@@ -376,7 +376,7 @@
     .parameter "defValue"
 
     .prologue
-    .line 114
+    .line 109
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
@@ -391,7 +391,7 @@
 
     if-nez v0, :cond_1
 
-    .line 115
+    .line 110
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
@@ -399,7 +399,7 @@
 
     move-result v0
 
-    .line 117
+    .line 112
     :goto_0
     return v0
 
@@ -429,7 +429,7 @@
     .parameter "defValue"
 
     .prologue
-    .line 96
+    .line 93
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
@@ -444,7 +444,7 @@
 
     if-nez v0, :cond_1
 
-    .line 97
+    .line 94
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
@@ -452,7 +452,7 @@
 
     move-result v0
 
-    .line 99
+    .line 96
     :goto_0
     return v0
 
@@ -482,7 +482,7 @@
     .parameter "defValue"
 
     .prologue
-    .line 105
+    .line 101
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
@@ -497,7 +497,7 @@
 
     if-nez v0, :cond_1
 
-    .line 106
+    .line 102
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
@@ -505,7 +505,7 @@
 
     move-result-wide v0
 
-    .line 108
+    .line 104
     :goto_0
     return-wide v0
 
@@ -525,7 +525,7 @@
     .parameter "defValue"
 
     .prologue
-    .line 87
+    .line 85
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
@@ -540,7 +540,7 @@
 
     if-nez v0, :cond_1
 
-    .line 88
+    .line 86
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
@@ -548,7 +548,7 @@
 
     move-result-object v0
 
-    .line 90
+    .line 88
     :goto_0
     return-object v0
 
@@ -582,7 +582,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 126
     .local p2, defValues:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -597,7 +597,7 @@
     .parameter "key"
 
     .prologue
-    .line 259
+    .line 237
     iget-object v2, p0, Lcom/android/camera/ComboPreferences;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -618,13 +618,13 @@
 
     check-cast v1, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
-    .line 260
+    .line 238
     .local v1, listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
     invoke-interface {v1, p0, p2}, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;->onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 262
+    .line 240
     .end local v1           #listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
     :cond_0
     return-void
@@ -635,12 +635,12 @@
     .parameter "listener"
 
     .prologue
-    .line 247
+    .line 227
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 248
+    .line 228
     return-void
 .end method
 
@@ -712,11 +712,11 @@
     .parameter "listener"
 
     .prologue
-    .line 253
+    .line 232
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 254
+    .line 233
     return-void
 .end method

@@ -51,7 +51,7 @@
 
     .line 38
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v3, 0x7f040040
+    const v3, 0x7f040017
 
     iget-object v4, p0, Lcom/android/camera/ui/RotateTextToast;->mLayoutRoot:Landroid/view/ViewGroup;
 
@@ -61,7 +61,7 @@
 
     .line 39
     .local v2, v:Landroid/view/View;
-    const v3, 0x7f1000b7
+    const v3, 0x7f0d0065
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -74,7 +74,7 @@
     .line 40
     iget-object v3, p0, Lcom/android/camera/ui/RotateTextToast;->mToast:Lcom/android/camera/ui/RotateLayout;
 
-    const v4, 0x7f10006e
+    const v4, 0x7f0d002c
 
     invoke-virtual {v3, v4}, Lcom/android/camera/ui/RotateLayout;->findViewById(I)Landroid/view/View;
 
@@ -89,9 +89,7 @@
     .line 42
     iget-object v3, p0, Lcom/android/camera/ui/RotateTextToast;->mToast:Lcom/android/camera/ui/RotateLayout;
 
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, p3, v4}, Lcom/android/camera/ui/RotateLayout;->setOrientation(IZ)V
+    invoke-virtual {v3, p3}, Lcom/android/camera/ui/RotateLayout;->setOrientation(I)V
 
     .line 43
     new-instance v3, Landroid/os/Handler;
@@ -110,14 +108,14 @@
     .locals 4
 
     .prologue
-    .line 56
+    .line 55
     iget-object v0, p0, Lcom/android/camera/ui/RotateTextToast;->mToast:Lcom/android/camera/ui/RotateLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateLayout;->setVisibility(I)V
 
-    .line 57
+    .line 56
     iget-object v0, p0, Lcom/android/camera/ui/RotateTextToast;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/camera/ui/RotateTextToast;->mRunnable:Ljava/lang/Runnable;
@@ -126,6 +124,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 58
+    .line 57
     return-void
 .end method

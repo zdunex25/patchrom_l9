@@ -54,41 +54,6 @@
     return v1
 .end method
 
-.method public static isSet(Landroid/content/SharedPreferences;)Z
-    .locals 3
-    .parameter "pref"
-
-    .prologue
-    .line 55
-    const-string v1, "pref_camera_recordlocation_key"
-
-    const-string v2, "none"
-
-    invoke-interface {p0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 56
-    .local v0, value:Ljava/lang/String;
-    const-string v1, "none"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x1
-
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
 .method public getValue()Ljava/lang/String;

@@ -16,10 +16,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 32
+    .line 33
     invoke-direct {p0, p1, p2}, Lcom/android/camera/ui/RotateLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 33
+    .line 34
     return-void
 .end method
 
@@ -29,11 +29,11 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 38
     invoke-super {p0}, Lcom/android/camera/ui/RotateLayout;->onFinishInflate()V
 
-    .line 39
-    const v0, 0x7f100017
+    .line 40
+    const/high16 v0, 0x7f0d
 
     invoke-virtual {p0, v0}, Lcom/android/camera/ui/AbstractSettingPopup;->findViewById(I)Landroid/view/View;
 
@@ -43,8 +43,8 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mTitle:Landroid/widget/TextView;
 
-    .line 40
-    const v0, 0x7f100060
+    .line 41
+    const v0, 0x7f0d0001
 
     invoke-virtual {p0, v0}, Lcom/android/camera/ui/AbstractSettingPopup;->findViewById(I)Landroid/view/View;
 
@@ -54,7 +54,7 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mSettingList:Landroid/view/ViewGroup;
 
-    .line 41
+    .line 42
     return-void
 .end method
 

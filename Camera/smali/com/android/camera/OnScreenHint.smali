@@ -30,50 +30,50 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 3
     .parameter "context"
 
     .prologue
     const/4 v2, -0x2
 
-    .line 62
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 45
     const/16 v0, 0x51
 
     iput v0, p0, Lcom/android/camera/OnScreenHint;->mGravity:I
 
-    .line 50
+    .line 52
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    .line 53
+    .line 55
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/OnScreenHint;->mHandler:Landroid/os/Handler;
 
-    .line 174
+    .line 177
     new-instance v0, Lcom/android/camera/OnScreenHint$1;
 
     invoke-direct {v0, p0}, Lcom/android/camera/OnScreenHint$1;-><init>(Lcom/android/camera/OnScreenHint;)V
 
     iput-object v0, p0, Lcom/android/camera/OnScreenHint;->mShow:Ljava/lang/Runnable;
 
-    .line 181
+    .line 183
     new-instance v0, Lcom/android/camera/OnScreenHint$2;
 
     invoke-direct {v0, p0}, Lcom/android/camera/OnScreenHint$2;-><init>(Lcom/android/camera/OnScreenHint;)V
 
     iput-object v0, p0, Lcom/android/camera/OnScreenHint;->mHide:Ljava/lang/Runnable;
 
-    .line 63
+    .line 66
     const-string v0, "window"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -84,12 +84,12 @@
 
     iput-object v0, p0, Lcom/android/camera/OnScreenHint;->mWM:Landroid/view/WindowManager;
 
-    .line 64
+    .line 67
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const/high16 v1, 0x7f0c
+    const/high16 v1, 0x7f0a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -97,52 +97,52 @@
 
     iput v0, p0, Lcom/android/camera/OnScreenHint;->mY:I
 
-    .line 67
+    .line 70
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 68
+    .line 71
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 69
+    .line 72
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     const/16 v1, 0x18
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 71
+    .line 74
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     const/4 v1, -0x3
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
-    .line 72
+    .line 75
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
-    const v1, 0x7f0e0005
+    const v1, 0x7f0c0003
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 73
+    .line 76
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     const/16 v1, 0x3e8
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 74
+    .line 77
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     const-string v1, "OnScreenHint"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 75
+    .line 78
     return-void
 .end method
 
@@ -151,7 +151,7 @@
     .parameter "x0"
 
     .prologue
-    .line 40
+    .line 42
     invoke-direct {p0}, Lcom/android/camera/OnScreenHint;->handleShow()V
 
     return-void
@@ -162,7 +162,7 @@
     .parameter "x0"
 
     .prologue
-    .line 40
+    .line 42
     invoke-direct {p0}, Lcom/android/camera/OnScreenHint;->handleHide()V
 
     return-void
@@ -172,7 +172,7 @@
     .locals 2
 
     .prologue
-    .line 163
+    .line 166
     monitor-enter p0
 
     :try_start_0
@@ -180,7 +180,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 167
+    .line 170
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -189,14 +189,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 168
+    .line 171
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mWM:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mView:Landroid/view/View;
 
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 170
+    .line 173
     :cond_0
     const/4 v0, 0x0
 
@@ -204,13 +204,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 172
+    .line 175
     :cond_1
     monitor-exit p0
 
     return-void
 
-    .line 163
+    .line 166
     :catchall_0
     move-exception v0
 
@@ -223,7 +223,7 @@
     .locals 4
 
     .prologue
-    .line 137
+    .line 140
     monitor-enter p0
 
     :try_start_0
@@ -233,38 +233,38 @@
 
     if-eq v1, v2, :cond_3
 
-    .line 139
+    .line 142
     invoke-direct {p0}, Lcom/android/camera/OnScreenHint;->handleHide()V
 
-    .line 140
+    .line 143
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mNextView:Landroid/view/View;
 
     iput-object v1, p0, Lcom/android/camera/OnScreenHint;->mView:Landroid/view/View;
 
-    .line 141
+    .line 144
     iget v0, p0, Lcom/android/camera/OnScreenHint;->mGravity:I
 
-    .line 142
+    .line 145
     .local v0, gravity:I
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iput v0, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 143
+    .line 146
     and-int/lit8 v1, v0, 0x7
 
     const/4 v2, 0x7
 
     if-ne v1, v2, :cond_0
 
-    .line 145
+    .line 148
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     const/high16 v2, 0x3f80
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->horizontalWeight:F
 
-    .line 147
+    .line 150
     :cond_0
     and-int/lit8 v1, v0, 0x70
 
@@ -272,14 +272,14 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 149
+    .line 152
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     const/high16 v2, 0x3f80
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->verticalWeight:F
 
-    .line 151
+    .line 154
     :cond_1
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -287,28 +287,28 @@
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 152
+    .line 155
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, p0, Lcom/android/camera/OnScreenHint;->mY:I
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 153
+    .line 156
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, p0, Lcom/android/camera/OnScreenHint;->mVerticalMargin:F
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->verticalMargin:F
 
-    .line 154
+    .line 157
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, p0, Lcom/android/camera/OnScreenHint;->mHorizontalMargin:F
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
-    .line 155
+    .line 158
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -317,14 +317,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 156
+    .line 159
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mWM:Landroid/view/WindowManager;
 
     iget-object v2, p0, Lcom/android/camera/OnScreenHint;->mView:Landroid/view/View;
 
     invoke-interface {v1, v2}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 158
+    .line 161
     :cond_2
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mWM:Landroid/view/WindowManager;
 
@@ -336,14 +336,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 160
+    .line 163
     .end local v0           #gravity:I
     :cond_3
     monitor-exit p0
 
     return-void
 
-    .line 137
+    .line 140
     :catchall_0
     move-exception v1
 
@@ -358,12 +358,12 @@
     .parameter "text"
 
     .prologue
-    .line 104
+    .line 107
     new-instance v1, Lcom/android/camera/OnScreenHint;
 
     invoke-direct {v1, p0}, Lcom/android/camera/OnScreenHint;-><init>(Landroid/content/Context;)V
 
-    .line 106
+    .line 109
     .local v1, result:Lcom/android/camera/OnScreenHint;
     const-string v4, "layout_inflater"
 
@@ -373,9 +373,9 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 109
+    .line 112
     .local v0, inflate:Landroid/view/LayoutInflater;
-    const v4, 0x7f040020
+    const v4, 0x7f04000c
 
     const/4 v5, 0x0
 
@@ -383,9 +383,9 @@
 
     move-result-object v3
 
-    .line 110
+    .line 113
     .local v3, v:Landroid/view/View;
-    const v4, 0x7f10006e
+    const v4, 0x7f0d002c
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -393,14 +393,14 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 111
+    .line 114
     .local v2, tv:Landroid/widget/TextView;
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 113
+    .line 116
     iput-object v3, v1, Lcom/android/camera/OnScreenHint;->mNextView:Landroid/view/View;
 
-    .line 115
+    .line 118
     return-object v1
 .end method
 
@@ -410,14 +410,14 @@
     .locals 2
 
     .prologue
-    .line 91
+    .line 94
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mHide:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 92
+    .line 95
     return-void
 .end method
 
@@ -426,12 +426,12 @@
     .parameter "s"
 
     .prologue
-    .line 124
+    .line 127
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mNextView:Landroid/view/View;
 
     if-nez v1, :cond_0
 
-    .line 125
+    .line 128
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "This OnScreenHint was not created with OnScreenHint.makeText()"
@@ -440,11 +440,11 @@
 
     throw v1
 
-    .line 128
+    .line 131
     :cond_0
     iget-object v1, p0, Lcom/android/camera/OnScreenHint;->mNextView:Landroid/view/View;
 
-    const v2, 0x7f10006e
+    const v2, 0x7f0d002c
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -452,11 +452,11 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 129
+    .line 132
     .local v0, tv:Landroid/widget/TextView;
     if-nez v0, :cond_1
 
-    .line 130
+    .line 133
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "This OnScreenHint was not created with OnScreenHint.makeText()"
@@ -465,11 +465,11 @@
 
     throw v1
 
-    .line 133
+    .line 136
     :cond_1
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 134
+    .line 137
     return-void
 .end method
 
@@ -477,21 +477,21 @@
     .locals 2
 
     .prologue
-    .line 81
+    .line 84
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mNextView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 82
+    .line 85
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "View is not initialized"
+    const-string v1, "setView must have been called"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 84
+    .line 87
     :cond_0
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mHandler:Landroid/os/Handler;
 
@@ -499,6 +499,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 85
+    .line 88
     return-void
 .end method

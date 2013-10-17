@@ -38,7 +38,7 @@
     move-result v1
 
     .line 41
-    invoke-virtual {v0, v1}, Lcom/android/camera/CameraHolder;->tryOpen(I)Lcom/android/camera/CameraManager$CameraProxy;
+    invoke-virtual {v0, v1}, Lcom/android/camera/CameraHolder;->tryOpen(I)Landroid/hardware/Camera;
 
     move-result-object v1
 
@@ -63,7 +63,7 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 47
-    const-class v1, Lcom/android/camera/CameraActivity;
+    const-class v1, Lcom/android/camera/Camera;
 
     invoke-virtual {v0, p1, v1}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 

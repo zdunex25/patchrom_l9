@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 174
+    .line 177
     iput-object p1, p0, Lcom/android/camera/OnScreenHint$1;->this$0:Lcom/android/camera/OnScreenHint;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 177
+    .line 179
     iget-object v0, p0, Lcom/android/camera/OnScreenHint$1;->this$0:Lcom/android/camera/OnScreenHint;
 
     #calls: Lcom/android/camera/OnScreenHint;->handleShow()V
     invoke-static {v0}, Lcom/android/camera/OnScreenHint;->access$000(Lcom/android/camera/OnScreenHint;)V
 
-    .line 178
+    .line 180
     return-void
 .end method

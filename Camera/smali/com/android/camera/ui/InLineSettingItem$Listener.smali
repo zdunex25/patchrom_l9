@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onSettingChanged(Lcom/android/camera/ListPreference;)V
+.method public abstract onSettingChanged()V
 .end method

@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract setOrientation(IZ)V
+.method public abstract setOrientation(I)V
 .end method

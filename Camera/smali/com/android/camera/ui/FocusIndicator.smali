@@ -7,11 +7,11 @@
 .method public abstract clear()V
 .end method
 
-.method public abstract showFail(Z)V
+.method public abstract showFail()V
 .end method
 
 .method public abstract showStart()V
 .end method
 
-.method public abstract showSuccess(Z)V
+.method public abstract showSuccess()V
 .end method

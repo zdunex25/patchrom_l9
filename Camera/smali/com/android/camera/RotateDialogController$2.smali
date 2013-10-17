@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 140
+    .line 135
     iput-object p1, p0, Lcom/android/camera/RotateDialogController$2;->this$0:Lcom/android/camera/RotateDialogController;
 
     iput-object p2, p0, Lcom/android/camera/RotateDialogController$2;->val$r2:Ljava/lang/Runnable;
@@ -47,7 +47,7 @@
     .parameter "v"
 
     .prologue
-    .line 143
+    .line 138
     iget-object v0, p0, Lcom/android/camera/RotateDialogController$2;->val$r2:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
@@ -56,12 +56,12 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 144
+    .line 139
     :cond_0
     iget-object v0, p0, Lcom/android/camera/RotateDialogController$2;->this$0:Lcom/android/camera/RotateDialogController;
 
     invoke-virtual {v0}, Lcom/android/camera/RotateDialogController;->dismissDialog()V
 
-    .line 145
+    .line 140
     return-void
 .end method

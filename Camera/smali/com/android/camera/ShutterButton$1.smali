@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 102
+    .line 86
     iput-object p1, p0, Lcom/android/camera/ShutterButton$1;->this$0:Lcom/android/camera/ShutterButton;
 
     iput-boolean p2, p0, Lcom/android/camera/ShutterButton$1;->val$pressed:Z
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 105
+    .line 88
     iget-object v0, p0, Lcom/android/camera/ShutterButton$1;->this$0:Lcom/android/camera/ShutterButton;
 
     iget-boolean v1, p0, Lcom/android/camera/ShutterButton$1;->val$pressed:Z
@@ -54,6 +54,6 @@
     #calls: Lcom/android/camera/ShutterButton;->callShutterButtonFocus(Z)V
     invoke-static {v0, v1}, Lcom/android/camera/ShutterButton;->access$000(Lcom/android/camera/ShutterButton;Z)V
 
-    .line 106
+    .line 89
     return-void
 .end method

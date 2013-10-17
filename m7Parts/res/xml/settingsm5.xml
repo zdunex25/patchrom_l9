@@ -30,7 +30,7 @@
             <EditTextPreference android:key="m7NetworkName" />
         </PreferenceCategory>
     </PreferenceScreen>
-    <!--PreferenceScreen android:title="@string/sNavBar" android:key="lNavBar">
+    <PreferenceScreen android:title="@string/sNavBar" android:key="lNavBar">
         <PreferenceCategory android:title="@string/sNavBarDesc">
             <ListPreference android:entries="@array/NavBarUses" android:title="@string/sNavBarEnable" android:key="m7NavBarOnOff" android:defaultValue="0" android:entryValues="@array/NavBarUsesValues" />
         </PreferenceCategory>
@@ -42,7 +42,7 @@
     <PreferenceScreen android:title="@string/sZRamTitle" android:key="lZRam">
         <ListPreference android:entries="@array/zRams" android:title="@string/sZRamSize" android:key="m7ZRamSize" android:defaultValue="0" android:entryValues="@array/zRamsValues" />
         <PreferenceScreen android:layout="@layout/zram" android:key="lZRam2" />
-    </PreferenceScreen-->
+    </PreferenceScreen>
     <PreferenceScreen android:title="@string/AboutString">
         <PreferenceScreen android:layout="@layout/main" />
     </PreferenceScreen>

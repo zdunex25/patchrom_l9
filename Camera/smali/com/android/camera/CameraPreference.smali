@@ -28,20 +28,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lcom/android/camera/CameraPreference;->mContext:Landroid/content/Context;
 
-    .line 43
+    .line 44
     sget-object v1, Lcom/android/camera/R$styleable;->CameraPreference:[I
 
     invoke-virtual {p1, p2, v1, v2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 45
+    .line 46
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -49,10 +49,10 @@
 
     iput-object v1, p0, Lcom/android/camera/CameraPreference;->mTitle:Ljava/lang/String;
 
-    .line 46
+    .line 47
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -62,12 +62,12 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 55
     iget-object v0, p0, Lcom/android/camera/CameraPreference;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     if-nez v0, :cond_0
 
-    .line 55
+    .line 56
     iget-object v0, p0, Lcom/android/camera/CameraPreference;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/camera/ComboPreferences;->get(Landroid/content/Context;)Lcom/android/camera/ComboPreferences;
@@ -76,7 +76,7 @@
 
     iput-object v0, p0, Lcom/android/camera/CameraPreference;->mSharedPreferences:Landroid/content/SharedPreferences;
 
-    .line 57
+    .line 58
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraPreference;->mSharedPreferences:Landroid/content/SharedPreferences;
 
@@ -87,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 51
     iget-object v0, p0, Lcom/android/camera/CameraPreference;->mTitle:Ljava/lang/String;
 
     return-object v0

@@ -17,97 +17,66 @@
 # static fields
 .field public static final CameraPreference:[I
 
-.field public static final CenteredLinearLayout:[I
-
 .field public static final IconIndicator:[I
 
 .field public static final IconListPreference:[I
 
-.field public static final ImageButtonTitle:[I
-
 .field public static final ListPreference:[I
-
-.field public static final Theme_GalleryBase:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 4
 
     .prologue
-    const/4 v5, 0x4
+    const/4 v3, 0x4
 
-    const/4 v4, 0x1
+    .line 925
+    const/4 v0, 0x1
 
-    const/4 v3, 0x0
+    new-array v0, v0, [I
 
-    const/4 v2, 0x2
+    const/4 v1, 0x0
 
-    .line 2544
-    new-array v0, v4, [I
+    const/high16 v2, 0x7f01
 
-    const/high16 v1, 0x7f01
-
-    aput v1, v0, v3
+    aput v2, v0, v1
 
     sput-object v0, Lcom/android/camera/R$styleable;->CameraPreference:[I
 
-    .line 2571
-    new-array v0, v4, [I
+    .line 954
+    const/4 v0, 0x2
 
-    const v1, 0x7f01000c
-
-    aput v1, v0, v3
-
-    sput-object v0, Lcom/android/camera/R$styleable;->CenteredLinearLayout:[I
-
-    .line 2602
-    new-array v0, v2, [I
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/camera/R$styleable;->IconIndicator:[I
 
-    .line 2641
-    new-array v0, v5, [I
+    .line 993
+    new-array v0, v3, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/camera/R$styleable;->IconListPreference:[I
 
-    .line 2698
-    new-array v0, v2, [I
+    .line 1054
+    new-array v0, v3, [I
 
     fill-array-data v0, :array_2
 
-    sput-object v0, Lcom/android/camera/R$styleable;->ImageButtonTitle:[I
-
-    .line 2729
-    new-array v0, v5, [I
-
-    fill-array-data v0, :array_3
-
     sput-object v0, Lcom/android/camera/R$styleable;->ListPreference:[I
-
-    .line 2789
-    new-array v0, v2, [I
-
-    fill-array-data v0, :array_4
-
-    sput-object v0, Lcom/android/camera/R$styleable;->Theme_GalleryBase:[I
 
     return-void
 
-    .line 2602
-    nop
-
+    .line 954
     :array_0
     .array-data 0x4
         0x5t 0x0t 0x1t 0x7ft
         0x6t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 2641
+    .line 993
     :array_1
     .array-data 0x4
         0x5t 0x0t 0x1t 0x7ft
@@ -116,27 +85,13 @@
         0x9t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 2698
+    .line 1054
     :array_2
-    .array-data 0x4
-        0x98t 0x0t 0x1t 0x1t
-        0x4ft 0x1t 0x1t 0x1t
-    .end array-data
-
-    .line 2729
-    :array_3
     .array-data 0x4
         0x1t 0x0t 0x1t 0x7ft
         0x2t 0x0t 0x1t 0x7ft
         0x3t 0x0t 0x1t 0x7ft
         0x4t 0x0t 0x1t 0x7ft
-    .end array-data
-
-    .line 2789
-    :array_4
-    .array-data 0x4
-        0xat 0x0t 0x1t 0x7ft
-        0xbt 0x0t 0x1t 0x7ft
     .end array-data
 .end method
 
@@ -144,7 +99,7 @@
     .locals 0
 
     .prologue
-    .line 2533
+    .line 914
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

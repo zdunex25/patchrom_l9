@@ -28,17 +28,17 @@
     .parameter "format"
 
     .prologue
-    .line 755
+    .line 697
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 756
+    .line 698
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     invoke-direct {v0, p1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/camera/Util$ImageFileNamer;->mFormat:Ljava/text/SimpleDateFormat;
 
-    .line 757
+    .line 699
     return-void
 .end method
 
@@ -51,12 +51,12 @@
     .prologue
     const-wide/16 v6, 0x3e8
 
-    .line 760
+    .line 702
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0, p1, p2}, Ljava/util/Date;-><init>(J)V
 
-    .line 761
+    .line 703
     .local v0, date:Ljava/util/Date;
     iget-object v2, p0, Lcom/android/camera/Util$ImageFileNamer;->mFormat:Ljava/text/SimpleDateFormat;
 
@@ -64,7 +64,7 @@
 
     move-result-object v1
 
-    .line 765
+    .line 707
     .local v1, result:Ljava/lang/String;
     div-long v2, p1, v6
 
@@ -76,14 +76,14 @@
 
     if-nez v2, :cond_0
 
-    .line 766
+    .line 708
     iget v2, p0, Lcom/android/camera/Util$ImageFileNamer;->mSameSecondCount:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/android/camera/Util$ImageFileNamer;->mSameSecondCount:I
 
-    .line 767
+    .line 709
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -108,15 +108,15 @@
 
     move-result-object v1
 
-    .line 773
+    .line 715
     :goto_0
     return-object v1
 
-    .line 769
+    .line 711
     :cond_0
     iput-wide p1, p0, Lcom/android/camera/Util$ImageFileNamer;->mLastDate:J
 
-    .line 770
+    .line 712
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/android/camera/Util$ImageFileNamer;->mSameSecondCount:I

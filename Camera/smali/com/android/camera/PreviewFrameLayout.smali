@@ -2,26 +2,9 @@
 .super Landroid/widget/RelativeLayout;
 .source "PreviewFrameLayout.java"
 
-# interfaces
-.implements Lcom/android/camera/ui/LayoutChangeNotifier;
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;
-    }
-.end annotation
-
 
 # instance fields
 .field private mAspectRatio:D
-
-.field private mBorder:Landroid/view/View;
-
-.field private mLayoutChangeHelper:Lcom/android/camera/ui/LayoutChangeHelper;
-
-.field private mListener:Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;
 
 
 # direct methods
@@ -31,189 +14,122 @@
     .parameter "attrs"
 
     .prologue
-    .line 48
+    .line 39
     invoke-direct {p0, p1, p2}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 49
+    .line 40
     const-wide v0, 0x3ff5555555555555L
 
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/PreviewFrameLayout;->setAspectRatio(D)V
 
-    .line 50
-    new-instance v0, Lcom/android/camera/ui/LayoutChangeHelper;
-
-    invoke-direct {v0, p0}, Lcom/android/camera/ui/LayoutChangeHelper;-><init>(Landroid/view/View;)V
-
-    iput-object v0, p0, Lcom/android/camera/PreviewFrameLayout;->mLayoutChangeHelper:Lcom/android/camera/ui/LayoutChangeHelper;
-
-    .line 51
+    .line 41
     return-void
 .end method
 
 
 # virtual methods
-.method protected onFinishInflate()V
-    .locals 2
-
-    .prologue
-    .line 55
-    const v1, 0x7f1000a5
-
-    invoke-virtual {p0, v1}, Lcom/android/camera/PreviewFrameLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/camera/PreviewFrameLayout;->mBorder:Landroid/view/View;
-
-    .line 56
-    sget-boolean v1, Lcom/android/gallery3d/common/ApiHelper;->HAS_FACE_DETECTION:Z
-
-    if-eqz v1, :cond_0
-
-    .line 57
-    const v1, 0x7f1000a1
-
-    invoke-virtual {p0, v1}, Lcom/android/camera/PreviewFrameLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewStub;
-
-    .line 61
-    .local v0, faceViewStub:Landroid/view/ViewStub;
-    if-eqz v0, :cond_0
-
-    .line 62
-    invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
-
-    .line 65
-    .end local v0           #faceViewStub:Landroid/view/ViewStub;
-    :cond_0
-    return-void
-.end method
-
-.method protected onLayout(ZIIII)V
-    .locals 6
-    .parameter "changed"
-    .parameter "l"
-    .parameter "t"
-    .parameter "r"
-    .parameter "b"
-
-    .prologue
-    .line 128
-    invoke-super/range {p0 .. p5}, Landroid/widget/RelativeLayout;->onLayout(ZIIII)V
-
-    .line 129
-    iget-object v0, p0, Lcom/android/camera/PreviewFrameLayout;->mLayoutChangeHelper:Lcom/android/camera/ui/LayoutChangeHelper;
-
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    invoke-virtual/range {v0 .. v5}, Lcom/android/camera/ui/LayoutChangeHelper;->onLayout(ZIIII)V
-
-    .line 130
-    return-void
-.end method
-
 .method protected onMeasure(II)V
-    .locals 7
+    .locals 13
     .parameter "widthSpec"
     .parameter "heightSpec"
 
     .prologue
-    const/high16 v6, 0x4000
+    const/high16 v12, 0x4000
 
-    .line 91
+    const-wide/high16 v10, 0x3fe0
+
+    .line 64
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 92
+    .line 65
     .local v2, previewWidth:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 95
+    .line 68
     .local v1, previewHeight:I
-    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getPaddingLeft()I
+    iget v4, p0, Lcom/android/camera/PreviewFrameLayout;->mPaddingLeft:I
 
-    move-result v4
-
-    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getPaddingRight()I
-
-    move-result v5
+    iget v5, p0, Lcom/android/camera/PreviewFrameLayout;->mPaddingRight:I
 
     add-int v0, v4, v5
 
-    .line 96
+    .line 69
     .local v0, hPadding:I
-    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getPaddingTop()I
+    iget v4, p0, Lcom/android/camera/PreviewFrameLayout;->mPaddingTop:I
 
-    move-result v4
-
-    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getPaddingBottom()I
-
-    move-result v5
+    iget v5, p0, Lcom/android/camera/PreviewFrameLayout;->mPaddingBottom:I
 
     add-int v3, v4, v5
 
-    .line 99
+    .line 72
     .local v3, vPadding:I
     sub-int/2addr v2, v0
 
-    .line 100
+    .line 73
     sub-int/2addr v1, v3
 
-    .line 103
+    .line 74
+    int-to-double v4, v2
+
+    int-to-double v6, v1
+
+    iget-wide v8, p0, Lcom/android/camera/PreviewFrameLayout;->mAspectRatio:D
+
+    mul-double/2addr v6, v8
+
+    cmpl-double v4, v4, v6
+
+    if-lez v4, :cond_0
+
+    .line 75
+    int-to-double v4, v1
+
+    iget-wide v6, p0, Lcom/android/camera/PreviewFrameLayout;->mAspectRatio:D
+
+    mul-double/2addr v4, v6
+
+    add-double/2addr v4, v10
+
+    double-to-int v2, v4
+
+    .line 81
+    :goto_0
     add-int/2addr v2, v0
 
-    .line 104
+    .line 82
     add-int/2addr v1, v3
 
-    .line 107
-    invoke-static {v2, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    .line 85
+    invoke-static {v2, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
-    invoke-static {v1, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v1, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v5
 
     invoke-super {p0, v4, v5}, Landroid/widget/RelativeLayout;->onMeasure(II)V
 
-    .line 109
+    .line 87
     return-void
-.end method
 
-.method protected onSizeChanged(IIII)V
-    .locals 1
-    .parameter "w"
-    .parameter "h"
-    .parameter "oldw"
-    .parameter "oldh"
-
-    .prologue
-    .line 117
-    iget-object v0, p0, Lcom/android/camera/PreviewFrameLayout;->mListener:Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/camera/PreviewFrameLayout;->mListener:Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;
-
-    invoke-interface {v0, p1, p2}, Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;->onSizeChanged(II)V
-
-    .line 118
+    .line 77
     :cond_0
-    return-void
+    int-to-double v4, v2
+
+    iget-wide v6, p0, Lcom/android/camera/PreviewFrameLayout;->mAspectRatio:D
+
+    div-double/2addr v4, v6
+
+    add-double/2addr v4, v10
+
+    double-to-int v1, v4
+
+    goto :goto_0
 .end method
 
 .method public setAspectRatio(D)V
@@ -221,7 +137,7 @@
     .parameter "ratio"
 
     .prologue
-    .line 68
+    .line 44
     const-wide/16 v0, 0x0
 
     cmpg-double v0, p1, v0
@@ -234,28 +150,28 @@
 
     throw v0
 
-    .line 70
+    .line 46
     :cond_0
-    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    check-cast v0, Landroid/app/Activity;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/app/Activity;->getRequestedOrientation()I
 
-    iget v0, v0, Landroid/content/res/Configuration;->orientation:I
+    move-result v0
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 72
+    .line 48
     const-wide/high16 v0, 0x3ff0
 
     div-double p1, v0, p1
 
-    .line 75
+    .line 51
     :cond_1
     iget-wide v0, p0, Lcom/android/camera/PreviewFrameLayout;->mAspectRatio:D
 
@@ -263,40 +179,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 76
+    .line 52
     iput-wide p1, p0, Lcom/android/camera/PreviewFrameLayout;->mAspectRatio:D
 
-    .line 77
+    .line 53
     invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->requestLayout()V
 
-    .line 79
+    .line 55
     :cond_2
-    return-void
-.end method
-
-.method public setOnLayoutChangeListener(Lcom/android/camera/ui/LayoutChangeNotifier$Listener;)V
-    .locals 1
-    .parameter "listener"
-
-    .prologue
-    .line 123
-    iget-object v0, p0, Lcom/android/camera/PreviewFrameLayout;->mLayoutChangeHelper:Lcom/android/camera/ui/LayoutChangeHelper;
-
-    invoke-virtual {v0, p1}, Lcom/android/camera/ui/LayoutChangeHelper;->setOnLayoutChangeListener(Lcom/android/camera/ui/LayoutChangeNotifier$Listener;)V
-
-    .line 124
-    return-void
-.end method
-
-.method public setOnSizeChangedListener(Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;)V
-    .locals 0
-    .parameter "listener"
-
-    .prologue
-    .line 112
-    iput-object p1, p0, Lcom/android/camera/PreviewFrameLayout;->mListener:Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;
-
-    .line 113
     return-void
 .end method
 
@@ -305,8 +195,12 @@
     .parameter "enabled"
 
     .prologue
-    .line 82
-    iget-object v1, p0, Lcom/android/camera/PreviewFrameLayout;->mBorder:Landroid/view/View;
+    .line 58
+    const v0, 0x7f0d0048
+
+    invoke-virtual {p0, v0}, Lcom/android/camera/PreviewFrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
 
     if-eqz p1, :cond_0
 
@@ -315,10 +209,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 83
+    .line 60
     return-void
 
-    .line 82
+    .line 58
     :cond_0
     const/4 v0, 0x4
 

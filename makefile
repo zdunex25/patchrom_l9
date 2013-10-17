@@ -9,7 +9,7 @@ local-zip-file     := stockrom.zip
 local-out-zip-file := MIUI_P760.zip
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := AGE Camera m7Parts MiuiUpdater VFX SPN
+local-modified-apps := AGE Camera m7Parts MiuiUpdater SPN VFX
 
 local-modified-jars := #framework_ext
 
@@ -18,7 +18,7 @@ local-miui-removed-apps := MediaProvider SuperMarket Updater Weather BaiduNetwor
 
 local-miui-modified-apps := AntiSpam Backup Browser BugReport Calculator Calendar CalendarProvider CloudService Contacts \
 			ContactsProvider DeskClock DownloadProvider DownloadProviderUi Email Exchange2 FileExplorer MiuiCompass \
-			MiuiGallery MiuiHome MiuiSystemUI MiuiVideoPlayer Mms Music NetworkAssistant Notes PackageInstaller Phone \
+			MiuiGallery MiuiHome MiuiSystemUI MiuiVideoPlayer MiWallpaper Mms Music NetworkAssistant Notes PackageInstaller Phone \
 			Provision QuickSearchBox Settings SoundRecorder TelephonyProvider ThemeManager Transfer VpnDialogs \
 			WeatherProvider XiaomiServiceFramework YellowPage
 

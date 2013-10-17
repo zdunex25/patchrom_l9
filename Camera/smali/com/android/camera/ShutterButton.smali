@@ -16,25 +16,18 @@
 
 .field private mOldPressed:Z
 
-.field private mTouchEnabled:Z
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+    .locals 0
     .parameter "context"
     .parameter "attrs"
 
     .prologue
-    .line 50
+    .line 47
     invoke-direct {p0, p1, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 31
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/camera/ShutterButton;->mTouchEnabled:Z
-
-    .line 51
+    .line 48
     return-void
 .end method
 
@@ -55,85 +48,60 @@
     .parameter "pressed"
 
     .prologue
-    .line 116
+    .line 99
     iget-object v0, p0, Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
     if-eqz v0, :cond_0
 
-    .line 117
+    .line 100
     iget-object v0, p0, Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
     invoke-interface {v0, p1}, Lcom/android/camera/ShutterButton$OnShutterButtonListener;->onShutterButtonFocus(Z)V
 
-    .line 119
+    .line 102
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 1
-    .parameter "m"
-
-    .prologue
-    .line 59
-    iget-boolean v0, p0, Lcom/android/camera/ShutterButton;->mTouchEnabled:Z
-
-    if-eqz v0, :cond_0
-
-    .line 60
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v0
-
-    .line 62
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method protected drawableStateChanged()V
     .locals 2
 
     .prologue
-    .line 77
+    .line 61
     invoke-super {p0}, Landroid/widget/ImageView;->drawableStateChanged()V
 
-    .line 78
+    .line 62
     invoke-virtual {p0}, Lcom/android/camera/ShutterButton;->isPressed()Z
 
     move-result v0
 
-    .line 79
+    .line 63
     .local v0, pressed:Z
     iget-boolean v1, p0, Lcom/android/camera/ShutterButton;->mOldPressed:Z
 
     if-eq v0, v1, :cond_0
 
-    .line 80
+    .line 64
     if-nez v0, :cond_1
 
-    .line 102
+    .line 86
     new-instance v1, Lcom/android/camera/ShutterButton$1;
 
     invoke-direct {v1, p0, v0}, Lcom/android/camera/ShutterButton$1;-><init>(Lcom/android/camera/ShutterButton;Z)V
 
     invoke-virtual {p0, v1}, Lcom/android/camera/ShutterButton;->post(Ljava/lang/Runnable;)Z
 
-    .line 111
+    .line 94
     :goto_0
     iput-boolean v0, p0, Lcom/android/camera/ShutterButton;->mOldPressed:Z
 
-    .line 113
+    .line 96
     :cond_0
     return-void
 
-    .line 109
+    .line 92
     :cond_1
     invoke-direct {p0, v0}, Lcom/android/camera/ShutterButton;->callShutterButtonFocus(Z)V
 
@@ -144,23 +112,23 @@
     .locals 2
 
     .prologue
-    .line 123
+    .line 106
     invoke-super {p0}, Landroid/widget/ImageView;->performClick()Z
 
     move-result v0
 
-    .line 124
+    .line 107
     .local v0, result:Z
     iget-object v1, p0, Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
     if-eqz v1, :cond_0
 
-    .line 125
+    .line 108
     iget-object v1, p0, Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
     invoke-interface {v1}, Lcom/android/camera/ShutterButton$OnShutterButtonListener;->onShutterButtonClick()V
 
-    .line 127
+    .line 110
     :cond_0
     return v0
 .end method
@@ -170,9 +138,9 @@
     .parameter "listener"
 
     .prologue
-    .line 54
+    .line 51
     iput-object p1, p0, Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
-    .line 55
+    .line 52
     return-void
 .end method

@@ -25,7 +25,7 @@
     .parameter "camera"
 
     .prologue
-    .line 27
+    .line 26
     const-string v0, "CameraErrorCallback"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -48,12 +48,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 28
+    .line 27
     const/16 v0, 0x64
 
     if-ne p1, v0, :cond_0
 
-    .line 32
+    .line 31
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Media server died."
@@ -62,7 +62,7 @@
 
     throw v0
 
-    .line 34
+    .line 33
     :cond_0
     return-void
 .end method
