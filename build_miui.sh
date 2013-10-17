@@ -4,14 +4,12 @@ export PATH=$PATH:/home/$USER/android-sdk-linux/tools:/home/$USER/android-sdk-li
 cd patchromv542
 . build/envsetup.sh
 cd l9
-mkdir BugReport
 mkdir Mms/smali/com/android/mms/data
 mkdir Mms/smali/com/android/mms/transaction
 mkdir Mms/smali/com/android/mms/ui
 mkdir -p MiuiSystemUI/smali/com/android/systemui/statusbar/phone
 mkdir Settings/res/xml
 mkdir -p Settings/smali/com/android/settings
-mkdir XiaomiServiceFramework
 mkdir -p temp/pl
 cd ../miuipolska/Polish/main
 for i in * ; do cp -r "$i" "../../../l9/temp/pl/${i//\.apk/}" ; done
@@ -160,12 +158,6 @@ cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings2.smali' | sed -e
     move-object\/from16 v2, v23\
 \
     invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V/' > '../Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali'
-'../../tools/apktool' --quiet d -f '../../miui/XHDPI/system/app/BugReport.apk'
-grep -v '<action android:name="android.intent.action.MAIN" />' 'BugReport/AndroidManifest.xml' >> 'BugReport/AndroidManifest2.xml'
-grep -v '<category android:name="android.intent.category.LAUNCHER" />' 'BugReport/AndroidManifest2.xml' >> '../BugReport/AndroidManifest.xml'
-'../../tools/apktool' --quiet d -f '../../miui/XHDPI/system/app/XiaomiServiceFramework.apk'
-grep -v '<action android:name="android.intent.action.MAIN" />' 'XiaomiServiceFramework/AndroidManifest.xml' >> 'XiaomiServiceFramework/AndroidManifest2.xml'
-grep -v '<category android:name="android.intent.category.LAUNCHER" />' 'XiaomiServiceFramework/AndroidManifest2.xml' >> '../XiaomiServiceFramework/AndroidManifest.xml'
 '../../tools/apktool' --quiet d -f '../../miui/XHDPI/system/app/LBESEC_MIUI.apk'
 cp -u -r pl/LBESEC_MIUI/* LBESEC_MIUI
 '../../tools/apktool' --quiet b -f 'LBESEC_MIUI' '../other/unsigned-LBESEC_MIUI.apk'
@@ -200,26 +192,14 @@ rm -rf pl/StkSelection
 rm -rf pl/TelocationProvider
 rm -rf pl/Updater
 rm -rf pl/YGPS
-sed -i -e 's/<resources>/<resources>\
-    <string-array name=\"baidu\">\
-        <item>Google<\/item>\
-        <item>google.com<\/item>\
-        <item>http:\/\/www.google.com\/favicon.ico<\/item>\
-        <item>http:\/\/www.google.com\/search?hl={language}\&amp;ie={inputEncoding}\&amp;source=android-browser\&amp;q={searchTerms}<\/item>\
-        <item>UTF-8<\/item>\
-        <item>http:\/\/api.bing.com\/osjson.aspx?query={searchTerms}\&amp;language={language}<\/item>\
-    <\/string-array>/' pl/Browser/res/values-pl/arrays.xml
-sed -i -e 's/>Baidu</>Google</' pl/Browser/res/values-pl/strings.xml
-cp -u -r pl/BugReport/* ../BugReport
-mkdir ../MiuiHome/res/values-pl
-grep -v '        <item>Obrót</item>' 'pl/MiuiHome/res/values-pl/arrays.xml' >> '../MiuiHome/res/values-pl/arrays.xml'
+sed -i -e 's/<item>Strona<\/item>/<!--item>Strona<\/item-->/' pl/MiuiHome/res/values-pl/arrays.xml
+sed -i -e 's/<item>Obrót<\/item>/<!--item>Obrót<\/item-->/' pl/MiuiHome/res/values-pl/arrays.xml
 cp -u -r pl/MiuiHome/* ../MiuiHome
 cp -u -r pl/MiuiSystemUI/* ../MiuiSystemUI
 cp -u -r pl/Mms/* ../Mms
 sed -i -e 's/\"no_effect\">Płaski/\"no_effect\">ViPER FX/' pl/Music/res/values-pl/strings.xml
 cp -u -r pl/Music/* ../Music
 cp -u -r pl/Phone/* ../Phone
-sed -i -e 's/>Efekty muzyczne/>Equalizer MIUI/' pl/Settings/res/values-pl/strings.xml
 sed -i -e 's/>Wyłącz okno Zasilania/>Wyłącz okno zasilania/' pl/Settings/res/values-pl/strings.xml
 sed -i -e 's/>Szybkie zdjęcie/>Wstecz to skrót aparatu/' pl/Settings/res/values-pl/strings.xml
 sed -i -e 's/<\/resources>/  <string name=\"polish_translation\">Spolszczenie<\/string>\
@@ -229,10 +209,8 @@ cp -u -r pl/Settings/* ../Settings
 cp -f ../Settings/res/drawable-en-xhdpi/miui_logo.png  ../Settings/res/drawable-pl-xhdpi/miui_logo.png
 #cp -u -r ../../miuipolska/Polish/device/l9/Settings.apk/* ../Settings
 cp -u -r pl/ThemeManager/* ../ThemeManager
-cp -u -r pl/XiaomiServiceFramework/* ../XiaomiServiceFramework
 cp -u -r pl/framework-miui-res/res/* ../../miui/src/frameworks/miui/core/res/res
 rm -rf pl/Bluetooth
-rm -rf pl/BugReport
 rm -rf pl/MiuiHome
 rm -rf pl/MiuiSystemUI
 rm -rf pl/Mms
@@ -240,7 +218,6 @@ rm -rf pl/Music
 rm -rf pl/Phone
 rm -rf pl/Settings
 rm -rf pl/ThemeManager
-rm -rf pl/XiaomiServiceFramework
 rm -rf pl/framework-miui-res
 cp -u -r pl/* ..
 cd ..
@@ -423,14 +400,15 @@ echo Signing rom
 java -jar 'other/signapk.jar' 'other/testkey.x509.pem' 'other/testkey.pk8' "unsigned-miuioptimus-v5-p760-$version-4.2.zip" "miuioptimus-v5-p760-$version-4.2.zip"
 rm -r unsigned-miuioptimus-v5-p760-$version-4.2.zip
 
+#echo $ota
 md5=`md5sum miuioptimus-v5-p760-$version-4.2.zip | cut -d" " -f1`
 size=`du -sh md5sum miuioptimus-v5-p760-$version-4.2.zip | cut -c1-4`
 data=`date +%-d/%-m/%Y`
 LINK_PL="http://91.205.75.29//zdunex25/$version/miuioptimus-v5-p760-$version-4.2.zip"
-forum="<a href=\"link\">Dyskusja na forum</a>"
+forum="<a href=\"http://bit.ly/19UDoYQ\">Dyskusja na forum</a>"
 #MIRROR1_PL="http://goo.im/devs/mikegapinski/miuioptimus-v5-p760-$version-4.2.zip"
 #MIRROR2_PL="http://htcfanboys.com/download/acid/files/MIUIv5/$version/miuioptimus-v5-p760-$version-4.2.zip"
-echo '[dwl producent="'LG'" board="'P760'" tytul="'LG Optimus L9'" android="'4.2.2'" miui="'$version'" data="'$data'" md5="'$md5'" ota="'$ota'" informacje="'$forum'" status="" link="'$LINK_PL'" mirror1="" mirror2="" rozmiar="'$size'" rodzaj="pelna"]
+echo '[dwl producent="'LG'" board="'P760'" tytul="'LG&nbsp;Optimus&nbsp;L9'" android="'4.2.2'" miui="'$version'" data="'$data'" md5="'$md5'" informacje="'$forum'" status="" link="'$LINK_PL'" mirror1="" mirror2="" rozmiar="'$size'" rodzaj="pelna"]
     
     ' > download_v5.txt
 read -p "Done, miuioptimus-v5-p760-$version-4.2.zip has been created in root of l9 directory, copy to sd and flash it!"
