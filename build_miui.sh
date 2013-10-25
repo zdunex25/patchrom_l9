@@ -105,9 +105,9 @@ cat 'Settings/res/xml/sound_settings.xml' | sed -e "s/android.musicfx/miui.playe
 cat 'Settings/res/xml/device_info_settings.xml' | sed -e 's/android:key=\"kernel_version\" \/>/android:key=\"kernel_version\" \/>\
 	<miui.preference.ValuePreference android:title=\"@string\/build_author\" android:key=\"build_author\" \/>\
 	<miui.preference.ValuePreference android:title=\"@string\/polish_translation\" android:key=\"polish_translation\" \/>/' > '../Settings/res/xml/device_info_settings.xml'
-cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali' | sed -e 's/MenuInflater;)V/MenuInflater;)V \
-    return-void/' > 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings2.smali'
-cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings2.smali' | sed -e 's/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V\
+#cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali' | sed -e 's/MenuInflater;)V/MenuInflater;)V \
+#    return-void/' > 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings2.smali'
+cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali' | sed -e 's/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V\
 \
     .line 116\
     const-string v22, \"build_author\"\
@@ -190,7 +190,6 @@ rm -rf pl/Stk
 rm -rf pl/Stk1
 rm -rf pl/StkSelection
 rm -rf pl/TelocationProvider
-rm -rf pl/Updater
 rm -rf pl/YGPS
 sed -i -e 's/<item>Strona<\/item>/<!--item>Strona<\/item-->/' pl/MiuiHome/res/values-pl/arrays.xml
 sed -i -e 's/<item>Obrót<\/item>/<!--item>Obrót<\/item-->/' pl/MiuiHome/res/values-pl/arrays.xml
@@ -207,8 +206,10 @@ sed -i -e 's/<\/resources>/  <string name=\"polish_translation\">Spolszczenie<\/
 <\/resources>/' pl/Settings/res/values-pl/strings.xml
 cp -u -r pl/Settings/* ../Settings
 cp -f ../Settings/res/drawable-en-xhdpi/miui_logo.png  ../Settings/res/drawable-pl-xhdpi/miui_logo.png
-#cp -u -r ../../miuipolska/Polish/device/l9/Settings.apk/* ../Settings
+cp -u -r ../../miuipolska/Polish/device/m0/Settings.apk/* ../Settings
 cp -u -r pl/ThemeManager/* ../ThemeManager
+cp -u -r pl/Updater/* ../Updater
+cp -f ../Updater/res/drawable-en-xhdpi/miui_title.png  ../Updater/res/drawable-pl-xhdpi/miui_title.png
 cp -u -r pl/framework-miui-res/res/* ../../miui/src/frameworks/miui/core/res/res
 rm -rf pl/Bluetooth
 rm -rf pl/MiuiHome
@@ -218,6 +219,7 @@ rm -rf pl/Music
 rm -rf pl/Phone
 rm -rf pl/Settings
 rm -rf pl/ThemeManager
+rm -rf pl/Updater
 rm -rf pl/framework-miui-res
 cp -u -r pl/* ..
 cd ..
@@ -247,7 +249,7 @@ sed -i -e "s/ro\.build\.version\.incremental=.*/ro\.build\.version\.incremental=
 sed -i -e "s/updater\.time=.*/updater\.time=$ota/g" out/temp/system/build.prop
 sed -i -e "s/updater\.ver=.*/updater\.ver=$version/g" out/temp/system/build.prop
 sed -i -e "s/ro\.goo\.version=.*/ro\.goo\.version=$version/g" out/temp/system/build.prop
-sed -i -e "s/ro\.product\.mod_device=.*/ro\.product\.mod_device=i9300/g" out/temp/system/build.prop
+sed -i -e "s/ro\.product\.mod_device=.*/ro\.product\.mod_device=p760_z25/g" out/temp/system/build.prop
 rm -f out/temp/system/etc/weather_city.db
 java -jar 'other/signapk.jar' 'other/testkey.x509.pem' 'other/testkey.pk8' "other/unsigned-LBESEC_MIUI.apk" "other/signed-LBESEC_MIUI.apk"
 java -jar 'other/signapk.jar' 'other/testkey.x509.pem' 'other/testkey.pk8' "other/unsigned-Mms.apk" "other/signed-Mms.apk"
@@ -285,16 +287,16 @@ cd ../miuipolska/Polish/extras/clocks
 zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q strings/strings_pl.xml
 zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q strings/strings_pl.xml
 zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q strings/strings_pl.xml
-cd right
+cd Bateria_Prawy
 zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q manifest.xml
-cd ../center
+cd ../Bateria_Srodek
 zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q manifest.xml
-cd ../left
-zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q manifest.xml
+#cd ../left
+#zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q manifest.xml
 cd ../../../../../l9
 mv out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock.mrc
 mv out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_center.mrc
-mv out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.mrc
+#mv out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.mrc
 
 mv out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.mrc out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.zip
 cd ../miuipolska/Polish/extras/simple_clock
@@ -320,15 +322,7 @@ for DIR in out/temp/system/app/; do
 done;
 
 cd out/temp
-'../../../tools/apktool' --quiet d -f '../../../miui/XHDPI/system/framework/framework_ext.jar'
-cp -u -r ../framework_ext_miui/* framework_ext.jar.out
-'../../../tools/apktool' --quiet b -f 'framework_ext.jar.out' 'system/framework/framework_ext.jar'
-mkdir -p ../framework_ext_miui/META-INF
-unzip -j -q '../../../miui/XHDPI/system/framework/framework_ext.jar' META-INF/* -d '../framework_ext_miui/META-INF'
-cd ../framework_ext_miui
-zip '../temp/system/framework/framework_ext.jar' -q 'META-INF/MANIFEST.MF'
-cd ../temp
-rm -rf 'framework_ext.jar.out'
+
 rm META-INF/CERT.RSA
 rm META-INF/CERT.SF
 rm META-INF/MANIFEST.MF
@@ -373,6 +367,7 @@ rm -rf Music/res/values-pl
 rm -rf NetworkAssistant
 rm -rf Notes
 rm -rf PackageInstaller
+rm -rf PaymentService
 rm -rf Phone/res/values-pl
 rm -rf Provision
 rm -rf QuickSearchBox
@@ -389,6 +384,8 @@ rm -rf ThemeManager/res/drawable-pl-xhdpi
 rm -rf ThemeManager/res/drawable-pl-xhdpi
 rm -rf ThemeManager/res/values-pl
 rm -rf Transfer
+rm -rf Updater/res/drawable-pl-xhdpi
+rm -rf Updater/res/values-pl
 rm -rf VpnDialogs
 rm -rf WeatherProvider
 rm -rf XiaomiServiceFramework
@@ -405,10 +402,10 @@ md5=`md5sum miuioptimus-v5-p760-$version-4.2.zip | cut -d" " -f1`
 size=`du -sh md5sum miuioptimus-v5-p760-$version-4.2.zip | cut -c1-4`
 data=`date +%-d/%-m/%Y`
 LINK_PL="http://91.205.75.29//zdunex25/$version/miuioptimus-v5-p760-$version-4.2.zip"
-forum="<a href=\"http://bit.ly/19UDoYQ\">Dyskusja na forum</a>"
-#MIRROR1_PL="http://goo.im/devs/mikegapinski/miuioptimus-v5-p760-$version-4.2.zip"
+forum="<a href='http://bit.ly/19UDoYQ'>Dyskusja na forum</a>"
+MIRROR1_PL="http://goo.im/devs/mikegapinski/miuiv5/4.2.2/p760/miuioptimus-v5-p760-$version-4.2.zip"
 #MIRROR2_PL="http://htcfanboys.com/download/acid/files/MIUIv5/$version/miuioptimus-v5-p760-$version-4.2.zip"
-echo '[dwl producent="'LG'" board="'P760'" tytul="'LG&nbsp;Optimus&nbsp;L9'" android="'4.2.2'" miui="'$version'" data="'$data'" md5="'$md5'" informacje="'$forum'" status="" link="'$LINK_PL'" mirror1="" mirror2="" rozmiar="'$size'" rodzaj="pelna"]
+echo '[dwl producent="'LG'" board="'p760'" tytul="LG&nbsp;Optimus&nbsp;L9" android="'4.2.2'" miui="'$version'" data="'$data'" md5="'$md5'" informacje="'$forum'" status="" link="'$LINK_PL'" mirror1="'$MIRROR1_PL'" mirror2="" rozmiar="'$size'" rodzaj="pelna"]
     
     ' > download_v5.txt
 read -p "Done, miuioptimus-v5-p760-$version-4.2.zip has been created in root of l9 directory, copy to sd and flash it!"

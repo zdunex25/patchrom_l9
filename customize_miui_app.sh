@@ -30,8 +30,6 @@ fi
 
 if [ $1 = "Browser" ];then
 	adjustDpi $1
-	cp -f $2/res/drawable-xhdpi/ic_search_engine_google.png $2/res/drawable-xhdpi/ic_search_engine_baidu.png
-	cp -f $2/res/drawable-xhdpi/ic_search_logo_google.png $2/res/drawable-xhdpi/ic_search_logo_baidu.png
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
 
@@ -162,6 +160,11 @@ if [ $1 = "PackageInstaller" ];then
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
 
+if [ $1 = "PaymentService" ];then
+	sed -i -e 's/<category android:name=\"android.intent.category.LAUNCHER\" \/>/<!--category android:name=\"android.intent.category.LAUNCHER\" \/-->/' out/$1/AndroidManifest.xml
+	$XMLMERGYTOOL $1/res/values $2/res/values
+fi
+
 if [ $1 = "Phone" ];then
 	adjustDpi $1
 	$XMLMERGYTOOL $1/res/values $2/res/values
@@ -198,6 +201,11 @@ if [ $1 = "ThemeManager" ];then
 fi
 
 if [ $1 = "Transfer" ];then
+	adjustDpi $1
+	$XMLMERGYTOOL $1/res/values $2/res/values
+fi
+
+if [ $1 = "Updater" ];then
 	adjustDpi $1
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
