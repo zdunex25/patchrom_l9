@@ -64,7 +64,7 @@
     iput v1, p0, Lcom/android/internal/telephony/U2RIL;->mCallState:I
 
     .line 82
-    const/16 v1, 0xce
+    const/16 v1, 0xb7
 
     iput v1, p0, Lcom/android/internal/telephony/U2RIL;->RIL_REQUEST_HANG_UP_CALL:I
 

@@ -105,9 +105,9 @@ cat 'Settings/res/xml/sound_settings.xml' | sed -e "s/android.musicfx/miui.playe
 cat 'Settings/res/xml/device_info_settings.xml' | sed -e 's/android:key=\"kernel_version\" \/>/android:key=\"kernel_version\" \/>\
 	<miui.preference.ValuePreference android:title=\"@string\/build_author\" android:key=\"build_author\" \/>\
 	<miui.preference.ValuePreference android:title=\"@string\/polish_translation\" android:key=\"polish_translation\" \/>/' > '../Settings/res/xml/device_info_settings.xml'
-#cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali' | sed -e 's/MenuInflater;)V/MenuInflater;)V \
-#    return-void/' > 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings2.smali'
-cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali' | sed -e 's/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V\
+cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings.smali' | sed -e 's/MenuInflater;)V/MenuInflater;)V \
+    return-void/' > 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings2.smali'
+cat 'Settings/smali/com/android/settings/MiuiDeviceInfoSettings2.smali' | sed -e 's/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V/invoke-direct {v0, v1, v2}, Lcom\/android\/settings\/MiuiDeviceInfoSettings;->setStringSummary(Ljava\/lang\/String;Ljava\/lang\/String;)V\
 \
     .line 116\
     const-string v22, \"build_author\"\
@@ -265,10 +265,7 @@ find other -name "signed-*" | xargs rm -f
 #cp other/extras/gapps/*.apk out/temp/system/app
 cp -r other/extras/misc out/temp/data/
 cp -f -r other/extras/data/* out/temp/system/media/theme/.data
-cp -f ../miuipolska/Polish/extras/system/etc/apns-conf.xml out/temp/system/etc/apns-conf.xml
-cp -f ../miuipolska/Polish/extras/system/etc/gps.conf out/temp/system/etc/gps.conf
-cp -f ../miuipolska/Polish/extras/system/etc/hosts out/temp/system/etc/hosts
-cp -f ../miuipolska/Polish/extras/system/etc/spn-conf.xml out/temp/system/etc/spn-conf.xml
+cp -f ../miuipolska/Polish/extras/system/etc/* out/temp/system/etc
 
 mv out/temp/system/media/theme/default/alarmscreen out/temp/system/media/theme/default/alarmscreen.zip
 mv out/temp/system/media/theme/default/lockscreen out/temp/system/media/theme/default/lockscreen.zip
@@ -284,19 +281,19 @@ mv out/temp/system/media/theme/.data/content/clock_2x4/clock.mrc out/temp/system
 cp out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip
 cp out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip
 cd ../miuipolska/Polish/extras/clocks
-zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q strings/strings_pl.xml
-zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q strings/strings_pl.xml
-zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q strings/strings_pl.xml
-cd Bateria_Prawy
-zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q manifest.xml
+zip ../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q strings/strings_pl.xml
+zip ../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q strings/strings_pl.xml
+zip ../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q strings/strings_pl.xml
+cd Prawy
+zip ../../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q manifest.xml
 cd ../Bateria_Srodek
-zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q manifest.xml
-#cd ../left
-#zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q manifest.xml
-cd ../../../../../l9
+zip ../../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q manifest.xml
+cd ../Bateria_Prawy
+zip ../../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q manifest.xml
+cd ../../../../../m0
 mv out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock.mrc
 mv out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_center.mrc
-#mv out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.mrc
+mv out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.mrc
 
 mv out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.mrc out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.zip
 cd ../miuipolska/Polish/extras/simple_clock

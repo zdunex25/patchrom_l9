@@ -475,7 +475,12 @@
     <array name="config_tether_bluetooth_regexs" />
     <array name="config_tether_dhcp_range" />
     <array name="config_mobile_hotspot_provision_app" />
-    <integer-array name="config_tether_upstream_types" />
+    <integer-array name="config_tether_upstream_types">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+    </integer-array>
     <array name="config_cdma_dun_supported_types" />
     <array name="config_usbHostBlacklist" />
     <array name="config_serialPorts" />

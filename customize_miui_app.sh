@@ -136,7 +136,7 @@ if [ $1 = "MiWallpaper" ];then
 fi
 
 if [ $1 = "Mms" ];then
-	adjustDpi $1
+#	adjustDpi $1
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
 
@@ -161,6 +161,7 @@ if [ $1 = "PackageInstaller" ];then
 fi
 
 if [ $1 = "PaymentService" ];then
+	adjustDpi $1
 	sed -i -e 's/<category android:name=\"android.intent.category.LAUNCHER\" \/>/<!--category android:name=\"android.intent.category.LAUNCHER\" \/-->/' out/$1/AndroidManifest.xml
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
@@ -205,11 +206,11 @@ if [ $1 = "Transfer" ];then
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
 
-if [ $1 = "Updater" ];then
-	adjustDpi $1
-	$XMLMERGYTOOL $1/res/values $2/res/values
-fi
-
+#if [ $1 = "Updater" ];then
+#	adjustDpi $1
+#	$XMLMERGYTOOL $1/res/values $2/res/values
+#fi
+#
 if [ $1 = "VpnDialogs" ];then
 	adjustDpi $1
 	$XMLMERGYTOOL $1/res/values $2/res/values
