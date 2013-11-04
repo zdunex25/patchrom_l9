@@ -1,0 +1,7 @@
+#!/system/bin/sh
+#
+# USB Mass Storage (UMS) mount script for LG Optimus L9 (by mateo1111)
+#
+
+setprop persist.sys.usb.config mass_storage,adb
+echo "/dev/block/vold/179:61" > /sys/devices/virtual/android_usb/android0/f_mass_storage/lun0/file

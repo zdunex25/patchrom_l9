@@ -281,16 +281,16 @@ mv out/temp/system/media/theme/.data/content/clock_2x4/clock.mrc out/temp/system
 cp out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip
 cp out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip
 cd ../miuipolska/Polish/extras/clocks
-zip ../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q strings/strings_pl.xml
-zip ../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q strings/strings_pl.xml
-zip ../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q strings/strings_pl.xml
+zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q strings/strings_pl.xml
+zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q strings/strings_pl.xml
+zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q strings/strings_pl.xml
 cd Prawy
-zip ../../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q manifest.xml
+zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q manifest.xml
 cd ../Bateria_Srodek
-zip ../../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q manifest.xml
+zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q manifest.xml
 cd ../Bateria_Prawy
-zip ../../../../../m0/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q manifest.xml
-cd ../../../../../m0
+zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q manifest.xml
+cd ../../../../../l9
 mv out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock.mrc
 mv out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_center.mrc
 mv out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.mrc
