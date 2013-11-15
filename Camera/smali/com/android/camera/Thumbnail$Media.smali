@@ -21,33 +21,39 @@
 
 .field public final orientation:I
 
+.field public final path:Ljava/lang/String;
+
 .field public final uri:Landroid/net/Uri;
 
 
 # direct methods
-.method public constructor <init>(JIJLandroid/net/Uri;)V
+.method public constructor <init>(JIJLandroid/net/Uri;Ljava/lang/String;)V
     .locals 0
     .parameter "id"
     .parameter "orientation"
     .parameter "dateTaken"
     .parameter "uri"
+    .parameter "path"
 
     .prologue
-    .line 182
+    .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 183
+    .line 255
     iput-wide p1, p0, Lcom/android/camera/Thumbnail$Media;->id:J
 
-    .line 184
+    .line 256
     iput p3, p0, Lcom/android/camera/Thumbnail$Media;->orientation:I
 
-    .line 185
+    .line 257
     iput-wide p4, p0, Lcom/android/camera/Thumbnail$Media;->dateTaken:J
 
-    .line 186
+    .line 258
     iput-object p6, p0, Lcom/android/camera/Thumbnail$Media;->uri:Landroid/net/Uri;
 
-    .line 187
+    .line 259
+    iput-object p7, p0, Lcom/android/camera/Thumbnail$Media;->path:Ljava/lang/String;
+
+    .line 260
     return-void
 .end method

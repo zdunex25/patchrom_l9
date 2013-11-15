@@ -24,10 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 281
+    .line 277
     iput-object p1, p0, Lcom/android/camera/Util$1;->val$activity:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,11 +42,11 @@
     .parameter "which"
 
     .prologue
-    .line 283
+    .line 280
     iget-object v0, p0, Lcom/android/camera/Util$1;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 284
+    .line 281
     return-void
 .end method

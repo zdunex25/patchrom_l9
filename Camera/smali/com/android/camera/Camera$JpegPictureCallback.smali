@@ -30,348 +30,853 @@
     .parameter "loc"
 
     .prologue
-    .line 747
+    .line 744
     iput-object p1, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 748
+    .line 745
     iput-object p2, p0, Lcom/android/camera/Camera$JpegPictureCallback;->mLocation:Landroid/location/Location;
 
-    .line 749
+    .line 746
     return-void
 .end method
 
 
 # virtual methods
 .method public onPictureTaken([BLandroid/hardware/Camera;)V
-    .locals 10
+    .locals 21
     .parameter "jpegData"
     .parameter "camera"
 
     .prologue
-    const-wide/16 v8, 0x0
+    .line 751
+    move-object/from16 v0, p0
 
-    .line 753
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    #getter for: Lcom/android/camera/Camera;->mPausing:Z
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$1500(Lcom/android/camera/Camera;)Z
+    iget-boolean v2, v2, Lcom/android/camera/ActivityBase;->mPaused:Z
 
-    move-result v3
+    if-eqz v2, :cond_1
 
-    if-eqz v3, :cond_0
-
-    .line 803
+    .line 844
+    :cond_0
     :goto_0
     return-void
 
-    .line 757
-    :cond_0
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    .line 754
+    :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mReceivedJpegCallbackNum:I
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4100(Lcom/android/camera/Camera;)I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    #setter for: Lcom/android/camera/Camera;->mReceivedJpegCallbackNum:I
+    invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$4102(Lcom/android/camera/Camera;I)I
+
+    .line 755
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v17
+
+    move-wide/from16 v0, v17
 
     #setter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
-    invoke-static {v3, v4, v5}, Lcom/android/camera/Camera;->access$3002(Lcom/android/camera/Camera;J)J
+    invoke-static {v2, v0, v1}, Lcom/android/camera/Camera;->access$4202(Lcom/android/camera/Camera;J)J
 
-    .line 761
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    .line 759
+    move-object/from16 v0, p0
 
-    #getter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$2800(Lcom/android/camera/Camera;)J
-
-    move-result-wide v3
-
-    cmp-long v3, v3, v8
-
-    if-eqz v3, :cond_2
-
-    .line 762
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    iget-object v4, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
-    invoke-static {v4}, Lcom/android/camera/Camera;->access$2800(Lcom/android/camera/Camera;)J
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$3600(Lcom/android/camera/Camera;)J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    iget-object v6, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    const-wide/16 v17, 0x0
+
+    cmp-long v2, v2, v17
+
+    if-eqz v2, :cond_5
+
+    .line 760
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$3600(Lcom/android/camera/Camera;)J
+
+    move-result-wide v17
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mShutterCallbackTime:J
-    invoke-static {v6}, Lcom/android/camera/Camera;->access$2500(Lcom/android/camera/Camera;)J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$3500(Lcom/android/camera/Camera;)J
 
-    move-result-wide v6
+    move-result-wide v19
 
-    sub-long/2addr v4, v6
+    sub-long v17, v17, v19
 
-    iput-wide v4, v3, Lcom/android/camera/Camera;->mShutterToPictureDisplayedTime:J
+    move-wide/from16 v0, v17
 
-    .line 764
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    iput-wide v0, v2, Lcom/android/camera/Camera;->mShutterToPictureDisplayedTime:J
 
-    iget-object v4, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    .line 762
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
-    invoke-static {v4}, Lcom/android/camera/Camera;->access$3000(Lcom/android/camera/Camera;)J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4200(Lcom/android/camera/Camera;)J
 
-    move-result-wide v4
+    move-result-wide v17
 
-    iget-object v6, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
-    invoke-static {v6}, Lcom/android/camera/Camera;->access$2800(Lcom/android/camera/Camera;)J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$3600(Lcom/android/camera/Camera;)J
 
-    move-result-wide v6
+    move-result-wide v19
 
-    sub-long/2addr v4, v6
+    sub-long v17, v17, v19
 
-    iput-wide v4, v3, Lcom/android/camera/Camera;->mPictureDisplayedToJpegCallbackTime:J
+    move-wide/from16 v0, v17
 
-    .line 772
+    iput-wide v0, v2, Lcom/android/camera/Camera;->mPictureDisplayedToJpegCallbackTime:J
+
+    .line 770
     :goto_1
-    const-string v3, "camera"
+    const-string v2, "camera"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "mPictureDisplayedToJpegCallbackTime = "
+    const-string v6, "mPictureDisplayedToJpegCallbackTime = "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    iget-wide v5, v5, Lcom/android/camera/Camera;->mPictureDisplayedToJpegCallbackTime:J
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "ms"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 775
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$2300(Lcom/android/camera/Camera;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    .line 776
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #calls: Lcom/android/camera/Camera;->startPreview()V
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$3100(Lcom/android/camera/Camera;)V
-
-    .line 777
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    invoke-virtual {v3}, Lcom/android/camera/Camera;->startFaceDetection()V
-
-    .line 780
-    :cond_1
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$2300(Lcom/android/camera/Camera;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    .line 781
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mParameters:Landroid/hardware/Camera$Parameters;
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$3200(Lcom/android/camera/Camera;)Landroid/hardware/Camera$Parameters;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/hardware/Camera$Parameters;->getPictureSize()Landroid/hardware/Camera$Size;
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    iget-wide v0, v6, Lcom/android/camera/Camera;->mPictureDisplayedToJpegCallbackTime:J
+
+    move-wide/from16 v17, v0
+
+    move-wide/from16 v0, v17
+
+    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v6, "ms"
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 773
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v2
 
-    .line 782
-    .local v2, s:Landroid/hardware/Camera$Size;
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    invoke-virtual {v2}, Lcom/android/camera/FocusManager;->onShutter()V
 
-    #getter for: Lcom/android/camera/Camera;->mImageSaver:Lcom/android/camera/Camera$ImageSaver;
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$1300(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageSaver;
+    .line 776
+    move-object/from16 v0, p0
 
-    move-result-object v3
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    iget-object v4, p0, Lcom/android/camera/Camera$JpegPictureCallback;->mLocation:Landroid/location/Location;
+    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
 
-    iget v5, v2, Landroid/hardware/Camera$Size;->width:I
+    move-result v2
 
-    iget v6, v2, Landroid/hardware/Camera$Size;->height:I
+    if-nez v2, :cond_6
 
-    invoke-virtual {v3, p1, v4, v5, v6}, Lcom/android/camera/Camera$ImageSaver;->addImage([BLandroid/location/Location;II)V
+    move-object/from16 v0, p0
 
-    .line 796
-    .end local v2           #s:Landroid/hardware/Camera$Size;
-    :goto_2
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    #calls: Lcom/android/camera/Camera;->checkStorage()V
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$2200(Lcom/android/camera/Camera;)V
+    #getter for: Lcom/android/camera/Camera;->mReceivedJpegCallbackNum:I
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4100(Lcom/android/camera/Camera;)I
 
-    .line 798
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result v2
 
-    move-result-wide v0
+    move-object/from16 v0, p0
 
-    .line 799
-    .local v0, now:J
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    iget-object v4, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
-    invoke-static {v4}, Lcom/android/camera/Camera;->access$3000(Lcom/android/camera/Camera;)J
-
-    move-result-wide v4
-
-    sub-long v4, v0, v4
-
-    iput-wide v4, v3, Lcom/android/camera/Camera;->mJpegCallbackFinishTime:J
-
-    .line 800
-    const-string v3, "camera"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "mJpegCallbackFinishTime = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    iget-wide v5, v5, Lcom/android/camera/Camera;->mJpegCallbackFinishTime:J
-
-    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "ms"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 802
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #setter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
-    invoke-static {v3, v8, v9}, Lcom/android/camera/Camera;->access$3002(Lcom/android/camera/Camera;J)J
-
-    goto/16 :goto_0
-
-    .line 767
-    .end local v0           #now:J
-    :cond_2
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    iget-object v4, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mRawPictureCallbackTime:J
-    invoke-static {v4}, Lcom/android/camera/Camera;->access$2900(Lcom/android/camera/Camera;)J
-
-    move-result-wide v4
-
-    iget-object v6, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mShutterCallbackTime:J
-    invoke-static {v6}, Lcom/android/camera/Camera;->access$2500(Lcom/android/camera/Camera;)J
-
-    move-result-wide v6
-
-    sub-long/2addr v4, v6
-
-    iput-wide v4, v3, Lcom/android/camera/Camera;->mShutterToPictureDisplayedTime:J
-
-    .line 769
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    iget-object v4, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
-    invoke-static {v4}, Lcom/android/camera/Camera;->access$3000(Lcom/android/camera/Camera;)J
-
-    move-result-wide v4
-
-    iget-object v6, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mRawPictureCallbackTime:J
-    invoke-static {v6}, Lcom/android/camera/Camera;->access$2900(Lcom/android/camera/Camera;)J
-
-    move-result-wide v6
-
-    sub-long/2addr v4, v6
-
-    iput-wide v4, v3, Lcom/android/camera/Camera;->mPictureDisplayedToJpegCallbackTime:J
-
-    goto/16 :goto_1
-
-    .line 784
-    :cond_3
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #setter for: Lcom/android/camera/Camera;->mJpegImageData:[B
-    invoke-static {v3, p1}, Lcom/android/camera/Camera;->access$3302(Lcom/android/camera/Camera;[B)[B
-
-    .line 785
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mQuickCapture:Z
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
+    #getter for: Lcom/android/camera/Camera;->mBurstJpegCallbackNum:I
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4300(Lcom/android/camera/Camera;)I
 
     move-result v3
 
-    if-nez v3, :cond_4
+    if-ne v2, v3, :cond_6
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mSnapshotMode:I
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4400(Lcom/android/camera/Camera;)I
+
+    move-result v2
+
+    const/4 v3, 0x2
+
+    if-eq v2, v3, :cond_6
+
+    .line 778
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    iget-object v2, v2, Lcom/android/camera/ActivityBase;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
+
+    invoke-virtual {v2}, Lcom/android/camera/CameraManager$CameraProxy;->cancelAutoFocus()V
+
+    .line 779
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #calls: Lcom/android/camera/Camera;->startPreview()V
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$1100(Lcom/android/camera/Camera;)V
+
+    .line 780
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mNeedFlash:Z
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4500(Lcom/android/camera/Camera;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 782
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    const/4 v3, 0x0
+
+    #setter for: Lcom/android/camera/Camera;->mNeedFlash:Z
+    invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$4502(Lcom/android/camera/Camera;Z)Z
+
+    .line 783
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #calls: Lcom/android/camera/Camera;->startPreview()V
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$1100(Lcom/android/camera/Camera;)V
+
+    .line 785
+    :cond_2
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    const/4 v3, 0x1
+
+    #calls: Lcom/android/camera/Camera;->setCameraState(I)V
+    invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$2000(Lcom/android/camera/Camera;I)V
 
     .line 786
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    move-object/from16 v0, p0
 
-    #calls: Lcom/android/camera/Camera;->showPostCaptureAlert()V
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$3500(Lcom/android/camera/Camera;)V
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    goto :goto_2
+    invoke-virtual {v2}, Lcom/android/camera/Camera;->startFaceDetection()V
+
+    .line 794
+    :cond_3
+    :goto_2
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    iget-boolean v2, v2, Lcom/android/camera/ActivityBase;->mHDRStatus:Z
+
+    if-eqz v2, :cond_4
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mReceivedJpegCallbackNum:I
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4100(Lcom/android/camera/Camera;)I
+
+    move-result v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mBurstJpegCallbackNum:I
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4300(Lcom/android/camera/Camera;)I
+
+    move-result v3
+
+    if-lt v2, v3, :cond_0
+
+    :cond_4
+    if-eqz p1, :cond_0
+
+    .line 800
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    iget-object v2, v2, Lcom/android/camera/ActivityBase;->mParameters:Landroid/hardware/Camera$Parameters;
+
+    invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getPictureSize()Landroid/hardware/Camera$Size;
+
+    move-result-object v16
+
+    .line 801
+    .local v16, s:Landroid/hardware/Camera$Size;
+    invoke-static/range {p1 .. p1}, Lcom/android/camera/Exif;->getOrientation([B)I
+
+    move-result v10
+
+    .line 803
+    .local v10, orientation:I
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mJpegRotation:I
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4600(Lcom/android/camera/Camera;)I
+
+    move-result v2
+
+    add-int/2addr v2, v10
+
+    rem-int/lit16 v2, v2, 0xb4
+
+    if-nez v2, :cond_7
+
+    .line 804
+    move-object/from16 v0, v16
+
+    iget v7, v0, Landroid/hardware/Camera$Size;->width:I
+
+    .line 805
+    .local v7, width:I
+    move-object/from16 v0, v16
+
+    iget v8, v0, Landroid/hardware/Camera$Size;->height:I
+
+    .line 810
+    .local v8, height:I
+    :goto_3
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_8
+
+    .line 811
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mImageNamer:Lcom/android/camera/Camera$ImageNamer;
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4700(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageNamer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/camera/Camera$ImageNamer;->getUri()Landroid/net/Uri;
+
+    move-result-object v4
+
+    .line 812
+    .local v4, uri:Landroid/net/Uri;
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mImageNamer:Lcom/android/camera/Camera$ImageNamer;
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4700(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageNamer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/camera/Camera$ImageNamer;->getTitle()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 813
+    .local v5, title:Ljava/lang/String;
+    invoke-static {}, Lcom/android/camera/CameraDataAnalytics;->instance()Lcom/android/camera/CameraDataAnalytics;
+
+    move-result-object v2
+
+    const-string v3, "camera_picture_taken_key"
+
+    invoke-virtual {v2, v3}, Lcom/android/camera/CameraDataAnalytics;->trackEvent(Ljava/lang/String;)V
+
+    .line 814
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mImageSaver:Lcom/android/camera/Camera$ImageSaver;
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$1700(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageSaver;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/camera/Camera$JpegPictureCallback;->mLocation:Landroid/location/Location;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    iget v9, v3, Lcom/android/camera/ActivityBase;->mThumbnailViewWidth:I
+
+    const/4 v11, 0x0
+
+    move-object/from16 v3, p1
+
+    invoke-virtual/range {v2 .. v11}, Lcom/android/camera/Camera$ImageSaver;->addImage([BLandroid/net/Uri;Ljava/lang/String;Landroid/location/Location;IIIIZ)V
+
+    .line 832
+    .end local v4           #uri:Landroid/net/Uri;
+    .end local v5           #title:Ljava/lang/String;
+    :goto_4
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v13
+
+    .line 833
+    .local v13, now:J
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4200(Lcom/android/camera/Camera;)J
+
+    move-result-wide v17
+
+    sub-long v17, v13, v17
+
+    move-wide/from16 v0, v17
+
+    iput-wide v0, v2, Lcom/android/camera/Camera;->mJpegCallbackFinishTime:J
+
+    .line 834
+    const-string v2, "camera"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "mJpegCallbackFinishTime = "
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    iget-wide v0, v6, Lcom/android/camera/Camera;->mJpegCallbackFinishTime:J
+
+    move-wide/from16 v17, v0
+
+    move-wide/from16 v0, v17
+
+    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v6, "ms"
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 839
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mReceivedJpegCallbackNum:I
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4100(Lcom/android/camera/Camera;)I
+
+    move-result v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mBurstJpegCallbackNum:I
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4300(Lcom/android/camera/Camera;)I
+
+    move-result v3
+
+    if-ne v2, v3, :cond_0
+
+    .line 840
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    iget-boolean v2, v2, Lcom/android/camera/ActivityBase;->mHDRStatus:Z
+
+    if-eqz v2, :cond_0
+
+    .line 841
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    const/4 v3, 0x1
+
+    #calls: Lcom/android/camera/Camera;->showHDRExit(Z)V
+    invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$5300(Lcom/android/camera/Camera;Z)V
+
+    goto/16 :goto_0
+
+    .line 765
+    .end local v7           #width:I
+    .end local v8           #height:I
+    .end local v10           #orientation:I
+    .end local v13           #now:J
+    .end local v16           #s:Landroid/hardware/Camera$Size;
+    :cond_5
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mRawPictureCallbackTime:J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$3700(Lcom/android/camera/Camera;)J
+
+    move-result-wide v17
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mShutterCallbackTime:J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$3500(Lcom/android/camera/Camera;)J
+
+    move-result-wide v19
+
+    sub-long v17, v17, v19
+
+    move-wide/from16 v0, v17
+
+    iput-wide v0, v2, Lcom/android/camera/Camera;->mShutterToPictureDisplayedTime:J
+
+    .line 767
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4200(Lcom/android/camera/Camera;)J
+
+    move-result-wide v17
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mRawPictureCallbackTime:J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$3700(Lcom/android/camera/Camera;)J
+
+    move-result-wide v19
+
+    sub-long v17, v17, v19
+
+    move-wide/from16 v0, v17
+
+    iput-wide v0, v2, Lcom/android/camera/Camera;->mPictureDisplayedToJpegCallbackTime:J
+
+    goto/16 :goto_1
+
+    .line 787
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mReceivedJpegCallbackNum:I
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4100(Lcom/android/camera/Camera;)I
+
+    move-result v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mBurstJpegCallbackNum:I
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$4300(Lcom/android/camera/Camera;)I
+
+    move-result v3
+
+    if-ne v2, v3, :cond_3
 
     .line 788
-    :cond_4
-    iget-object v3, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    const/4 v3, 0x1
+
+    #calls: Lcom/android/camera/Camera;->setCameraState(I)V
+    invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$2000(Lcom/android/camera/Camera;I)V
+
+    .line 789
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    invoke-virtual {v2}, Lcom/android/camera/Camera;->startFaceDetection()V
+
+    .line 790
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    invoke-virtual {v2}, Lcom/android/camera/Camera;->cancelAutoFocus()V
+
+    goto/16 :goto_2
+
+    .line 807
+    .restart local v10       #orientation:I
+    .restart local v16       #s:Landroid/hardware/Camera$Size;
+    :cond_7
+    move-object/from16 v0, v16
+
+    iget v7, v0, Landroid/hardware/Camera$Size;->height:I
+
+    .line 808
+    .restart local v7       #width:I
+    move-object/from16 v0, v16
+
+    iget v8, v0, Landroid/hardware/Camera$Size;->width:I
+
+    .restart local v8       #height:I
+    goto/16 :goto_3
+
+    .line 817
+    :cond_8
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    move-object/from16 v0, p1
+
+    #setter for: Lcom/android/camera/Camera;->mJpegImageData:[B
+    invoke-static {v2, v0}, Lcom/android/camera/Camera;->access$4802(Lcom/android/camera/Camera;[B)[B
+
+    .line 818
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mQuickCapture:Z
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$4900(Lcom/android/camera/Camera;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_a
+
+    .line 819
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #calls: Lcom/android/camera/Camera;->showPostCaptureAlert()V
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$5000(Lcom/android/camera/Camera;)V
+
+    .line 820
+    int-to-double v2, v7
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mPreviewHeight:I
+    invoke-static {v6}, Lcom/android/camera/Camera;->access$3000(Lcom/android/camera/Camera;)I
+
+    move-result v6
+
+    int-to-double v0, v6
+
+    move-wide/from16 v17, v0
+
+    div-double v2, v2, v17
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v2
+
+    double-to-int v15, v2
+
+    .line 821
+    .local v15, ratio:I
+    invoke-static {v15}, Ljava/lang/Integer;->highestOneBit(I)I
+
+    move-result v12
+
+    .line 822
+    .local v12, inSampleSize:I
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    invoke-virtual {v2}, Lcom/android/camera/ActivityBase;->getCameraScreenNail()Lcom/android/camera/CameraScreenNail;
+
+    move-result-object v3
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    invoke-virtual {v2}, Lcom/android/camera/ActivityBase;->isFrontCamera()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    invoke-virtual {v2}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lcom/android/gallery3d/ui/GLRoot;->getCompensation()I
+
+    move-result v2
+
+    rem-int/lit16 v2, v2, 0x168
+
+    :goto_5
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    #calls: Lcom/android/camera/Camera;->needMirrorInStorage()Z
+    invoke-static {v6}, Lcom/android/camera/Camera;->access$5100(Lcom/android/camera/Camera;)Z
+
+    move-result v6
+
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2, v6, v12}, Lcom/android/camera/Thumbnail;->createBitmap([BIZI)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v2}, Lcom/android/camera/CameraScreenNail;->renderBitmapToCanvas(Landroid/graphics/Bitmap;)V
+
+    goto/16 :goto_4
+
+    :cond_9
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
+
+    invoke-virtual {v2}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lcom/android/gallery3d/ui/GLRoot;->getCompensation()I
+
+    move-result v2
+
+    rsub-int v2, v2, 0x168
+
+    rem-int/lit16 v2, v2, 0x168
+
+    goto :goto_5
+
+    .line 828
+    .end local v12           #inSampleSize:I
+    .end local v15           #ratio:I
+    :cond_a
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #calls: Lcom/android/camera/Camera;->doAttach()V
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$3600(Lcom/android/camera/Camera;)V
+    invoke-static {v2}, Lcom/android/camera/Camera;->access$5200(Lcom/android/camera/Camera;)V
 
-    goto :goto_2
+    goto/16 :goto_4
 .end method

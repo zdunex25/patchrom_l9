@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field private final TAG:Ljava/lang/String;
-
 .field private final mDefaultValues:[Ljava/lang/CharSequence;
 
 .field private mEntries:[Ljava/lang/CharSequence;
@@ -32,11 +30,6 @@
 
     .line 44
     invoke-direct {p0, p1, p2}, Lcom/android/camera/CameraPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    .line 34
-    const-string v3, "ListPreference"
-
-    iput-object v3, p0, Lcom/android/camera/ListPreference;->TAG:Ljava/lang/String;
 
     .line 41
     iput-boolean v5, p0, Lcom/android/camera/ListPreference;->mLoaded:Z
@@ -209,7 +202,6 @@
 # virtual methods
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 6
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -371,30 +363,6 @@
     return-object v0
 .end method
 
-.method public getEntry()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 133
-    iget-object v0, p0, Lcom/android/camera/ListPreference;->mEntries:[Ljava/lang/CharSequence;
-
-    invoke-virtual {p0}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
-
-    move-result v1
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public getEntryValues()[Ljava/lang/CharSequence;
     .locals 1
 
@@ -425,7 +393,7 @@
     if-nez v0, :cond_0
 
     .line 94
-    invoke-virtual {p0}, Lcom/android/camera/ListPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
+    invoke-virtual {p0}, Lcom/android/camera/CameraPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -459,7 +427,7 @@
 
     .prologue
     .line 137
-    invoke-virtual {p0}, Lcom/android/camera/ListPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
+    invoke-virtual {p0}, Lcom/android/camera/CameraPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v1
 

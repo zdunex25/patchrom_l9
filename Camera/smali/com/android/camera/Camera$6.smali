@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/Camera;->addBaseMenuItems(Landroid/view/Menu;)V
+    value = Lcom/android/camera/Camera;->onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,10 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 2162
+    .line 2930
     iput-object p1, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +37,33 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 2164
+    const/4 v2, 0x2
+
+    .line 2932
     iget-object v0, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
 
-    const/4 v1, 0x1
+    const v1, 0x7f0c0037
 
-    #calls: Lcom/android/camera/Camera;->switchToOtherMode(I)Z
-    invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$5400(Lcom/android/camera/Camera;I)Z
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
-    .line 2165
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 2933
+    invoke-static {v2}, Lcom/android/camera/ModeChangeManager;->setCurrentMode(I)V
+
+    .line 2934
+    iget-object v0, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
+
+    #calls: Lcom/android/camera/Camera;->switchToOtherMode(I)V
+    invoke-static {v0, v2}, Lcom/android/camera/Camera;->access$6200(Lcom/android/camera/Camera;I)V
+
+    .line 2935
     return-void
 .end method

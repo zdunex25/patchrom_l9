@@ -24,10 +24,9 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 806
+    .line 924
     iput-object p1, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,7 @@
     .parameter "x1"
 
     .prologue
-    .line 806
+    .line 924
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$AutoFocusCallback;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -55,21 +54,18 @@
     .parameter "camera"
 
     .prologue
-    .line 810
+    .line 929
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
-    #getter for: Lcom/android/camera/Camera;->mPausing:Z
-    invoke-static {v0}, Lcom/android/camera/Camera;->access$1500(Lcom/android/camera/Camera;)Z
-
-    move-result v0
+    iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mPaused:Z
 
     if-eqz v0, :cond_0
 
-    .line 816
+    .line 936
     :goto_0
     return-void
 
-    .line 812
+    .line 931
     :cond_0
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
@@ -80,7 +76,7 @@
     iget-object v3, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusStartTime:J
-    invoke-static {v3}, Lcom/android/camera/Camera;->access$3700(Lcom/android/camera/Camera;)J
+    invoke-static {v3}, Lcom/android/camera/Camera;->access$5700(Lcom/android/camera/Camera;)J
 
     move-result-wide v3
 
@@ -88,7 +84,7 @@
 
     iput-wide v1, v0, Lcom/android/camera/Camera;->mAutoFocusTime:J
 
-    .line 813
+    .line 932
     const-string v0, "camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -121,23 +117,33 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 814
+    .line 933
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     const/4 v1, 0x1
 
     #calls: Lcom/android/camera/Camera;->setCameraState(I)V
-    invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$3800(Lcom/android/camera/Camera;I)V
+    invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$2000(Lcom/android/camera/Camera;I)V
 
-    .line 815
+    .line 934
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
-    invoke-static {v0}, Lcom/android/camera/Camera;->access$2700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
+    invoke-static {v0}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/android/camera/FocusManager;->onAutoFocus(Z)V
+
+    .line 935
+    iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
+
+    #getter for: Lcom/android/camera/Camera;->mMotionFocusManager:Lcom/android/camera/MotionFocusManager;
+    invoke-static {v0}, Lcom/android/camera/Camera;->access$5800(Lcom/android/camera/Camera;)Lcom/android/camera/MotionFocusManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/camera/MotionFocusManager;->reset()V
 
     goto :goto_0
 .end method

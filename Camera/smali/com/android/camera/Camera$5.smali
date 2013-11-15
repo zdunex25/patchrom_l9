@@ -3,12 +3,12 @@
 .source "Camera.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/camera/Camera;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/camera/Camera;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,10 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 1109
+    .line 1445
     iput-object p1, p0, Lcom/android/camera/Camera$5;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,22 +36,18 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+    .parameter "v"
 
     .prologue
-    .line 1111
+    .line 1448
     iget-object v0, p0, Lcom/android/camera/Camera$5;->this$0:Lcom/android/camera/Camera;
 
-    #calls: Lcom/android/camera/Camera;->initializeCapabilities()V
-    invoke-static {v0}, Lcom/android/camera/Camera;->access$5000(Lcom/android/camera/Camera;)V
+    const/4 v1, 0x1
 
-    .line 1112
-    iget-object v0, p0, Lcom/android/camera/Camera$5;->this$0:Lcom/android/camera/Camera;
+    invoke-virtual {v0, v1}, Lcom/android/camera/ActivityBase;->exitHDRMode(Z)V
 
-    #calls: Lcom/android/camera/Camera;->startPreview()V
-    invoke-static {v0}, Lcom/android/camera/Camera;->access$3100(Lcom/android/camera/Camera;)V
-
-    .line 1113
+    .line 1449
     return-void
 .end method

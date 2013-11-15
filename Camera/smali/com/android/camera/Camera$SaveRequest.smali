@@ -17,13 +17,19 @@
 # instance fields
 .field data:[B
 
-.field dateTaken:J
-
 .field height:I
 
 .field loc:Landroid/location/Location;
 
-.field previewWidth:I
+.field orientation:I
+
+.field quickSave:Z
+
+.field thumbnailWidth:I
+
+.field title:Ljava/lang/String;
+
+.field uri:Landroid/net/Uri;
 
 .field width:I
 
@@ -33,7 +39,7 @@
     .locals 0
 
     .prologue
-    .line 846
+    .line 949
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +50,7 @@
     .parameter "x0"
 
     .prologue
-    .line 846
+    .line 949
     invoke-direct {p0}, Lcom/android/camera/Camera$SaveRequest;-><init>()V
 
     return-void

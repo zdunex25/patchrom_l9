@@ -21,10 +21,9 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ui/AbstractIndicatorButton;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 164
+    .line 201
     iput-object p1, p0, Lcom/android/camera/ui/AbstractIndicatorButton$MainHandler;->this$0:Lcom/android/camera/ui/AbstractIndicatorButton;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -38,7 +37,7 @@
     .parameter "x1"
 
     .prologue
-    .line 164
+    .line 201
     invoke-direct {p0, p1}, Lcom/android/camera/ui/AbstractIndicatorButton$MainHandler;-><init>(Lcom/android/camera/ui/AbstractIndicatorButton;)V
 
     return-void
@@ -51,16 +50,17 @@
     .parameter "msg"
 
     .prologue
-    .line 167
+    .line 204
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 172
+    .line 214
+    :cond_0
     :goto_0
     return-void
 
-    .line 169
+    .line 206
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton$MainHandler;->this$0:Lcom/android/camera/ui/AbstractIndicatorButton;
 
@@ -68,9 +68,27 @@
 
     goto :goto_0
 
-    .line 167
+    .line 209
+    :pswitch_1
+    iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton$MainHandler;->this$0:Lcom/android/camera/ui/AbstractIndicatorButton;
+
+    iget-object v0, v0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
+
+    if-eqz v0, :cond_0
+
+    .line 210
+    iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton$MainHandler;->this$0:Lcom/android/camera/ui/AbstractIndicatorButton;
+
+    iget-object v0, v0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
+
+    invoke-virtual {v0}, Lcom/android/camera/ui/AbstractSettingPopup;->scrollToChecked()V
+
+    goto :goto_0
+
+    .line 204
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

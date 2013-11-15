@@ -19,28 +19,19 @@
 
 
 # direct methods
-.method private constructor <init>(Lcom/android/camera/FocusManager;)V
+.method public constructor <init>(Lcom/android/camera/FocusManager;Landroid/os/Looper;)V
     .locals 0
     .parameter
+    .parameter "looper"
 
     .prologue
-    .line 87
+    .line 189
     iput-object p1, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    .line 190
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/camera/FocusManager;Lcom/android/camera/FocusManager$1;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 87
-    invoke-direct {p0, p1}, Lcom/android/camera/FocusManager$MainHandler;-><init>(Lcom/android/camera/FocusManager;)V
-
+    .line 191
     return-void
 .end method
 
@@ -51,23 +42,44 @@
     .parameter "msg"
 
     .prologue
-    .line 90
+    .line 195
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 97
+    .line 206
     :goto_0
     return-void
 
-    .line 92
+    .line 198
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
 
-    #calls: Lcom/android/camera/FocusManager;->cancelAutoFocus()V
+    invoke-virtual {v0}, Lcom/android/camera/FocusManager;->resetTouchFocus()V
+
+    .line 199
+    iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
+
+    #calls: Lcom/android/camera/FocusManager;->unlockAeAwbLock()V
     invoke-static {v0}, Lcom/android/camera/FocusManager;->access$000(Lcom/android/camera/FocusManager;)V
 
-    .line 93
+    .line 200
+    iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
+
+    #calls: Lcom/android/camera/FocusManager;->cancelAutoFocus()V
+    invoke-static {v0}, Lcom/android/camera/FocusManager;->access$100(Lcom/android/camera/FocusManager;)V
+
+    .line 201
+    iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
+
+    #getter for: Lcom/android/camera/FocusManager;->mFocusIndicatorRotateLayout:Lcom/android/camera/ui/FocusIndicatorRotateLayout;
+    invoke-static {v0}, Lcom/android/camera/FocusManager;->access$200(Lcom/android/camera/FocusManager;)Lcom/android/camera/ui/FocusIndicatorRotateLayout;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->clear()V
+
+    .line 202
     iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
 
     iget-object v0, v0, Lcom/android/camera/FocusManager;->mListener:Lcom/android/camera/FocusManager$Listener;
@@ -76,11 +88,10 @@
 
     goto :goto_0
 
-    .line 90
-    nop
-
+    .line 195
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_0
         :pswitch_0
     .end packed-switch
 .end method

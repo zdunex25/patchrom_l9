@@ -24,6 +24,9 @@
 .method public abstract capture()Z
 .end method
 
+.method public abstract multiCapture()Z
+.end method
+
 .method public abstract playSound(I)V
 .end method
 
@@ -33,5 +36,5 @@
 .method public abstract startFaceDetection()V
 .end method
 
-.method public abstract stopFaceDetection()V
+.method public abstract stopFaceDetection(Z)V
 .end method

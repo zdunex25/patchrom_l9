@@ -3,12 +3,12 @@
 .source "VideoCamera.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/VideoCamera;->doOnResume()V
+    value = Lcom/android/camera/VideoCamera;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,10 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/VideoCamera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 870
+    .line 497
     iput-object p1, p0, Lcom/android/camera/VideoCamera$2;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,16 +36,16 @@
 
 
 # virtual methods
-.method public run()V
+.method public onClick(Landroid/view/View;)V
     .locals 1
+    .parameter "v"
 
     .prologue
-    .line 872
+    .line 500
     iget-object v0, p0, Lcom/android/camera/VideoCamera$2;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->showStorageHint()V
-    invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$2400(Lcom/android/camera/VideoCamera;)V
+    invoke-virtual {v0}, Lcom/android/camera/VideoCamera;->switchHDR()V
 
-    .line 873
+    .line 501
     return-void
 .end method

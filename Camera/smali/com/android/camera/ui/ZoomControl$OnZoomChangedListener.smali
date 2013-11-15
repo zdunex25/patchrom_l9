@@ -15,8 +15,5 @@
 
 
 # virtual methods
-.method public abstract onZoomStateChanged(I)V
-.end method
-
 .method public abstract onZoomValueChanged(I)V
 .end method

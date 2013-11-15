@@ -28,12 +28,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/EffectsRecorder;II)V
     .locals 0
-    .parameter
-    .parameter
-    .parameter
 
     .prologue
-    .line 862
+    .line 929
     iput-object p1, p0, Lcom/android/camera/EffectsRecorder$5;->this$0:Lcom/android/camera/EffectsRecorder;
 
     iput p2, p0, Lcom/android/camera/EffectsRecorder$5;->val$effect:I
@@ -51,7 +48,7 @@
     .locals 3
 
     .prologue
-    .line 864
+    .line 932
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$5;->this$0:Lcom/android/camera/EffectsRecorder;
 
     #getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
@@ -65,6 +62,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/camera/EffectsRecorder$EffectsListener;->onEffectsUpdate(II)V
 
-    .line 865
+    .line 933
     return-void
 .end method

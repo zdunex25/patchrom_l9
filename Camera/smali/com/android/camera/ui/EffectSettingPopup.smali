@@ -64,25 +64,25 @@
     .parameter "attrs"
 
     .prologue
-    .line 61
+    .line 60
     invoke-direct {p0, p1, p2}, Lcom/android/camera/ui/AbstractSettingPopup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 48
+    .line 47
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesItem:Ljava/util/ArrayList;
 
-    .line 52
+    .line 51
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundItem:Ljava/util/ArrayList;
 
-    .line 62
-    const v0, 0x7f0b0069
+    .line 61
+    const v0, 0x7f0d010c
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -90,7 +90,7 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mNoEffect:Ljava/lang/String;
 
-    .line 63
+    .line 62
     return-void
 .end method
 
@@ -101,39 +101,39 @@
     .parameter "preference"
 
     .prologue
-    .line 75
+    .line 74
     move-object/from16 v0, p1
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    .line 76
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/EffectSettingPopup;->getContext()Landroid/content/Context;
+    .line 75
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    .line 77
+    .line 76
     .local v3, context:Landroid/content/Context;
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v5}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v5}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v10
 
-    .line 78
+    .line 77
     .local v10, entries:[Ljava/lang/CharSequence;
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v5}, Lcom/android/camera/IconListPreference;->getEntryValues()[Ljava/lang/CharSequence;
+    invoke-virtual {v5}, Lcom/android/camera/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v11
 
-    .line 79
+    .line 78
     .local v11, entryValues:[Ljava/lang/CharSequence;
     move-object/from16 v0, p0
 
@@ -143,11 +143,11 @@
 
     move-result-object v15
 
-    .line 80
+    .line 79
     .local v15, iconIds:[I
     if-nez v15, :cond_0
 
-    .line 81
+    .line 80
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
@@ -156,23 +156,23 @@
 
     move-result-object v15
 
-    .line 85
+    .line 84
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mTitle:Landroid/widget/TextView;
+    iget-object v5, v0, Lcom/android/camera/ui/AbstractSettingPopup;->mTitle:Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v6}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 87
+    .line 86
     const/4 v14, 0x0
 
     .local v14, i:I
@@ -181,14 +181,14 @@
 
     if-ge v14, v5, :cond_5
 
-    .line 88
+    .line 87
     aget-object v5, v11, v14
 
     invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v17
 
-    .line 89
+    .line 88
     .local v17, value:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -202,20 +202,20 @@
 
     if-eqz v5, :cond_2
 
-    .line 87
+    .line 86
     :cond_1
     :goto_1
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_0
 
-    .line 90
+    .line 89
     :cond_2
     new-instance v16, Ljava/util/HashMap;
 
     invoke-direct/range {v16 .. v16}, Ljava/util/HashMap;-><init>()V
 
-    .line 91
+    .line 90
     .local v16, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     const-string v5, "value"
 
@@ -225,7 +225,7 @@
 
     invoke-virtual {v0, v5, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 92
+    .line 91
     const-string v5, "text"
 
     aget-object v6, v10, v14
@@ -238,7 +238,7 @@
 
     invoke-virtual {v0, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 93
+    .line 92
     if-eqz v15, :cond_3
 
     const-string v5, "image"
@@ -253,7 +253,7 @@
 
     invoke-virtual {v0, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 94
+    .line 93
     :cond_3
     const-string v5, "goofy_face"
 
@@ -265,7 +265,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 95
+    .line 94
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesItem:Ljava/util/ArrayList;
@@ -276,7 +276,7 @@
 
     goto :goto_1
 
-    .line 96
+    .line 95
     :cond_4
     const-string v5, "backdropper"
 
@@ -288,7 +288,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 97
+    .line 96
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundItem:Ljava/util/ArrayList;
@@ -299,7 +299,7 @@
 
     goto :goto_1
 
-    .line 101
+    .line 100
     .end local v16           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     .end local v17           #value:Ljava/lang/String;
     :cond_5
@@ -315,7 +315,7 @@
 
     const/4 v13, 0x1
 
-    .line 102
+    .line 101
     .local v13, hasSillyFaces:Z
     :goto_2
     move-object/from16 v0, p0
@@ -330,17 +330,30 @@
 
     const/4 v12, 0x1
 
-    .line 105
+    .line 104
     .local v12, hasBackground:Z
     :goto_3
     if-eqz v13, :cond_6
 
-    .line 106
-    const v5, 0x7f0d000e
+    .line 105
+    const v5, 0x7f0c003b
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
+
+    .line 106
+    const v5, 0x7f0c003c
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -349,35 +362,22 @@
     invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
     .line 107
-    const v5, 0x7f0d000f
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
-
-    .line 108
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesGrid:Landroid/widget/GridView;
 
     const/4 v6, 0x0
 
-    invoke-virtual {v5, v6}, Landroid/widget/GridView;->setVisibility(I)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 109
+    .line 108
     new-instance v2, Landroid/widget/SimpleAdapter;
 
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesItem:Ljava/util/ArrayList;
 
-    const v5, 0x7f040004
+    const v5, 0x7f04000f
 
     const/4 v6, 0x2
 
@@ -403,7 +403,7 @@
 
     invoke-direct/range {v2 .. v7}, Landroid/widget/SimpleAdapter;-><init>(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[I)V
 
-    .line 113
+    .line 112
     .local v2, sillyFacesItemAdapter:Landroid/widget/SimpleAdapter;
     move-object/from16 v0, p0
 
@@ -411,28 +411,28 @@
 
     invoke-virtual {v5, v2}, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 114
+    .line 113
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesGrid:Landroid/widget/GridView;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v5, v0}, Landroid/widget/GridView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v5, v0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 117
+    .line 116
     .end local v2           #sillyFacesItemAdapter:Landroid/widget/SimpleAdapter;
     :cond_6
     if-eqz v13, :cond_7
 
     if-eqz v12, :cond_7
 
-    .line 118
-    const v5, 0x7f0d0011
+    .line 117
+    const v5, 0x7f0c003e
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -440,16 +440,29 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 122
+    .line 121
     :cond_7
     if-eqz v12, :cond_8
 
-    .line 123
-    const v5, 0x7f0d0012
+    .line 122
+    const v5, 0x7f0c003f
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
+
+    .line 123
+    const v5, 0x7f0c0040
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -458,35 +471,22 @@
     invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
     .line 124
-    const v5, 0x7f0d0013
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
-
-    .line 125
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundGrid:Landroid/widget/GridView;
 
     const/4 v6, 0x0
 
-    invoke-virtual {v5, v6}, Landroid/widget/GridView;->setVisibility(I)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 126
+    .line 125
     new-instance v4, Landroid/widget/SimpleAdapter;
 
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundItem:Ljava/util/ArrayList;
 
-    const v7, 0x7f040004
+    const v7, 0x7f04000f
 
     const/4 v5, 0x2
 
@@ -514,7 +514,7 @@
 
     invoke-direct/range {v4 .. v9}, Landroid/widget/SimpleAdapter;-><init>(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[I)V
 
-    .line 130
+    .line 129
     .local v4, backgroundItemAdapter:Landroid/widget/SimpleAdapter;
     move-object/from16 v0, p0
 
@@ -522,24 +522,24 @@
 
     invoke-virtual {v5, v4}, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 131
+    .line 130
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundGrid:Landroid/widget/GridView;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v5, v0}, Landroid/widget/GridView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v5, v0}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 134
+    .line 133
     .end local v4           #backgroundItemAdapter:Landroid/widget/SimpleAdapter;
     :cond_8
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/EffectSettingPopup;->reloadPreference()V
 
-    .line 135
+    .line 134
     return-void
 
-    .line 101
+    .line 100
     .end local v12           #hasBackground:Z
     .end local v13           #hasSillyFaces:Z
     :cond_9
@@ -547,25 +547,25 @@
 
     goto/16 :goto_2
 
-    .line 102
+    .line 101
     .restart local v13       #hasSillyFaces:Z
     :cond_a
     const/4 v12, 0x0
 
     goto/16 :goto_3
 
-    .line 109
+    .line 108
     :array_0
     .array-data 0x4
-        0xct 0x0t 0xdt 0x7ft
-        0xbt 0x0t 0xdt 0x7ft
+        0x39t 0x0t 0xct 0x7ft
+        0x38t 0x0t 0xct 0x7ft
     .end array-data
 
-    .line 126
+    .line 125
     :array_1
     .array-data 0x4
-        0xct 0x0t 0xdt 0x7ft
-        0xbt 0x0t 0xdt 0x7ft
+        0x39t 0x0t 0xct 0x7ft
+        0x38t 0x0t 0xct 0x7ft
     .end array-data
 .end method
 
@@ -574,17 +574,17 @@
     .parameter "v"
 
     .prologue
-    .line 207
+    .line 206
     iget-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mNoEffect:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/IconListPreference;->setValue(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 208
+    .line 207
     invoke-virtual {p0}, Lcom/android/camera/ui/EffectSettingPopup;->reloadPreference()V
 
-    .line 209
+    .line 208
     iget-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mListener:Lcom/android/camera/ui/EffectSettingPopup$Listener;
 
     if-eqz v0, :cond_0
@@ -593,7 +593,7 @@
 
     invoke-interface {v0}, Lcom/android/camera/ui/EffectSettingPopup$Listener;->onSettingChanged()V
 
-    .line 210
+    .line 209
     :cond_0
     return-void
 .end method
@@ -602,27 +602,27 @@
     .locals 1
 
     .prologue
-    .line 67
+    .line 66
     invoke-super {p0}, Lcom/android/camera/ui/AbstractSettingPopup;->onFinishInflate()V
 
-    .line 68
-    const v0, 0x7f0d000d
+    .line 67
+    const v0, 0x7f0c003a
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mClearEffects:Landroid/view/View;
 
-    .line 69
+    .line 68
     iget-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mClearEffects:Landroid/view/View;
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 70
-    const v0, 0x7f0d0010
+    .line 69
+    const v0, 0x7f0c003d
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -630,10 +630,10 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesGrid:Landroid/widget/GridView;
 
-    .line 71
-    const v0, 0x7f0d0014
+    .line 70
+    const v0, 0x7f0c0041
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/EffectSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -641,7 +641,7 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundGrid:Landroid/widget/GridView;
 
-    .line 72
+    .line 71
     return-void
 .end method
 
@@ -662,13 +662,13 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 185
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesGrid:Landroid/widget/GridView;
 
     if-ne p1, v1, :cond_1
 
-    .line 187
+    .line 186
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesItem:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -685,12 +685,12 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 195
+    .line 194
     .local v0, value:Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
@@ -700,18 +700,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 196
+    .line 195
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mNoEffect:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Lcom/android/camera/IconListPreference;->setValue(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lcom/android/camera/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 200
+    .line 199
     :goto_1
     invoke-virtual {p0}, Lcom/android/camera/ui/EffectSettingPopup;->reloadPreference()V
 
-    .line 201
+    .line 200
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mListener:Lcom/android/camera/ui/EffectSettingPopup$Listener;
 
     if-eqz v1, :cond_0
@@ -720,18 +720,18 @@
 
     invoke-interface {v1}, Lcom/android/camera/ui/EffectSettingPopup$Listener;->onSettingChanged()V
 
-    .line 202
+    .line 201
     .end local v0           #value:Ljava/lang/String;
     :cond_0
     return-void
 
-    .line 188
+    .line 187
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundGrid:Landroid/widget/GridView;
 
     if-ne p1, v1, :cond_0
 
-    .line 189
+    .line 188
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundItem:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -751,11 +751,11 @@
     .restart local v0       #value:Ljava/lang/String;
     goto :goto_0
 
-    .line 198
+    .line 197
     :cond_2
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->setValue(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->setValue(Ljava/lang/String;)V
 
     goto :goto_1
 .end method
@@ -768,36 +768,36 @@
 
     const/4 v4, 0x0
 
-    .line 154
+    .line 153
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundGrid:Landroid/widget/GridView;
 
     iget-object v3, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundGrid:Landroid/widget/GridView;
 
-    invoke-virtual {v3}, Landroid/widget/GridView;->getCheckedItemPosition()I
+    invoke-virtual {v3}, Landroid/widget/AbsListView;->getCheckedItemPosition()I
 
     move-result v3
 
-    invoke-virtual {v2, v3, v4}, Landroid/widget/GridView;->setItemChecked(IZ)V
+    invoke-virtual {v2, v3, v4}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
-    .line 155
+    .line 154
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesGrid:Landroid/widget/GridView;
 
     iget-object v3, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesGrid:Landroid/widget/GridView;
 
-    invoke-virtual {v3}, Landroid/widget/GridView;->getCheckedItemPosition()I
+    invoke-virtual {v3}, Landroid/widget/AbsListView;->getCheckedItemPosition()I
 
     move-result v3
 
-    invoke-virtual {v2, v3, v4}, Landroid/widget/GridView;->setItemChecked(IZ)V
+    invoke-virtual {v2, v3, v4}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
-    .line 157
+    .line 156
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v2}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 158
+    .line 157
     .local v1, value:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mNoEffect:Ljava/lang/String;
 
@@ -807,11 +807,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 176
+    .line 175
     :goto_0
     return-void
 
-    .line 160
+    .line 159
     :cond_0
     const/4 v0, 0x0
 
@@ -825,7 +825,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 161
+    .line 160
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesItem:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -846,20 +846,20 @@
 
     if-eqz v2, :cond_1
 
-    .line 162
+    .line 161
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mSillyFacesGrid:Landroid/widget/GridView;
 
-    invoke-virtual {v2, v0, v5}, Landroid/widget/GridView;->setItemChecked(IZ)V
+    invoke-virtual {v2, v0, v5}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
     goto :goto_0
 
-    .line 160
+    .line 159
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 167
+    .line 166
     :cond_2
     const/4 v0, 0x0
 
@@ -872,7 +872,7 @@
 
     if-ge v0, v2, :cond_4
 
-    .line 168
+    .line 167
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundItem:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -893,20 +893,20 @@
 
     if-eqz v2, :cond_3
 
-    .line 169
+    .line 168
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mBackgroundGrid:Landroid/widget/GridView;
 
-    invoke-virtual {v2, v0, v5}, Landroid/widget/GridView;->setItemChecked(IZ)V
+    invoke-virtual {v2, v0, v5}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
     goto :goto_0
 
-    .line 167
+    .line 166
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 174
+    .line 173
     :cond_4
     const-string v2, "EffectSettingPopup"
 
@@ -930,24 +930,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
+    .line 174
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v2}, Lcom/android/camera/IconListPreference;->print()V
+    invoke-virtual {v2}, Lcom/android/camera/ListPreference;->print()V
 
     goto :goto_0
-.end method
-
-.method public setSettingChangedListener(Lcom/android/camera/ui/EffectSettingPopup$Listener;)V
-    .locals 0
-    .parameter "listener"
-
-    .prologue
-    .line 179
-    iput-object p1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mListener:Lcom/android/camera/ui/EffectSettingPopup$Listener;
-
-    .line 180
-    return-void
 .end method
 
 .method public setVisibility(I)V
@@ -955,20 +943,20 @@
     .parameter "visibility"
 
     .prologue
-    .line 139
+    .line 138
     if-nez p1, :cond_1
 
-    .line 140
-    invoke-virtual {p0}, Lcom/android/camera/ui/EffectSettingPopup;->getVisibility()I
+    .line 139
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 143
+    .line 142
     iget-object v1, p0, Lcom/android/camera/ui/EffectSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
@@ -978,7 +966,7 @@
 
     move-result v0
 
-    .line 144
+    .line 143
     .local v0, noEffect:Z
     iget-object v2, p0, Lcom/android/camera/ui/EffectSettingPopup;->mClearEffects:Landroid/view/View;
 
@@ -989,19 +977,19 @@
     :goto_0
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 146
+    .line 145
     .end local v0           #noEffect:Z
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/ui/EffectSettingPopup;->reloadPreference()V
 
-    .line 148
+    .line 147
     :cond_1
-    invoke-super {p0, p1}, Lcom/android/camera/ui/AbstractSettingPopup;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 149
+    .line 148
     return-void
 
-    .line 144
+    .line 143
     .restart local v0       #noEffect:Z
     :cond_2
     const/4 v1, 0x0

@@ -24,7 +24,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/RotateTextToast;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 46
@@ -41,14 +40,14 @@
     .locals 2
 
     .prologue
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/android/camera/ui/RotateTextToast$1;->this$0:Lcom/android/camera/ui/RotateTextToast;
 
     iget-object v0, v0, Lcom/android/camera/ui/RotateTextToast;->mToast:Lcom/android/camera/ui/RotateLayout;
 
     invoke-static {v0}, Lcom/android/camera/Util;->fadeOut(Landroid/view/View;)V
 
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/android/camera/ui/RotateTextToast$1;->this$0:Lcom/android/camera/ui/RotateTextToast;
 
     iget-object v0, v0, Lcom/android/camera/ui/RotateTextToast;->mLayoutRoot:Landroid/view/ViewGroup;
@@ -59,13 +58,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 50
+    .line 51
     iget-object v0, p0, Lcom/android/camera/ui/RotateTextToast$1;->this$0:Lcom/android/camera/ui/RotateTextToast;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/camera/ui/RotateTextToast;->mToast:Lcom/android/camera/ui/RotateLayout;
 
-    .line 51
+    .line 52
     return-void
 .end method

@@ -25,13 +25,13 @@
     .parameter "looper"
 
     .prologue
-    .line 73
+    .line 78
     iput-object p1, p0, Lcom/android/camera/CameraHolder$MyHandler;->this$0:Lcom/android/camera/CameraHolder;
 
-    .line 74
+    .line 79
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 75
+    .line 80
     return-void
 .end method
 
@@ -42,27 +42,27 @@
     .parameter "msg"
 
     .prologue
-    .line 79
+    .line 84
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 91
+    .line 96
     :goto_0
     return-void
 
-    .line 81
+    .line 86
     :pswitch_0
     iget-object v1, p0, Lcom/android/camera/CameraHolder$MyHandler;->this$0:Lcom/android/camera/CameraHolder;
 
     monitor-enter v1
 
-    .line 87
+    .line 92
     :try_start_0
     iget-object v0, p0, Lcom/android/camera/CameraHolder$MyHandler;->this$0:Lcom/android/camera/CameraHolder;
 
-    #getter for: Lcom/android/camera/CameraHolder;->mUsers:I
-    invoke-static {v0}, Lcom/android/camera/CameraHolder;->access$000(Lcom/android/camera/CameraHolder;)I
+    #getter for: Lcom/android/camera/CameraHolder;->mCameraOpened:Z
+    invoke-static {v0}, Lcom/android/camera/CameraHolder;->access$000(Lcom/android/camera/CameraHolder;)Z
 
     move-result v0
 
@@ -70,10 +70,9 @@
 
     iget-object v0, p0, Lcom/android/camera/CameraHolder$MyHandler;->this$0:Lcom/android/camera/CameraHolder;
 
-    #calls: Lcom/android/camera/CameraHolder;->releaseCamera()V
-    invoke-static {v0}, Lcom/android/camera/CameraHolder;->access$100(Lcom/android/camera/CameraHolder;)V
+    invoke-virtual {v0}, Lcom/android/camera/CameraHolder;->release()V
 
-    .line 88
+    .line 93
     :cond_0
     monitor-exit v1
 
@@ -88,7 +87,7 @@
 
     throw v0
 
-    .line 79
+    .line 84
     nop
 
     :pswitch_data_0

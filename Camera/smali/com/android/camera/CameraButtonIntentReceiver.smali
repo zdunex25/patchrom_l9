@@ -18,8 +18,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .parameter
-    .parameter
 
     .prologue
     .line 38
@@ -28,9 +26,9 @@
     move-result-object v0
 
     .line 39
-    new-instance v1, Lcom/android/camera/ComboPreferences;
+    invoke-static {}, Lcom/android/camera/ComboPreferences;->instance()Lcom/android/camera/ComboPreferences;
 
-    invoke-direct {v1, p1}, Lcom/android/camera/ComboPreferences;-><init>(Landroid/content/Context;)V
+    move-result-object v1
 
     .line 40
     invoke-static {v1}, Lcom/android/camera/CameraSettings;->readPreferredCameraId(Landroid/content/SharedPreferences;)I
@@ -38,13 +36,13 @@
     move-result v1
 
     .line 41
-    invoke-virtual {v0, v1}, Lcom/android/camera/CameraHolder;->tryOpen(I)Landroid/hardware/Camera;
+    invoke-virtual {v0, v1}, Lcom/android/camera/CameraHolder;->tryOpen(I)Lcom/android/camera/CameraManager$CameraProxy;
 
     move-result-object v1
 
     if-nez v1, :cond_0
 
-    .line 52
+    .line 51
     :goto_0
     return-void
 
@@ -73,11 +71,11 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 49
-    const/high16 v1, 0x1400
+    const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 51
+    .line 50
     invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0

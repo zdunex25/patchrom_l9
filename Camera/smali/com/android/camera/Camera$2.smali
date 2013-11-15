@@ -24,10 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 408
+    .line 601
     iput-object p1, p0, Lcom/android/camera/Camera$2;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +40,10 @@
     .locals 1
 
     .prologue
-    .line 410
+    .line 604
     invoke-static {}, Lcom/android/camera/Storage;->ensureOSXCompatible()V
 
-    .line 411
+    .line 605
     const/4 v0, 0x0
 
     return v0

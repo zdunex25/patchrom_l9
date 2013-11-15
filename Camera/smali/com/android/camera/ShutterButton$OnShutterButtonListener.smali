@@ -18,5 +18,8 @@
 .method public abstract onShutterButtonClick()V
 .end method
 
-.method public abstract onShutterButtonFocus(Z)V
+.method public abstract onShutterButtonFocus(ZI)V
+.end method
+
+.method public abstract onShutterButtonLongClick()Z
 .end method

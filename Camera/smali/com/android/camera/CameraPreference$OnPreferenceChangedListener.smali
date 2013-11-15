@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onRestorePreferencesClicked()V
+.method public abstract onCameraPickerClicked(I)V
 .end method
 
 .method public abstract onSharedPreferenceChanged()V

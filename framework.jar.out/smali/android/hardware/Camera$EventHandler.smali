@@ -44,10 +44,12 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 7
+    .locals 9
     .parameter "msg"
 
     .prologue
+    const/16 v7, 0x101
+
     const/4 v3, 0x1
 
     const/4 v2, 0x0
@@ -490,6 +492,97 @@
     goto :goto_4
 
     .line 753
+    :sswitch_a
+    new-array v8, v7, [I
+
+    .line 823
+    .local v8, statsdata:[I
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_5
+    if-ge v1, v7, :cond_6
+
+    .line 824
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, [B
+
+    check-cast v5, [B
+
+    mul-int/lit8 v6, v1, 0x4
+
+    #calls: Landroid/hardware/Camera;->byteToInt([BI)I
+    invoke-static {v5, v6}, Landroid/hardware/Camera;->access$1400([BI)I
+
+    move-result v5
+
+    aput v5, v8, v1
+
+    .line 823
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_5
+
+    .line 826
+    :cond_6
+    iget-object v5, p0, Landroid/hardware/Camera$EventHandler;->this$0:Landroid/hardware/Camera;
+
+    #getter for: Landroid/hardware/Camera;->mCameraDataCallback:Landroid/hardware/Camera$CameraDataCallback;
+    invoke-static {v5}, Landroid/hardware/Camera;->access$1500(Landroid/hardware/Camera;)Landroid/hardware/Camera$CameraDataCallback;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_0
+
+    .line 827
+    iget-object v5, p0, Landroid/hardware/Camera$EventHandler;->this$0:Landroid/hardware/Camera;
+
+    #getter for: Landroid/hardware/Camera;->mCameraDataCallback:Landroid/hardware/Camera$CameraDataCallback;
+    invoke-static {v5}, Landroid/hardware/Camera;->access$1500(Landroid/hardware/Camera;)Landroid/hardware/Camera$CameraDataCallback;
+
+    move-result-object v5
+
+    iget-object v6, p0, Landroid/hardware/Camera$EventHandler;->mCamera:Landroid/hardware/Camera;
+
+    invoke-interface {v5, v8, v6}, Landroid/hardware/Camera$CameraDataCallback;->onCameraData([ILandroid/hardware/Camera;)V
+
+    goto/16 :goto_0
+
+    .line 832
+    .end local v1           #i:I
+    .end local v8           #statsdata:[I
+    :sswitch_b
+    iget-object v5, p0, Landroid/hardware/Camera$EventHandler;->this$0:Landroid/hardware/Camera;
+
+    #getter for: Landroid/hardware/Camera;->mCameraMetaDataCallback:Landroid/hardware/Camera$CameraMetaDataCallback;
+    invoke-static {v5}, Landroid/hardware/Camera;->access$1600(Landroid/hardware/Camera;)Landroid/hardware/Camera$CameraMetaDataCallback;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_0
+
+    .line 833
+    iget-object v5, p0, Landroid/hardware/Camera$EventHandler;->this$0:Landroid/hardware/Camera;
+
+    #getter for: Landroid/hardware/Camera;->mCameraMetaDataCallback:Landroid/hardware/Camera$CameraMetaDataCallback;
+    invoke-static {v5}, Landroid/hardware/Camera;->access$1600(Landroid/hardware/Camera;)Landroid/hardware/Camera$CameraMetaDataCallback;
+
+    move-result-object v6
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, [I
+
+    check-cast v5, [I
+
+    iget-object v7, p0, Landroid/hardware/Camera$EventHandler;->mCamera:Landroid/hardware/Camera;
+
+    invoke-interface {v6, v5, v7}, Landroid/hardware/Camera$CameraMetaDataCallback;->onCameraMetaData([ILandroid/hardware/Camera;)V
+
+    goto/16 :goto_0
+
+    .line 742
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_8
@@ -502,5 +595,7 @@
         0x100 -> :sswitch_2
         0x400 -> :sswitch_7
         0x800 -> :sswitch_9
+        0x1000 -> :sswitch_a
+        0x2000 -> :sswitch_b
     .end sparse-switch
 .end method

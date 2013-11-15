@@ -28,20 +28,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 42
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 42
     iput-object p1, p0, Lcom/android/camera/CameraPreference;->mContext:Landroid/content/Context;
 
-    .line 44
+    .line 43
     sget-object v1, Lcom/android/camera/R$styleable;->CameraPreference:[I
 
     invoke-virtual {p1, p2, v1, v2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 46
+    .line 45
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -49,10 +49,10 @@
 
     iput-object v1, p0, Lcom/android/camera/CameraPreference;->mTitle:Ljava/lang/String;
 
-    .line 47
+    .line 46
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 48
+    .line 47
     return-void
 .end method
 
@@ -62,21 +62,19 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 54
     iget-object v0, p0, Lcom/android/camera/CameraPreference;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     if-nez v0, :cond_0
 
-    .line 56
-    iget-object v0, p0, Lcom/android/camera/CameraPreference;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/android/camera/ComboPreferences;->get(Landroid/content/Context;)Lcom/android/camera/ComboPreferences;
+    .line 55
+    invoke-static {}, Lcom/android/camera/ComboPreferences;->instance()Lcom/android/camera/ComboPreferences;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/camera/CameraPreference;->mSharedPreferences:Landroid/content/SharedPreferences;
 
-    .line 58
+    .line 57
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraPreference;->mSharedPreferences:Landroid/content/SharedPreferences;
 
@@ -87,7 +85,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 50
     iget-object v0, p0, Lcom/android/camera/CameraPreference;->mTitle:Ljava/lang/String;
 
     return-object v0

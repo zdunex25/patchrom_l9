@@ -2,5 +2,5 @@
 <LinearLayout style="@style/SettingRow"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView android:id="@id/text" style="@style/SettingItemTitle" />
-    <ImageView android:id="@id/image" android:layout_width="@dimen/setting_item_icon_width" android:layout_height="@dimen/setting_item_icon_width" android:scaleType="fitCenter" android:adjustViewBounds="true" />
+    <ImageView android:id="@id/image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" android:adjustViewBounds="true" />
 </LinearLayout>

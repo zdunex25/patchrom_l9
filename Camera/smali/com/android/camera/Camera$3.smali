@@ -21,10 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 583
+    .line 685
     iput-object p1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,12 @@
     .parameter "intent"
 
     .prologue
-    .line 586
+    .line 688
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 587
+    .line 689
     .local v0, action:Ljava/lang/String;
     const-string v1, "camera"
 
@@ -69,7 +68,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 588
+    .line 690
     const-string v1, "android.intent.action.MEDIA_MOUNTED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -94,19 +93,20 @@
 
     if-eqz v1, :cond_2
 
-    .line 591
+    .line 693
     :cond_0
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    #calls: Lcom/android/camera/Camera;->checkStorage()V
-    invoke-static {v1}, Lcom/android/camera/Camera;->access$2200(Lcom/android/camera/Camera;)V
+    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
-    .line 598
+    invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
+
+    .line 700
     :cond_1
     :goto_0
     return-void
 
-    .line 592
+    .line 694
     :cond_2
     const-string v1, "android.intent.action.MEDIA_SCANNER_FINISHED"
 
@@ -116,27 +116,27 @@
 
     if-eqz v1, :cond_1
 
-    .line 593
+    .line 695
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    #calls: Lcom/android/camera/Camera;->checkStorage()V
-    invoke-static {v1}, Lcom/android/camera/Camera;->access$2200(Lcom/android/camera/Camera;)V
+    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
-    .line 594
+    invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
+
+    .line 696
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
-    invoke-static {v1}, Lcom/android/camera/Camera;->access$2300(Lcom/android/camera/Camera;)Z
+    invoke-static {v1}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 595
+    .line 697
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    #calls: Lcom/android/camera/Camera;->updateThumbnailButton()V
-    invoke-static {v1}, Lcom/android/camera/Camera;->access$2400(Lcom/android/camera/Camera;)V
+    invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnail()V
 
     goto :goto_0
 .end method

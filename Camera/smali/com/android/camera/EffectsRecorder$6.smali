@@ -26,11 +26,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/EffectsRecorder;Ljava/lang/Exception;)V
     .locals 0
-    .parameter
-    .parameter
 
     .prologue
-    .line 872
+    .line 940
     iput-object p1, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 
     iput-object p2, p0, Lcom/android/camera/EffectsRecorder$6;->val$exception:Ljava/lang/Exception;
@@ -46,7 +44,7 @@
     .locals 3
 
     .prologue
-    .line 874
+    .line 943
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 
     #getter for: Lcom/android/camera/EffectsRecorder;->mFd:Ljava/io/FileDescriptor;
@@ -56,7 +54,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 875
+    .line 944
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 
     #getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
@@ -70,11 +68,11 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/camera/EffectsRecorder$EffectsListener;->onEffectsError(Ljava/lang/Exception;Ljava/lang/String;)V
 
-    .line 879
+    .line 948
     :goto_0
     return-void
 
-    .line 877
+    .line 946
     :cond_0
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/Camera;->addBaseMenuItems(Landroid/view/Menu;)V
+    value = Lcom/android/camera/Camera;->onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,10 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 2167
+    .line 2938
     iput-object p1, p0, Lcom/android/camera/Camera$7;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +37,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 2169
+    .line 2940
     iget-object v0, p0, Lcom/android/camera/Camera$7;->this$0:Lcom/android/camera/Camera;
 
-    const/4 v1, 0x2
+    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->openSettingActivity()V
 
-    #calls: Lcom/android/camera/Camera;->switchToOtherMode(I)Z
-    invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$5400(Lcom/android/camera/Camera;I)Z
-
-    .line 2170
+    .line 2941
     return-void
 .end method

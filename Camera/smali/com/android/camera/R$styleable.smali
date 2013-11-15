@@ -31,7 +31,7 @@
     .prologue
     const/4 v3, 0x4
 
-    .line 925
+    .line 2047
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -44,7 +44,7 @@
 
     sput-object v0, Lcom/android/camera/R$styleable;->CameraPreference:[I
 
-    .line 954
+    .line 2076
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -53,14 +53,14 @@
 
     sput-object v0, Lcom/android/camera/R$styleable;->IconIndicator:[I
 
-    .line 993
+    .line 2115
     new-array v0, v3, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/camera/R$styleable;->IconListPreference:[I
 
-    .line 1054
+    .line 2176
     new-array v0, v3, [I
 
     fill-array-data v0, :array_2
@@ -69,14 +69,14 @@
 
     return-void
 
-    .line 954
+    .line 2076
     :array_0
     .array-data 0x4
         0x5t 0x0t 0x1t 0x7ft
         0x6t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 993
+    .line 2115
     :array_1
     .array-data 0x4
         0x5t 0x0t 0x1t 0x7ft
@@ -85,7 +85,7 @@
         0x9t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 1054
+    .line 2176
     :array_2
     .array-data 0x4
         0x1t 0x0t 0x1t 0x7ft
@@ -99,7 +99,7 @@
     .locals 0
 
     .prologue
-    .line 914
+    .line 2036
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
