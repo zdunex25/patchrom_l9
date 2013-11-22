@@ -46,6 +46,8 @@ then
             rm -rf "$file"
     done
 
+    #fix miuicamera app icon to be themeable
+    sed -i -e 's/com.sec.android.app.camera.Camera.png/com.android.camera.Camera.png/' $BUILD_OUT/framework_ext/smali/miui/content/res/IconCustomizer.smali
     cp -rf "$BUILD_OUT/framework_miui/smali/com/google/android/mms" "$BUILD_OUT/framework_ext/smali/com/google/android"
     cp -u -r $BUILD_OUT/$SEP_FRAME/*  $BUILD_OUT/framework_ext
     rm -rf $BUILD_OUT/$SEP_FRAME

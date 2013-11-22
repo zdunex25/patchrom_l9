@@ -93,6 +93,7 @@ cd ../miuipolska/Polish/extras/simple_clock
 zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.zip -q images_pl/*.png
 cd ../../../../l9
 mv out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.zip out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.mrc
+cp -f ../miuipolska/Polish/extras/system/media/theme/.data/content/clock_2x4/clock_2x4.mrc out/temp/system/media/theme/.data/content/clock_2x4/clock_2x4.mrc
 
 cd out/temp
 
@@ -114,7 +115,7 @@ rm -r unsigned-miuioptimus-v5-p760-$version-4.2.zip
 
 echo $ota
 md5=`md5sum miuioptimus-v5-p760-$version-4.2.zip | cut -d" " -f1`
-size=`du -sh md5sum miuioptimus-v5-p760-$version-4.2.zip | cut -c1-4`
+size=`du -sh miuioptimus-v5-p760-$version-4.2.zip | cut -c1-4`
 data=`date +%-d/%-m/%Y`
 LINK_PL="http://91.205.75.29//zdunex25/$version/miuioptimus-v5-p760-$version-4.2.zip"
 forum="<a href='http://bit.ly/19UDoYQ'>Dyskusja na forum</a>"
@@ -122,5 +123,5 @@ MIRROR1_PL="http://goo.im/devs/mikegapinski/miuiv5/4.2.2/p760/miuioptimus-v5-p76
 #MIRROR2_PL="http://htcfanboys.com/download/acid/files/MIUIv5/$version/miuioptimus-v5-p760-$version-4.2.zip"
 echo '[dwl producent="'lg'" board="'p760'" tytul="LG&nbsp;Optimus&nbsp;L9" android="'4.2.2'" miui="'$version'" data="'$data'" md5="'$md5'" datapl="'$data'" md5pl="'\$md5_ota2'" informacje="'$forum'" status="" statuspl="" link="'$LINK_PL'" linkpl="'\$LINK_OTA2'" rozmiar="'$size'" rozmiarpl="'\$size_ota2'" rodzaj="" mirror1="'$MIRROR1_PL'" mirror2="" ota="'\$OTA2'"]
     
-    ' > ../download_v5.txt
+    ' > download_v5.txt
 read -p "Done, miuioptimus-v5-p760-$version-4.2.zip has been created in root of l9 directory, copy to sd and flash it!"
