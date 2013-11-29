@@ -24,12 +24,13 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
-    .line 725
+    .line 721
     iput-object p1, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 725
+    .line 721
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$RawPictureCallback;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -54,7 +55,7 @@
     .parameter "camera"
 
     .prologue
-    .line 729
+    .line 725
     iget-object v0, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -64,7 +65,7 @@
     #setter for: Lcom/android/camera/Camera;->mRawPictureCallbackTime:J
     invoke-static {v0, v1, v2}, Lcom/android/camera/Camera;->access$3702(Lcom/android/camera/Camera;J)J
 
-    .line 730
+    .line 726
     const-string v0, "camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -109,60 +110,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 732
-    iget-object v0, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    invoke-static {v0}, Lcom/android/camera/Camera;->access$3804(Lcom/android/camera/Camera;)I
-
-    .line 734
-    iget-object v0, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mHDRStatus:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mBurstRawCallbackNum:I
-    invoke-static {v0}, Lcom/android/camera/Camera;->access$3900(Lcom/android/camera/Camera;)I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mReceivedRawCallbackNum:I
-    invoke-static {v1}, Lcom/android/camera/Camera;->access$3800(Lcom/android/camera/Camera;)I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
-    invoke-static {v0}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 736
-    iget-object v0, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->getCameraScreenNail()Lcom/android/camera/CameraScreenNail;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/camera/Camera$RawPictureCallback;->this$0:Lcom/android/camera/Camera;
-
-    #calls: Lcom/android/camera/Camera;->getCameraRotation()I
-    invoke-static {v1}, Lcom/android/camera/Camera;->access$4000(Lcom/android/camera/Camera;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/android/camera/CameraScreenNail;->animateCapture(I)V
-
-    .line 738
-    :cond_0
+    .line 728
     return-void
 .end method

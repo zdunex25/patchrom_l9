@@ -120,9 +120,9 @@
 
     const-string v2, "pref_key_camera_referenceline"
 
-    const v3, 0x7f0d016e
+    const v3, 0x7f0d017c
 
-    invoke-virtual {p0, v3}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v3}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -132,9 +132,9 @@
 
     .line 155
     .local v0, value:Ljava/lang/String;
-    const v1, 0x7f0d016f
+    const v1, 0x7f0d017d
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -176,7 +176,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mExposureIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b4
+    const v1, 0x7f0200b3
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -236,7 +236,7 @@
     .line 137
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mFocusIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b5
+    const v1, 0x7f0200b4
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -260,7 +260,7 @@
     .line 140
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mFocusIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b6
+    const v1, 0x7f0200b5
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -303,7 +303,7 @@
     :cond_1
     const v0, 0x7f0d00d4
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -316,7 +316,7 @@
     .line 79
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mISOIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b8
+    const v1, 0x7f0200b7
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -331,7 +331,7 @@
     :cond_2
     const v0, 0x7f0d00d5
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -344,7 +344,7 @@
     .line 82
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mISOIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200ba
+    const v1, 0x7f0200b9
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -359,7 +359,7 @@
     :cond_3
     const v0, 0x7f0d00d6
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -372,7 +372,7 @@
     .line 85
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mISOIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200bc
+    const v1, 0x7f0200bb
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -387,7 +387,7 @@
     :cond_4
     const v0, 0x7f0d00d7
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -400,7 +400,7 @@
     .line 88
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mISOIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200bd
+    const v1, 0x7f0200bc
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -415,7 +415,7 @@
     :cond_5
     const v0, 0x7f0d00d8
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -428,7 +428,7 @@
     .line 91
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mISOIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b9
+    const v1, 0x7f0200b8
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -443,7 +443,7 @@
     :cond_6
     const v0, 0x7f0d00d9
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -456,7 +456,7 @@
     .line 94
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mISOIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200bb
+    const v1, 0x7f0200ba
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -508,7 +508,7 @@
     .line 118
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mReferenceLineIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200bf
+    const v1, 0x7f0200be
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -555,7 +555,7 @@
     .line 106
     iget-object v0, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mAudioIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b2
+    const v1, 0x7f0200b1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -588,7 +588,7 @@
     const/16 v3, 0x8
 
     .line 31
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingsStatusBar;->isSimpleLayoutMode()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->isSimpleLayoutMode()Z
 
     move-result v1
 
@@ -605,7 +605,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingsStatusBar;->updateColorEffectIndicator(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateColorEffectIndicator(Ljava/lang/String;)V
 
     .line 35
     invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getISOValue()Ljava/lang/String;
@@ -653,7 +653,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingsStatusBar;->updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
 
     .line 46
     invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getFocusMode()Ljava/lang/String;

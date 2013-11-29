@@ -108,7 +108,7 @@
 
     .prologue
     .line 1705
-    invoke-super {p0, p1, p2}, Landroid/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 1706
     iget v0, p0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I

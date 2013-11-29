@@ -26,6 +26,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/RotateDialogController;Ljava/lang/Runnable;)V
     .locals 0
+    .parameter
+    .parameter
 
     .prologue
     .line 130
@@ -33,7 +35,7 @@
 
     iput-object p2, p0, Lcom/android/camera/RotateDialogController$1;->val$r1:Ljava/lang/Runnable;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

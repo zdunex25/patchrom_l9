@@ -24,12 +24,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/RulerSettingPopup;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 33
     iput-object p1, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -61,7 +62,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v6}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setPressed(Z)V
 
     .line 56
     :cond_0
@@ -155,7 +156,7 @@
     :cond_2
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
+    invoke-virtual {v2}, Lcom/android/camera/ui/RulerSettingPopup;->invalidate()V
 
     goto :goto_0
 
@@ -222,12 +223,12 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setPressed(Z)V
 
     .line 52
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
+    invoke-virtual {v2}, Lcom/android/camera/ui/RulerSettingPopup;->invalidate()V
 
     .line 53
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
@@ -252,7 +253,7 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    invoke-virtual {v2, v3}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
+    invoke-virtual {v2, v3}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
 
     .line 54
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;

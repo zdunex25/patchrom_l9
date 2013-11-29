@@ -27,6 +27,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/ui/PositionController;)V
     .locals 1
+    .parameter
 
     .prologue
     .line 1788
@@ -87,7 +88,7 @@
     iput v0, p0, Lcom/android/gallery3d/ui/PositionController$Animatable;->mAnimationDuration:I
 
     .line 1807
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/PositionController$Animatable;->advanceAnimation()Z
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->advanceAnimation()Z
 
     .line 1808
     const/4 v0, 0x1

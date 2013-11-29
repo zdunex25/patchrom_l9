@@ -24,12 +24,13 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
-    .line 714
+    .line 710
     iput-object p1, p0, Lcom/android/camera/Camera$PostViewPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 714
+    .line 710
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$PostViewPictureCallback;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -54,7 +55,7 @@
     .parameter "camera"
 
     .prologue
-    .line 718
+    .line 714
     iget-object v0, p0, Lcom/android/camera/Camera$PostViewPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -64,7 +65,7 @@
     #setter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
     invoke-static {v0, v1, v2}, Lcom/android/camera/Camera;->access$3602(Lcom/android/camera/Camera;J)J
 
-    .line 719
+    .line 715
     const-string v0, "camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -109,6 +110,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 722
+    .line 718
     return-void
 .end method

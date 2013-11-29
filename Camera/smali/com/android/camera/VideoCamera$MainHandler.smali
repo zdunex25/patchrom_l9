@@ -21,6 +21,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/VideoCamera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 300
@@ -97,7 +98,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ShutterButton;->setEnabled(Z)V
 
     goto :goto_0
 
@@ -105,7 +106,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Lcom/android/camera/VideoCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -139,7 +140,7 @@
     .line 317
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Lcom/android/camera/VideoCamera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -250,7 +251,7 @@
     :pswitch_5
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->resetSimpleMode()V
+    invoke-virtual {v0}, Lcom/android/camera/VideoCamera;->resetSimpleMode()V
 
     .line 344
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
@@ -264,7 +265,7 @@
     :pswitch_6
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->getCameraScreenNail()Lcom/android/camera/CameraScreenNail;
+    invoke-virtual {v0}, Lcom/android/camera/VideoCamera;->getCameraScreenNail()Lcom/android/camera/CameraScreenNail;
 
     move-result-object v0
 

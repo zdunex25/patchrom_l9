@@ -49,7 +49,7 @@
     .line 761
     iput-object p1, p0, Lcom/android/gallery3d/ui/PhotoView$ScreenNailPicture;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 758
     const/4 v0, 0x0
@@ -315,7 +315,7 @@
 
     iget-object v3, v0, Lcom/android/gallery3d/ui/PhotoView$ScreenNailPicture;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/PhotoView;->getWidth()I
 
     move-result v18
 
@@ -325,7 +325,7 @@
 
     iget-object v3, v0, Lcom/android/gallery3d/ui/PhotoView$ScreenNailPicture;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/PhotoView;->getHeight()I
 
     move-result v13
 
@@ -656,7 +656,7 @@
 
     iget-object v3, v0, Lcom/android/gallery3d/ui/PhotoView$ScreenNailPicture;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/PhotoView;->invalidate()V
 
     .line 832
     :cond_6

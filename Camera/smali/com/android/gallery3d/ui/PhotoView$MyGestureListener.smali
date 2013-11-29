@@ -46,12 +46,13 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/ui/PhotoView;)V
     .locals 1
+    .parameter
 
     .prologue
     .line 925
     iput-object p1, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 926
     const/4 v0, 0x0
@@ -102,7 +103,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PhotoView;->getHeight()I
 
     move-result v1
 
@@ -254,13 +255,13 @@
 
     const/4 v3, 0x5
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v2, v3}, Lcom/android/gallery3d/ui/SynchronizedHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
     .line 1093
     .local v1, m:Landroid/os/Message;
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v2
 
@@ -286,7 +287,7 @@
 
     int-to-long v3, p1
 
-    invoke-virtual {v2, v1, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v2, v1, v3, v4}, Lcom/android/gallery3d/ui/SynchronizedHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 .end method
@@ -465,7 +466,7 @@
     :goto_1
     iget-object v10, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v10}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v10}, Lcom/android/gallery3d/ui/PhotoView;->getHeight()I
 
     move-result v10
 
@@ -589,7 +590,7 @@
 
     const-wide/16 v2, 0x2bc
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/gallery3d/ui/SynchronizedHandler;->sendEmptyMessageDelayed(IJ)Z
 
     .line 1174
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
@@ -638,7 +639,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Lcom/android/gallery3d/ui/SynchronizedHandler;->removeMessages(I)V
 
     .line 1182
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
@@ -1696,7 +1697,7 @@
     .line 965
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/GLView;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/PhotoView;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v3
 
@@ -1839,7 +1840,7 @@
     .local v2, r:Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/PhotoView;->getHeight()I
 
     move-result v1
 

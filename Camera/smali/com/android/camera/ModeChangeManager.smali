@@ -50,7 +50,7 @@
 
     .prologue
     .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     return-void
@@ -62,7 +62,7 @@
 
     .prologue
     .line 34
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     sput-object p1, Lcom/android/camera/ModeChangeManager;->mActivity:Landroid/app/Activity;
@@ -222,9 +222,9 @@
     .locals 8
 
     .prologue
-    const v7, 0x7f02014a
+    const v7, 0x7f02014b
 
-    const v6, 0x7f020149
+    const v6, 0x7f02014a
 
     const/4 v5, 0x0
 
@@ -239,7 +239,7 @@
     .local v2, thumbs:[Landroid/graphics/drawable/Drawable;
     sget-object v3, Lcom/android/camera/ModeChangeManager;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v3}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v3}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -298,7 +298,7 @@
     :goto_1
     iget-object v3, p0, Lcom/android/camera/ModeChangeManager;->mScrollButton:Lcom/android/camera/ui/ScrollButton;
 
-    const v4, 0x7f020147
+    const v4, 0x7f020148
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -309,7 +309,7 @@
     .line 72
     iget-object v3, p0, Lcom/android/camera/ModeChangeManager;->mScrollButton:Lcom/android/camera/ui/ScrollButton;
 
-    const v4, 0x7f020148
+    const v4, 0x7f020149
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -320,7 +320,7 @@
     .line 73
     iget-object v3, p0, Lcom/android/camera/ModeChangeManager;->mScrollButton:Lcom/android/camera/ui/ScrollButton;
 
-    const v4, 0x7f020108
+    const v4, 0x7f020109
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -331,7 +331,7 @@
     .line 74
     iget-object v3, p0, Lcom/android/camera/ModeChangeManager;->mScrollButton:Lcom/android/camera/ui/ScrollButton;
 
-    const v4, 0x7f02010a
+    const v4, 0x7f02010b
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -433,7 +433,7 @@
     .line 115
     iget-object v0, p0, Lcom/android/camera/ModeChangeManager;->mScrollButton:Lcom/android/camera/ui/ScrollButton;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/ScrollButton;->setVisibility(I)V
 
     .line 116
     return-void

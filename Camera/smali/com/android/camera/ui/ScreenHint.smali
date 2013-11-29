@@ -18,7 +18,7 @@
 
     .prologue
     .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     iput-object p1, p0, Lcom/android/camera/ui/ScreenHint;->mActivity:Landroid/app/Activity;
@@ -203,7 +203,7 @@
 
     const v2, 0x7f0d0010
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -213,7 +213,7 @@
 
     const v5, 0x7f0d0011
 
-    invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -221,7 +221,7 @@
 
     const v9, 0x7f0d0012
 
-    invoke-virtual {v5, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v5, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -260,7 +260,7 @@
 
     const v2, 0x7f0d0007
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -309,7 +309,7 @@
 
     const v2, 0x7f0d0009
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -330,7 +330,7 @@
 
     const v2, 0x7f0d000a
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -351,7 +351,7 @@
 
     const v2, 0x7f0d00e9
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 

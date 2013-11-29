@@ -36,9 +36,9 @@
 
     :array_0
     .array-data 0x4
+        0x45t 0x0t 0x2t 0x7ft
         0x46t 0x0t 0x2t 0x7ft
         0x47t 0x0t 0x2t 0x7ft
-        0x48t 0x0t 0x2t 0x7ft
     .end array-data
 .end method
 
@@ -73,7 +73,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateImageView;->setVisibility(I)V
 
     .line 71
     return-void
@@ -130,7 +130,7 @@
 
     .line 56
     :cond_0
-    invoke-super {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->onBackPressed()V
+    invoke-super {p0}, Lcom/android/camera/ActivityBase;->onBackPressed()V
 
     goto :goto_0
 .end method
@@ -228,7 +228,7 @@
 
     .line 112
     :cond_2
-    const v0, 0x7f0d017a
+    const v0, 0x7f0d0188
 
     invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -364,7 +364,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f02004a
+    const v0, 0x7f020049
 
     :goto_0
     invoke-virtual {v1, v2, v0}, Lcom/android/camera/ui/SettingView;->setIndicatorImage(Ljava/lang/String;I)V
@@ -374,7 +374,7 @@
 
     .line 97
     :cond_0
-    const v0, 0x7f020049
+    const v0, 0x7f020048
 
     goto :goto_0
 .end method
@@ -396,7 +396,7 @@
     .line 62
     iget-object v0, p0, Lcom/android/camera/ActivityWithAudioCapture;->mCaptrueDelayView:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v0}, Lcom/android/camera/ui/RotateImageView;->getVisibility()I
 
     move-result v0
 
@@ -407,7 +407,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateImageView;->setVisibility(I)V
 
     .line 65
     :cond_0
@@ -417,7 +417,7 @@
 
     aget v1, v1, p1
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
 
     .line 67
     :cond_1

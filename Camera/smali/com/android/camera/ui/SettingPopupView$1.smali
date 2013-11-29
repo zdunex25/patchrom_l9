@@ -24,12 +24,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/SettingPopupView;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 202
     iput-object p1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -50,6 +51,24 @@
 
     .line 206
     .local v0, key:Ljava/lang/String;
+    const-string v1, "pref_camera_coloreffect_key"
+
+    iget-object v2, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
+
+    iget-object v2, v2, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
+
+    iget-boolean v1, v1, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
+
+    if-nez v1, :cond_0
+
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
     iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
@@ -60,22 +79,25 @@
 
     if-eqz v1, :cond_1
 
-    .line 207
+    .line 225
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 212
+    :cond_1
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    const-string v2, "mode_none"
+    iput-object v0, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
-    iput-object v2, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
-
-    .line 211
-    :goto_0
+    .line 213
     invoke-static {}, Lcom/android/camera/CameraDataAnalytics;->instance()Lcom/android/camera/CameraDataAnalytics;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lcom/android/camera/CameraDataAnalytics;->trackEvent(Ljava/lang/String;)V
 
-    .line 212
+    .line 214
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
     iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
@@ -86,7 +108,7 @@
 
     invoke-interface {v1, p1, v2}, Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;->onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
 
-    .line 213
+    .line 215
     invoke-static {}, Lcom/android/camera/ModeChangeManager;->getCurrentMode()I
 
     move-result v1
@@ -95,7 +117,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 214
+    .line 216
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
     iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
@@ -108,25 +130,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 215
+    .line 217
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/SettingPopupView;->initColorEffectView()V
 
-    .line 223
-    :cond_0
-    :goto_1
-    return-void
-
-    .line 209
-    :cond_1
-    iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
-
-    iput-object v0, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
-
     goto :goto_0
 
-    .line 217
+    .line 219
     :cond_2
     const-string v1, "pref_settings"
 
@@ -148,10 +159,10 @@
 
     if-nez v1, :cond_0
 
-    .line 219
+    .line 221
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    invoke-virtual {v1}, Lcom/android/camera/ui/SettingView;->dismiss()V
+    invoke-virtual {v1}, Lcom/android/camera/ui/SettingPopupView;->dismiss()V
 
-    goto :goto_1
+    goto :goto_0
 .end method

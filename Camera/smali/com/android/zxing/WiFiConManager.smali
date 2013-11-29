@@ -28,7 +28,7 @@
 
     .prologue
     .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 15
     const/16 v0, 0x50
@@ -70,10 +70,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 117
+    .line 121
     const/4 v1, 0x0
 
-    .line 118
+    .line 122
     .local v1, i:I
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
@@ -83,12 +83,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 137
+    .line 141
     :cond_0
     :goto_0
     return v0
 
-    .line 121
+    .line 125
     :cond_1
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
@@ -100,7 +100,7 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 122
+    .line 126
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v2, v0}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
@@ -109,16 +109,16 @@
 
     if-nez v2, :cond_2
 
-    .line 123
+    .line 127
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 127
+    .line 131
     :cond_2
     const/4 v0, 0x0
 
-    .line 128
+    .line 132
     .local v0, enabled:Z
     :goto_1
     if-nez v0, :cond_0
@@ -127,27 +127,27 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 130
+    .line 134
+    const-wide/16 v2, 0x64
+
     :try_start_0
+    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
+
+    .line 135
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v2}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
-
-    move-result v0
-
-    .line 131
-    add-int/lit8 v1, v1, 0x1
-
-    .line 132
-    const-wide/16 v2, 0x64
-
-    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+    move-result v0
+
+    .line 136
+    add-int/lit8 v1, v1, 0x1
+
     goto :goto_1
 
-    .line 133
+    .line 137
     :catch_0
     move-exception v2
 
@@ -306,9 +306,9 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x7f0d0212
+    const v1, 0x7f0d0223
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -318,9 +318,9 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x7f0d0213
+    const v1, 0x7f0d0224
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -330,9 +330,9 @@
     :pswitch_2
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x7f0d0214
+    const v1, 0x7f0d0225
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -342,9 +342,9 @@
     :pswitch_3
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x7f0d0211
+    const v1, 0x7f0d0222
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -376,40 +376,52 @@
     .line 104
     .local v1, i:I
     :goto_0
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     const/16 v2, 0x50
 
-    if-ge v1, v2, :cond_0
+    if-ge v1, v2, :cond_1
 
     .line 106
+    if-nez v1, :cond_0
+
+    .line 107
+    const-wide/16 v2, 0x320
+
     :try_start_0
+    invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
+
+    .line 111
+    :goto_1
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
 
     invoke-static {v2}, Lcom/android/zxing/WiFiUtil;->isWiFiContected(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 107
+    .line 112
     add-int/lit8 v1, v1, 0x1
 
-    .line 108
-    const-wide/16 v2, 0x96
+    goto :goto_0
+
+    .line 109
+    :cond_0
+    const-wide/16 v2, 0x64
 
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 109
+    .line 113
     :catch_0
     move-exception v2
 
     goto :goto_0
 
-    .line 113
-    :cond_0
+    .line 117
+    :cond_1
     return v0
 .end method
 
@@ -465,7 +477,7 @@
 
     check-cast v0, [Ljava/lang/Void;
 
-    invoke-virtual {v1, v2, v0}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v2, v0}, Lcom/android/zxing/WiFiConManager$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     goto :goto_0
 .end method

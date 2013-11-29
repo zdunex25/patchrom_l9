@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 259
@@ -93,7 +94,7 @@
 
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->saveThumbnailToFile()V
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->saveThumbnailToFile()V
 
     .line 275
     :cond_0
@@ -226,7 +227,7 @@
     :pswitch_4
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -343,13 +344,13 @@
     :pswitch_6
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/gallery3d/ui/GLRootView;
 
-    invoke-virtual {v0, v3}, Landroid/view/SurfaceView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Lcom/android/gallery3d/ui/GLRootView;->setVisibility(I)V
 
     goto/16 :goto_0
 

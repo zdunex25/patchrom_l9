@@ -81,6 +81,7 @@
 
 .method public putDefault(Ljava/lang/Object;)V
     .locals 0
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)V"

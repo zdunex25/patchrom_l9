@@ -90,18 +90,18 @@
     .prologue
     const v6, 0x7f0d00ad
 
-    .line 417
+    .line 420
     invoke-virtual {p1}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 418
+    .line 421
     .local v0, entries:[Ljava/lang/CharSequence;
     invoke-virtual {p1}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 419
+    .line 422
     .local v1, entryValues:[Ljava/lang/CharSequence;
     const/4 v2, 0x0
 
@@ -111,7 +111,7 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 420
+    .line 423
     invoke-virtual {p1}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v4
@@ -124,7 +124,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 421
+    .line 424
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -145,9 +145,9 @@
 
     move-result-object v3
 
-    .line 422
+    .line 425
     .local v3, title:Ljava/lang/String;
-    invoke-virtual {p0, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v6}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -157,7 +157,7 @@
 
     if-nez v4, :cond_0
 
-    .line 423
+    .line 426
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -166,7 +166,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v6}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -178,15 +178,15 @@
 
     move-result-object v3
 
-    .line 424
+    .line 427
     aput-object v3, v0, v2
 
-    .line 429
+    .line 432
     .end local v3           #title:Ljava/lang/String;
     :cond_0
     return-void
 
-    .line 419
+    .line 422
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
@@ -198,22 +198,22 @@
     .parameter "checkBox"
 
     .prologue
-    .line 277
+    .line 280
     new-instance v4, Lcom/android/camera/BasePreferenceActivity$2;
 
     invoke-direct {v4, p0}, Lcom/android/camera/BasePreferenceActivity$2;-><init>(Lcom/android/camera/BasePreferenceActivity;)V
 
-    .line 289
+    .line 292
     .local v4, ok:Ljava/lang/Runnable;
     new-instance v6, Lcom/android/camera/BasePreferenceActivity$3;
 
     invoke-direct {v6, p0, p1}, Lcom/android/camera/BasePreferenceActivity$3;-><init>(Lcom/android/camera/BasePreferenceActivity;Landroid/preference/CheckBoxPreference;)V
 
-    .line 301
+    .line 304
     .local v6, cancel:Ljava/lang/Runnable;
     const v0, 0x7f0d000d
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -224,19 +224,19 @@
     const v0, 0x7f0d000f
 
     :goto_0
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     const v0, 0x104000a
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     const/high16 v0, 0x104
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -244,10 +244,10 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/camera/RotateDialogController;->showSystemAlertDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    .line 308
+    .line 311
     return-void
 
-    .line 301
+    .line 304
     :cond_0
     const v0, 0x7f0d000e
 
@@ -258,19 +258,19 @@
     .locals 2
 
     .prologue
-    .line 196
+    .line 199
     iget-boolean v0, p0, Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
 
     if-eqz v0, :cond_0
 
-    .line 197
+    .line 200
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_video_time_lapse_frame_interval_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 199
+    .line 202
     :cond_0
     return-void
 .end method
@@ -279,7 +279,7 @@
     .locals 2
 
     .prologue
-    .line 182
+    .line 185
     sget-object v0, Lcom/android/camera/BasePreferenceActivity;->mParameters:Landroid/hardware/Camera$Parameters;
 
     const-string v1, "pref_camera_id_key"
@@ -292,60 +292,60 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 183
+    .line 186
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_camera_focusmode_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 184
+    .line 187
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_video_time_lapse_frame_interval_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 185
+    .line 188
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_camera_hfr_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 186
+    .line 189
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_camera_burst_shooting_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 187
+    .line 190
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_video_focusmode_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 188
+    .line 191
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_camera_redeyereduction_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 189
+    .line 192
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     const-string v1, "pref_camera_skinToneEnhancement_key"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 193
+    .line 196
     :goto_0
     return-void
 
-    .line 191
+    .line 194
     :cond_0
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
@@ -443,6 +443,21 @@
 
     .line 179
     :cond_4
+    invoke-static {}, Lcom/android/camera/Device;->supportZSL()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    .line 180
+    iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
+
+    const-string v1, "pref_camera_zsl_key"
+
+    invoke-direct {p0, v0, v1}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
+
+    .line 182
+    :cond_5
     return-void
 .end method
 
@@ -455,7 +470,7 @@
 
     const-string v12, "pref_camera_focusmode_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v4
 
@@ -467,7 +482,7 @@
 
     const-string v12, "pref_restore"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v7
 
@@ -477,7 +492,7 @@
 
     const-string v12, "pref_layout_mode_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v3
 
@@ -487,7 +502,7 @@
 
     const-string v12, "pref_camera_touchafaec_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v8
 
@@ -499,7 +514,7 @@
 
     const-string v12, "pref_camera_zsl_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v10
 
@@ -511,7 +526,7 @@
 
     const-string v12, "pref_camera_autoexposure_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v1
 
@@ -523,7 +538,7 @@
 
     const-string v12, "pref_camera_antibanding_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
@@ -535,7 +550,7 @@
 
     const-string v12, "pref_camera_videosnapsize_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v9
 
@@ -584,7 +599,7 @@
 
     const-string v12, "pref_camera_front_picturesize_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v6
 
@@ -647,7 +662,7 @@
     invoke-direct {p0, v11, v8, v12}, Lcom/android/camera/BasePreferenceActivity;->filterUnsupportedOptions(Landroid/preference/PreferenceGroup;Lcom/android/camera/ui/PreviewListPreference;Ljava/util/List;)V
 
     .line 117
-    invoke-virtual {v8, v5}, Landroid/preference/Preference;->setEnabled(Z)V
+    invoke-virtual {v8, v5}, Lcom/android/camera/ui/PreviewListPreference;->setEnabled(Z)V
 
     .line 120
     :cond_2
@@ -665,7 +680,7 @@
     invoke-direct {p0, v11, v4, v12}, Lcom/android/camera/BasePreferenceActivity;->filterUnsupportedOptions(Landroid/preference/PreferenceGroup;Lcom/android/camera/ui/PreviewListPreference;Ljava/util/List;)V
 
     .line 122
-    invoke-virtual {v4, v5}, Landroid/preference/Preference;->setEnabled(Z)V
+    invoke-virtual {v4, v5}, Lcom/android/camera/ui/PreviewListPreference;->setEnabled(Z)V
 
     .line 125
     :cond_3
@@ -712,7 +727,7 @@
     invoke-direct {p0, v11, v1, v12}, Lcom/android/camera/BasePreferenceActivity;->filterUnsupportedOptions(Landroid/preference/PreferenceGroup;Lcom/android/camera/ui/PreviewListPreference;Ljava/util/List;)V
 
     .line 140
-    invoke-virtual {v1, v5}, Landroid/preference/Preference;->setEnabled(Z)V
+    invoke-virtual {v1, v5}, Lcom/android/camera/ui/PreviewListPreference;->setEnabled(Z)V
 
     .line 143
     :cond_7
@@ -769,7 +784,7 @@
 
     const-string v12, "pref_camera_picturesize_key"
 
-    invoke-virtual {v11, v12}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+    invoke-virtual {v11, v12}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v6
 
@@ -809,6 +824,7 @@
     .locals 2
     .parameter "group"
     .parameter "pref"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -825,7 +841,7 @@
     .local p3, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v1, 0x1
 
-    .line 206
+    .line 209
     if-eqz p3, :cond_0
 
     invoke-interface {p3}, Ljava/util/List;->size()I
@@ -834,24 +850,24 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 207
+    .line 210
     :cond_0
-    invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
 
-    .line 218
+    .line 221
     :goto_0
     return-void
 
-    .line 211
+    .line 214
     :cond_1
     invoke-virtual {p2, p3}, Lcom/android/camera/ui/PreviewListPreference;->filterUnsupported(Ljava/util/List;)V
 
-    .line 212
-    invoke-virtual {p2}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
+    .line 215
+    invoke-virtual {p2}, Lcom/android/camera/ui/PreviewListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -859,8 +875,8 @@
 
     if-gt v0, v1, :cond_2
 
-    .line 213
-    invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    .line 216
+    invoke-virtual {p2}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
@@ -868,7 +884,7 @@
 
     goto :goto_0
 
-    .line 217
+    .line 220
     :cond_2
     invoke-direct {p0, p2}, Lcom/android/camera/BasePreferenceActivity;->resetIfInvalid(Landroid/preference/ListPreference;)V
 
@@ -880,7 +896,7 @@
 
     .prologue
     .line 63
-    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+    invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
 
@@ -894,7 +910,7 @@
     .line 65
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
-    invoke-virtual {v1}, Landroid/preference/PreferenceGroup;->removeAll()V
+    invoke-virtual {v1}, Landroid/preference/PreferenceScreen;->removeAll()V
 
     .line 67
     :cond_0
@@ -904,10 +920,10 @@
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/preference/PreferenceActivity;->addPreferencesFromResource(I)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/BasePreferenceActivity;->addPreferencesFromResource(I)V
 
     .line 68
-    invoke-virtual {p0}, Landroid/preference/PreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+    invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
 
@@ -924,11 +940,11 @@
 
     .line 70
     :cond_1
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->finish()V
 
     .line 72
     :cond_2
-    invoke-virtual {p0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+    invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
@@ -967,12 +983,12 @@
     .parameter "l"
 
     .prologue
-    .line 230
+    .line 233
     invoke-virtual {p1}, Landroid/preference/PreferenceGroup;->getPreferenceCount()I
 
     move-result v2
 
-    .line 231
+    .line 234
     .local v2, total:I
     const/4 v1, 0x0
 
@@ -980,37 +996,37 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 232
+    .line 235
     invoke-virtual {p1, v1}, Landroid/preference/PreferenceGroup;->getPreference(I)Landroid/preference/Preference;
 
     move-result-object v0
 
-    .line 233
+    .line 236
     .local v0, child:Landroid/preference/Preference;
     instance-of v3, v0, Landroid/preference/PreferenceGroup;
 
     if-eqz v3, :cond_0
 
-    .line 234
+    .line 237
     check-cast v0, Landroid/preference/PreferenceGroup;
 
     .end local v0           #child:Landroid/preference/Preference;
     invoke-direct {p0, v0, p2}, Lcom/android/camera/BasePreferenceActivity;->registerListener(Landroid/preference/PreferenceGroup;Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 231
+    .line 234
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 236
+    .line 239
     .restart local v0       #child:Landroid/preference/Preference;
     :cond_0
     invoke-virtual {v0, p2}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     goto :goto_1
 
-    .line 239
+    .line 242
     .end local v0           #child:Landroid/preference/Preference;
     :cond_1
     return-void
@@ -1024,16 +1040,16 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 335
+    .line 338
     invoke-virtual {p1, p2}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
-    .line 336
+    .line 339
     .local v0, child:Landroid/preference/Preference;
     if-eqz v0, :cond_0
 
-    .line 337
+    .line 340
     invoke-virtual {p1, v0}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
     move-result v3
@@ -1042,17 +1058,17 @@
 
     move v3, v4
 
-    .line 352
+    .line 355
     :goto_0
     return v3
 
-    .line 342
+    .line 345
     :cond_0
     invoke-virtual {p1}, Landroid/preference/PreferenceGroup;->getPreferenceCount()I
 
     move-result v1
 
-    .line 343
+    .line 346
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -1060,19 +1076,19 @@
     :goto_1
     if-ge v2, v1, :cond_2
 
-    .line 344
+    .line 347
     invoke-virtual {p1, v2}, Landroid/preference/PreferenceGroup;->getPreference(I)Landroid/preference/Preference;
 
     move-result-object v0
 
-    .line 345
+    .line 348
     instance-of v3, v0, Landroid/preference/PreferenceGroup;
 
     if-eqz v3, :cond_1
 
     move-object v3, v0
 
-    .line 346
+    .line 349
     check-cast v3, Landroid/preference/PreferenceGroup;
 
     invoke-direct {p0, v3, p2}, Lcom/android/camera/BasePreferenceActivity;->removePreference(Landroid/preference/PreferenceGroup;Ljava/lang/String;)Z
@@ -1083,16 +1099,16 @@
 
     move v3, v4
 
-    .line 347
+    .line 350
     goto :goto_0
 
-    .line 343
+    .line 346
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 352
+    .line 355
     :cond_2
     const/4 v3, 0x0
 
@@ -1104,12 +1120,12 @@
     .parameter "pref"
 
     .prologue
-    .line 222
+    .line 225
     invoke-virtual {p1}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 223
+    .line 226
     .local v0, value:Ljava/lang/String;
     invoke-virtual {p1, v0}, Landroid/preference/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
@@ -1119,12 +1135,12 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 224
+    .line 227
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
-    .line 226
+    .line 229
     :cond_0
     return-void
 .end method
@@ -1133,19 +1149,19 @@
     .locals 3
 
     .prologue
-    .line 265
+    .line 268
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
 
     invoke-static {p0, v1}, Lcom/android/camera/CameraSettings;->restorePreferences(Landroid/content/Context;Lcom/android/camera/ComboPreferences;)V
 
-    .line 267
+    .line 270
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
 
     invoke-virtual {v1}, Lcom/android/camera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 268
+    .line 271
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "pref_layout_mode_key"
 
@@ -1158,28 +1174,28 @@
     :goto_0
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 269
+    .line 272
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 271
+    .line 274
     invoke-direct {p0}, Lcom/android/camera/BasePreferenceActivity;->initializeActivity()V
 
-    .line 272
+    .line 275
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferenceGroup:Landroid/preference/PreferenceScreen;
 
     iget-object v2, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
 
     invoke-direct {p0, v1, v2}, Lcom/android/camera/BasePreferenceActivity;->updatePrefrences(Landroid/preference/PreferenceGroup;Landroid/content/SharedPreferences;)V
 
-    .line 273
+    .line 276
     const/4 v1, 0x3
 
     invoke-virtual {p0, v1}, Lcom/android/camera/BasePreferenceActivity;->onSettingChanged(I)V
 
-    .line 274
+    .line 277
     return-void
 
-    .line 268
+    .line 271
     :cond_0
     const/4 v1, 0x0
 
@@ -1191,10 +1207,10 @@
     .parameter "parameters"
 
     .prologue
-    .line 440
+    .line 444
     sput-object p0, Lcom/android/camera/BasePreferenceActivity;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 441
+    .line 445
     return-void
 .end method
 
@@ -1205,10 +1221,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 388
+    .line 391
     const-string v2, "pref_camera_antibanding_key"
 
-    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1222,12 +1238,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 389
+    .line 392
     const-string v2, "60hz"
 
     invoke-virtual {p1, v2}, Lcom/android/camera/ui/PreviewListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 391
+    .line 394
     :cond_0
     sget-object v2, Lcom/android/camera/BasePreferenceActivity;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -1239,12 +1255,12 @@
 
     if-ne v2, v0, :cond_5
 
-    .line 394
+    .line 397
     .local v0, isFrontCamera:Z
     :goto_0
     const-string v2, "pref_camera_autoexposure_key"
 
-    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1256,20 +1272,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 395
-    const v2, 0x7f0d012c
+    .line 398
+    const v2, 0x7f0d013a
 
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Lcom/android/camera/ui/PreviewListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 398
+    .line 401
     :cond_1
     const-string v2, "pref_camera_saturation_key"
 
-    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1279,14 +1295,14 @@
 
     if-eqz v2, :cond_2
 
-    .line 399
+    .line 402
     invoke-direct {p0, p1}, Lcom/android/camera/BasePreferenceActivity;->addSuffixForDefault(Landroid/preference/ListPreference;)V
 
-    .line 402
+    .line 405
     :cond_2
     const-string v2, "pref_camera_picturesize_key"
 
-    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1296,7 +1312,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 403
+    .line 406
     sget-object v2, Lcom/android/camera/BasePreferenceActivity;->mParameters:Landroid/hardware/Camera$Parameters;
 
     invoke-static {v2}, Lcom/android/camera/Device;->isM2Supremacy(Landroid/hardware/Camera$Parameters;)Z
@@ -1311,31 +1327,31 @@
 
     if-nez v0, :cond_3
 
-    .line 404
+    .line 407
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 405
+    .line 408
     .local v1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const-string v2, "4208x3120"
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 406
+    .line 409
     const-string v2, "4208x2368"
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 407
+    .line 410
     invoke-virtual {p1, v1}, Lcom/android/camera/ui/PreviewListPreference;->filterUnsupported(Ljava/util/List;)V
 
-    .line 411
+    .line 414
     .end local v1           #supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_3
     const-string v2, "pref_camera_picturesize_key"
 
-    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1345,18 +1361,18 @@
 
     if-eqz v2, :cond_4
 
-    .line 412
+    .line 415
     invoke-static {}, Lcom/android/camera/Device;->defaultPictrueSize()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Lcom/android/camera/ui/PreviewListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 414
+    .line 417
     :cond_4
     return-void
 
-    .line 391
+    .line 394
     .end local v0           #isFrontCamera:Z
     :cond_5
     const/4 v0, 0x0
@@ -1372,20 +1388,20 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 356
+    .line 359
     if-nez p1, :cond_1
 
-    .line 384
+    .line 387
     :cond_0
     return-void
 
-    .line 359
+    .line 362
     :cond_1
     invoke-virtual {p1}, Landroid/preference/PreferenceGroup;->getPreferenceCount()I
 
     move-result v2
 
-    .line 360
+    .line 363
     .local v2, count:I
     const/4 v3, 0x0
 
@@ -1393,12 +1409,12 @@
     :goto_0
     if-ge v3, v2, :cond_0
 
-    .line 361
+    .line 364
     invoke-virtual {p1, v3}, Landroid/preference/PreferenceGroup;->getPreference(I)Landroid/preference/Preference;
 
     move-result-object v1
 
-    .line 362
+    .line 365
     .local v1, child:Landroid/preference/Preference;
     instance-of v6, v1, Lcom/android/camera/ui/PreviewListPreference;
 
@@ -1406,19 +1422,19 @@
 
     move-object v5, v1
 
-    .line 363
+    .line 366
     check-cast v5, Lcom/android/camera/ui/PreviewListPreference;
 
-    .line 364
+    .line 367
     .local v5, list:Lcom/android/camera/ui/PreviewListPreference;
     invoke-direct {p0, v5}, Lcom/android/camera/BasePreferenceActivity;->updateDefaultValue(Lcom/android/camera/ui/PreviewListPreference;)V
 
-    .line 365
-    invoke-virtual {v5}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    .line 368
+    invoke-virtual {v5}, Lcom/android/camera/ui/PreviewListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-virtual {v5}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/android/camera/ui/PreviewListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v8
 
@@ -1428,10 +1444,10 @@
 
     invoke-virtual {v5, v6}, Lcom/android/camera/ui/PreviewListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 366
+    .line 369
     invoke-virtual {v1, v7}, Landroid/preference/Preference;->setPersistent(Z)V
 
-    .line 360
+    .line 363
     .end local v1           #child:Landroid/preference/Preference;
     .end local v5           #list:Lcom/android/camera/ui/PreviewListPreference;
     :goto_1
@@ -1439,7 +1455,7 @@
 
     goto :goto_0
 
-    .line 367
+    .line 370
     .restart local v1       #child:Landroid/preference/Preference;
     :cond_2
     instance-of v6, v1, Landroid/preference/CheckBoxPreference;
@@ -1448,16 +1464,16 @@
 
     move-object v0, v1
 
-    .line 368
+    .line 371
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    .line 369
+    .line 372
     .local v0, checkBox:Landroid/preference/CheckBoxPreference;
-    invoke-virtual {v0}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->getKey()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 370
+    .line 373
     .local v4, key:Ljava/lang/String;
     const-string v6, "pref_layout_mode_key"
 
@@ -1467,8 +1483,8 @@
 
     if-eqz v6, :cond_4
 
-    .line 371
-    invoke-virtual {v0}, Landroid/preference/TwoStatePreference;->isChecked()Z
+    .line 374
+    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v6
 
@@ -1481,9 +1497,9 @@
     const/4 v6, 0x1
 
     :goto_2
-    invoke-virtual {v0, v6}, Landroid/preference/TwoStatePreference;->setChecked(Z)V
+    invoke-virtual {v0, v6}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 376
+    .line 379
     :goto_3
     invoke-virtual {v1, v7}, Landroid/preference/Preference;->setPersistent(Z)V
 
@@ -1492,12 +1508,12 @@
     :cond_3
     move v6, v7
 
-    .line 371
+    .line 374
     goto :goto_2
 
-    .line 374
+    .line 377
     :cond_4
-    invoke-virtual {v0}, Landroid/preference/TwoStatePreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v6
 
@@ -1505,11 +1521,11 @@
 
     move-result v6
 
-    invoke-virtual {v0, v6}, Landroid/preference/TwoStatePreference;->setChecked(Z)V
+    invoke-virtual {v0, v6}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     goto :goto_3
 
-    .line 377
+    .line 380
     .end local v0           #checkBox:Landroid/preference/CheckBoxPreference;
     .end local v4           #key:Ljava/lang/String;
     :cond_5
@@ -1517,7 +1533,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 378
+    .line 381
     check-cast v1, Landroid/preference/PreferenceGroup;
 
     .end local v1           #child:Landroid/preference/Preference;
@@ -1525,7 +1541,7 @@
 
     goto :goto_1
 
-    .line 381
+    .line 384
     .restart local v1       #child:Landroid/preference/Preference;
     :cond_6
     sget-object v6, Lcom/android/camera/BasePreferenceActivity;->TAG:Ljava/lang/String;
@@ -1612,7 +1628,7 @@
 
     .line 48
     :cond_0
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->finish()V
 
     goto :goto_0
 .end method
@@ -1622,7 +1638,7 @@
     .parameter "item"
 
     .prologue
-    .line 432
+    .line 436
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -1631,18 +1647,18 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 433
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    .line 437
+    invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->finish()V
 
-    .line 434
+    .line 438
     const/4 v0, 0x1
 
-    .line 436
+    .line 440
     :goto_0
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -1653,26 +1669,29 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 449
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/camera/BasePreferenceActivity;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 446
-    invoke-super {p0}, Landroid/app/Activity;->onPause()V
+    .line 450
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onPause()V
 
-    .line 447
+    .line 451
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mCameraBrightness:Lcom/android/camera/CameraBrightness;
 
     if-eqz v0, :cond_0
 
-    .line 448
+    .line 452
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mCameraBrightness:Lcom/android/camera/CameraBrightness;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraBrightness;->onPause()V
 
-    .line 450
+    .line 454
     :cond_0
+    invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->finish()V
+
+    .line 455
     return-void
 .end method
 
@@ -1684,49 +1703,49 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 312
+    .line 315
     invoke-virtual {p0, v4}, Lcom/android/camera/BasePreferenceActivity;->onSettingChanged(I)V
 
-    .line 313
+    .line 316
     iget-object v2, p0, Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
 
     invoke-virtual {v2}, Lcom/android/camera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 314
+    .line 317
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 315
+    .line 318
     .local v1, key:Ljava/lang/String;
     instance-of v2, p2, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 316
+    .line 319
     check-cast p2, Ljava/lang/String;
 
     .end local p2
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 329
+    .line 332
     :goto_0
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 331
+    .line 334
     return v4
 
-    .line 317
+    .line 320
     .restart local p2
     :cond_0
     instance-of v2, p2, Ljava/lang/Boolean;
 
     if-eqz v2, :cond_1
 
-    .line 318
+    .line 321
     check-cast p2, Ljava/lang/Boolean;
 
     .end local p2
@@ -1738,14 +1757,14 @@
 
     goto :goto_0
 
-    .line 319
+    .line 322
     .restart local p2
     :cond_1
     instance-of v2, p2, Ljava/lang/Integer;
 
     if-eqz v2, :cond_2
 
-    .line 320
+    .line 323
     check-cast p2, Ljava/lang/Integer;
 
     .end local p2
@@ -1757,14 +1776,14 @@
 
     goto :goto_0
 
-    .line 321
+    .line 324
     .restart local p2
     :cond_2
     instance-of v2, p2, Ljava/lang/Long;
 
     if-eqz v2, :cond_3
 
-    .line 322
+    .line 325
     check-cast p2, Ljava/lang/Long;
 
     .end local p2
@@ -1776,14 +1795,14 @@
 
     goto :goto_0
 
-    .line 323
+    .line 326
     .restart local p2
     :cond_3
     instance-of v2, p2, Ljava/lang/Float;
 
     if-eqz v2, :cond_4
 
-    .line 324
+    .line 327
     check-cast p2, Ljava/lang/Float;
 
     .end local p2
@@ -1795,7 +1814,7 @@
 
     goto :goto_0
 
-    .line 326
+    .line 329
     .restart local p2
     :cond_4
     new-instance v2, Ljava/lang/IllegalStateException;
@@ -1836,7 +1855,7 @@
     .parameter "preference"
 
     .prologue
-    .line 243
+    .line 246
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -1849,34 +1868,34 @@
 
     if-eqz v0, :cond_0
 
-    .line 244
+    .line 247
     new-instance v4, Lcom/android/camera/BasePreferenceActivity$1;
 
     invoke-direct {v4, p0}, Lcom/android/camera/BasePreferenceActivity$1;-><init>(Lcom/android/camera/BasePreferenceActivity;)V
 
-    .line 251
+    .line 254
     .local v4, restore:Ljava/lang/Runnable;
     const v0, 0x7f0d000b
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     const v0, 0x7f0d000c
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     const v0, 0x104000a
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
     const/high16 v0, 0x104
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/BasePreferenceActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1886,16 +1905,16 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/camera/RotateDialogController;->showSystemAlertDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    .line 256
+    .line 259
     const/4 v0, 0x1
 
-    .line 261
+    .line 264
     .end local v4           #restore:Ljava/lang/Runnable;
     .end local p1
     :goto_0
     return v0
 
-    .line 258
+    .line 261
     .restart local p1
     :cond_0
     const-string v0, "pref_layout_mode_key"
@@ -1910,13 +1929,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 259
+    .line 262
     check-cast p1, Landroid/preference/CheckBoxPreference;
 
     .end local p1
     invoke-direct {p0, p1}, Lcom/android/camera/BasePreferenceActivity;->changeToLayoutMode(Landroid/preference/CheckBoxPreference;)V
 
-    .line 261
+    .line 264
     :cond_1
     const/4 v0, 0x0
 
@@ -1928,7 +1947,7 @@
 
     .prologue
     .line 55
-    invoke-super {p0}, Landroid/app/Activity;->onResume()V
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onResume()V
 
     .line 56
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity;->mCameraBrightness:Lcom/android/camera/CameraBrightness;

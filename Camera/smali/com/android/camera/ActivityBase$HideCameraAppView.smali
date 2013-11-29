@@ -24,12 +24,13 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
+    .parameter
 
     .prologue
-    .line 561
+    .line 563
     iput-object p1, p0, Lcom/android/camera/ActivityBase$HideCameraAppView;->this$0:Lcom/android/camera/ActivityBase;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 561
+    .line 563
     invoke-direct {p0, p1}, Lcom/android/camera/ActivityBase$HideCameraAppView;-><init>(Lcom/android/camera/ActivityBase;)V
 
     return-void
@@ -52,7 +53,7 @@
     .locals 2
 
     .prologue
-    .line 566
+    .line 568
     iget-object v0, p0, Lcom/android/camera/ActivityBase$HideCameraAppView;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mCameraAppView:Landroid/view/View;
@@ -61,6 +62,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 567
+    .line 569
     return-void
 .end method

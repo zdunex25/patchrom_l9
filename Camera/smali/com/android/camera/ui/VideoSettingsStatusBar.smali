@@ -68,7 +68,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ui/VideoSettingsStatusBar;->mVideoSpeedIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b1
+    const v1, 0x7f0200b0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -91,7 +91,7 @@
 
     .prologue
     .line 35
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingsStatusBar;->isSimpleLayoutMode()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/VideoSettingsStatusBar;->isSimpleLayoutMode()Z
 
     move-result v0
 
@@ -107,14 +107,14 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/VideoSettingsStatusBar;->updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
 
     .line 39
     invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getColorEffect()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->updateColorEffectIndicator(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/VideoSettingsStatusBar;->updateColorEffectIndicator(Ljava/lang/String;)V
 
     .line 40
     if-eqz p2, :cond_1
@@ -135,7 +135,7 @@
 
     const v2, 0x7f0d00f9
 
-    invoke-virtual {p0, v2}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/VideoSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 

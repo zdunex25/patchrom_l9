@@ -17,7 +17,7 @@
 
     .prologue
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 31
     iput-object p1, p0, Lcom/android/gallery3d/ui/ImportCompleteListener;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
@@ -92,7 +92,7 @@
     if-ne p1, v2, :cond_0
 
     .line 38
-    const v0, 0x7f0d019b
+    const v0, 0x7f0d01a9
 
     .line 39
     .local v0, message:I
@@ -118,7 +118,7 @@
     .line 41
     .end local v0           #message:I
     :cond_0
-    const v0, 0x7f0d019c
+    const v0, 0x7f0d01aa
 
     .restart local v0       #message:I
     goto :goto_0

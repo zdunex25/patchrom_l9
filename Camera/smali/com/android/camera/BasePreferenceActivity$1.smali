@@ -24,12 +24,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/BasePreferenceActivity;)V
     .locals 0
+    .parameter
 
     .prologue
-    .line 244
+    .line 247
     iput-object p1, p0, Lcom/android/camera/BasePreferenceActivity$1;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 247
+    .line 250
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity$1;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
     #calls: Lcom/android/camera/BasePreferenceActivity;->restorePreferences()V
     invoke-static {v0}, Lcom/android/camera/BasePreferenceActivity;->access$000(Lcom/android/camera/BasePreferenceActivity;)V
 
-    .line 248
+    .line 251
     return-void
 .end method

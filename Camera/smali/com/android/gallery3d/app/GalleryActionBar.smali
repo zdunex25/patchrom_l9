@@ -56,9 +56,9 @@
 
     new-instance v0, Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
-    const v4, 0x7f0d01d6
+    const v4, 0x7f0d01e4
 
-    const v5, 0x7f0d01c5
+    const v5, 0x7f0d01d3
 
     move v2, v1
 
@@ -68,11 +68,11 @@
 
     new-instance v4, Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
-    const v8, 0x7f0d01ca
+    const v8, 0x7f0d01d8
 
-    const v9, 0x7f0d01bc
+    const v9, 0x7f0d01ca
 
-    const v10, 0x7f0d01c7
+    const v10, 0x7f0d01d5
 
     move v5, v13
 
@@ -86,11 +86,11 @@
 
     new-instance v4, Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
-    const v8, 0x7f0d01d4
+    const v8, 0x7f0d01e2
 
-    const v9, 0x7f0d01c2
+    const v9, 0x7f0d01d0
 
-    const v10, 0x7f0d01c9
+    const v10, 0x7f0d01d7
 
     move v5, v12
 
@@ -108,9 +108,9 @@
 
     const/16 v5, 0x20
 
-    const v8, 0x7f0d01cb
+    const v8, 0x7f0d01d9
 
-    const v9, 0x7f0d01c6
+    const v9, 0x7f0d01d4
 
     move v6, v1
 
@@ -124,9 +124,9 @@
 
     const/16 v5, 0x8
 
-    const v8, 0x7f0d01d3
+    const v8, 0x7f0d01e1
 
-    const v9, 0x7f0d01c8
+    const v9, 0x7f0d01d6
 
     move v6, v1
 
@@ -147,7 +147,7 @@
 
     .prologue
     .line 134
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     new-instance v0, Lcom/android/gallery3d/app/GalleryActionBar$ClusterAdapter;

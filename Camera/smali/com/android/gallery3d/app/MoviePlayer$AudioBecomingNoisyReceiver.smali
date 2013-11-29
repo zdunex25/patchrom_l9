@@ -21,6 +21,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 436

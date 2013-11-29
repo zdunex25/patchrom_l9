@@ -29,6 +29,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 2
+    .parameter
 
     .prologue
     const/4 v1, 0x0
@@ -36,7 +37,7 @@
     .line 173
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 174
     const/4 v0, 0x0
@@ -67,7 +68,7 @@
     .line 166
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 167
     iput-object p2, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->data:[B

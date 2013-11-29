@@ -3,8 +3,8 @@
 .source "ComboPreferences.java"
 
 # interfaces
-.implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 .implements Landroid/content/SharedPreferences;
+.implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
 
 # annotations
@@ -45,7 +45,7 @@
 
     .prologue
     .line 31
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
     new-instance v1, Ljava/lang/StringBuilder;
@@ -736,6 +736,7 @@
 .method public getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
     .locals 1
     .parameter "key"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

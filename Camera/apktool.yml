@@ -1,5 +1,5 @@
 version: 1.5.2
-apkFileName: Camera.apk
+apkFileName: MiuiCamera.apk
 isFrameworkApk: false
 usesFramework:
   ids:
@@ -11,4 +11,4 @@ sdkInfo:
 packageInfo:
   cur_package: com.android.camera
   orig_package: com.android.camera
-compressionType: true
+compressionType: false

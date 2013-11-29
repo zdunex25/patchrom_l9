@@ -77,7 +77,7 @@
 
     .prologue
     .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -140,7 +140,7 @@
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
     .line 73
-    invoke-virtual {v5}, Ljava/io/OutputStream;->flush()V
+    invoke-virtual {v5}, Ljava/io/FileOutputStream;->flush()V
 
     .line 74
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -302,7 +302,7 @@
     .line 112
     .local v8, uri:Landroid/net/Uri;
     :try_start_3
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v10
 
@@ -336,7 +336,7 @@
     :try_start_4
     move-object/from16 v0, p6
 
-    invoke-virtual {v5, v0}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
@@ -389,7 +389,7 @@
     :try_start_7
     move-object/from16 v0, p6
 
-    invoke-virtual {v5, v0}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
@@ -1019,7 +1019,7 @@
     goto :goto_0
 .end method
 
-.method private static saveToCloudAlbum(Landroid/content/Context;Ljava/lang/String;)V
+.method public static saveToCloudAlbum(Landroid/content/Context;Ljava/lang/String;)V
     .locals 2
     .parameter "context"
     .parameter "filePath"
@@ -1131,7 +1131,7 @@
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
     .line 215
-    invoke-virtual {v7}, Ljava/io/OutputStream;->flush()V
+    invoke-virtual {v7}, Ljava/io/FileOutputStream;->flush()V
 
     .line 216
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -1328,7 +1328,7 @@
     :try_start_4
     move-object/from16 v0, p5
 
-    invoke-virtual {v7, v0}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v7, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
@@ -1381,7 +1381,7 @@
     :try_start_7
     move-object/from16 v0, p5
 
-    invoke-virtual {v7, v0}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v7, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0

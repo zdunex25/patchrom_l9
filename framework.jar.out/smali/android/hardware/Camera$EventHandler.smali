@@ -50,6 +50,7 @@
     .prologue
     const/16 v7, 0x101
 
+    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0

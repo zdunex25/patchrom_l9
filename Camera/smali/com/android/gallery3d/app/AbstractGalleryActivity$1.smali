@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/AbstractGalleryActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 63
@@ -42,7 +43,7 @@
     .line 66
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity$1;->this$0:Lcom/android/gallery3d/app/AbstractGalleryActivity;
 
-    invoke-virtual {v0}, Landroid/content/ContextWrapper;->getExternalCacheDir()Ljava/io/File;
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getExternalCacheDir()Ljava/io/File;
 
     move-result-object v0
 

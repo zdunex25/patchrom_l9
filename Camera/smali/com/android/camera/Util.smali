@@ -46,7 +46,7 @@
 
     .prologue
     .line 91
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 92
     return-void
@@ -102,6 +102,7 @@
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -465,7 +466,7 @@
     .local v0, animation:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x190
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
     .line 621
     invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
@@ -506,7 +507,7 @@
     .local v0, animation:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x190
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
     .line 629
     invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V

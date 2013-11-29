@@ -21,6 +21,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 152

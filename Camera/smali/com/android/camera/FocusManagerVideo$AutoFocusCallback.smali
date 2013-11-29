@@ -24,12 +24,13 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/FocusManagerVideo;)V
     .locals 0
+    .parameter
 
     .prologue
-    .line 775
+    .line 776
     iput-object p1, p0, Lcom/android/camera/FocusManagerVideo$AutoFocusCallback;->this$0:Lcom/android/camera/FocusManagerVideo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 775
+    .line 776
     invoke-direct {p0, p1}, Lcom/android/camera/FocusManagerVideo$AutoFocusCallback;-><init>(Lcom/android/camera/FocusManagerVideo;)V
 
     return-void
@@ -54,6 +55,6 @@
     .parameter "camera"
 
     .prologue
-    .line 779
+    .line 780
     return-void
 .end method

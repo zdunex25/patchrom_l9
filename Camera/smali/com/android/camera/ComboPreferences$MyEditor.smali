@@ -30,12 +30,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ComboPreferences;)V
     .locals 1
+    .parameter
 
     .prologue
     .line 207
     iput-object p1, p0, Lcom/android/camera/ComboPreferences$MyEditor;->this$0:Lcom/android/camera/ComboPreferences;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 208
     #getter for: Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
@@ -414,6 +415,7 @@
 .method public putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
     .locals 1
     .parameter "key"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

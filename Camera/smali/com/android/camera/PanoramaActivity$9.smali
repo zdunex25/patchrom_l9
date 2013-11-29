@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 911
@@ -108,7 +109,7 @@
 
     invoke-direct {v3, p0, v1}, Lcom/android/camera/PanoramaActivity$9$1;-><init>(Lcom/android/camera/PanoramaActivity$9;I)V
 
-    invoke-virtual {v2, v3}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    invoke-virtual {v2, v3}, Lcom/android/camera/PanoramaActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     goto :goto_0
 

@@ -133,7 +133,7 @@
 
     .prologue
     .line 31
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -196,6 +196,7 @@
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

@@ -31,6 +31,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ui/ScreenView;)V
     .locals 2
+    .parameter
 
     .prologue
     const/high16 v1, -0x4080
@@ -38,7 +39,7 @@
     .line 179
     iput-object p1, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 181
     const/4 v0, -0x1
@@ -377,7 +378,7 @@
     .line 261
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    #getter for: Landroid/view/View;->mScrollX:I
+    #getter for: Lcom/android/camera/ui/ScreenView;->mScrollX:I
     invoke-static {v0}, Lcom/android/camera/ui/ScreenView;->access$100(Lcom/android/camera/ui/ScreenView;)I
 
     move-result v0
@@ -418,7 +419,7 @@
     .line 267
     iget-object v1, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    #getter for: Landroid/view/View;->mScrollX:I
+    #getter for: Lcom/android/camera/ui/ScreenView;->mScrollX:I
     invoke-static {v1}, Lcom/android/camera/ui/ScreenView;->access$200(Lcom/android/camera/ui/ScreenView;)I
 
     move-result v1

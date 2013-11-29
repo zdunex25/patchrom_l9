@@ -21,6 +21,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/VideoCamera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 376
@@ -104,7 +105,7 @@
     .line 385
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnail()V
+    invoke-virtual {v1}, Lcom/android/camera/VideoCamera;->getLastThumbnail()V
 
     goto :goto_0
 
@@ -132,7 +133,7 @@
 
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Lcom/android/camera/VideoCamera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 

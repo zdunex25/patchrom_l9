@@ -10,7 +10,7 @@
         </com.android.camera.ui.SkinBeautifyButton>
         <include layout="@layout/camera_scroll_button" />
         <com.android.camera.ui.CameraPickerButton android:id="@id/camera_picker_button" android:background="@drawable/btn_camera_picker_bg" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle">
-            <com.android.camera.ui.RotateImageView android:id="@id/camera_picker_button_image" android:src="@drawable/ic_switch_photo_facing_holo_light" android:layout_centerInParent="true" android:contentDescription="@string/accessibility_camera_picker" style="@style/RotateImageViewStyle" />
+            <com.android.camera.ui.RotateImageView android:id="@id/camera_picker_button_image" android:src="@drawable/ic_switch_photo_facing_holo_light" android:layout_centerInParent="true" style="@style/RotateImageViewStyle" />
         </com.android.camera.ui.CameraPickerButton>
         <com.android.camera.ui.RotateImageView android:id="@id/capture_button" android:background="@drawable/btn_camera_picker_bg" android:visibility="gone" android:clickable="true" android:src="@drawable/ic_capture_video_picture" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle" />
     </RelativeLayout>

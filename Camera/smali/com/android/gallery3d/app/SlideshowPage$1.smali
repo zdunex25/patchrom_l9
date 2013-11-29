@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SlideshowPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 86
@@ -56,7 +57,7 @@
 
     sub-int v2, p5, p3
 
-    invoke-virtual {v0, v3, v3, v1, v2}, Lcom/android/gallery3d/ui/GLView;->layout(IIII)V
+    invoke-virtual {v0, v3, v3, v1, v2}, Lcom/android/gallery3d/ui/SlideshowView;->layout(IIII)V
 
     .line 90
     return-void
@@ -79,7 +80,7 @@
     .line 95
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$1;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/ActivityState;->onBackPressed()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/SlideshowPage;->onBackPressed()V
 
     .line 97
     :cond_0

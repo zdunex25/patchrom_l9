@@ -156,6 +156,7 @@
 # virtual methods
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 7
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,7 +170,7 @@
     .prologue
     .line 89
     .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    invoke-virtual {p0}, Lcom/android/camera/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Lcom/android/camera/IconListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v0
 

@@ -24,12 +24,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 649
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$5;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -97,7 +98,7 @@
 
     const v3, 0x7f0c0051
 
-    invoke-virtual {v2, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Lcom/android/camera/PanoramaActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -107,7 +108,7 @@
 
     const v3, 0x7f0c0052
 
-    invoke-virtual {v2, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Lcom/android/camera/PanoramaActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 

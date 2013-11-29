@@ -32,6 +32,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 1299
@@ -90,7 +91,7 @@
     .line 1303
     :goto_0
     :try_start_0
-    invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
+    invoke-virtual {p0}, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->isCancelled()Z
 
     move-result v0
 
@@ -194,7 +195,7 @@
     .line 1318
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+    invoke-virtual {v2}, Lcom/android/camera/PanoramaActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v2
 
@@ -202,7 +203,7 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v2, v3}, Landroid/view/SurfaceView;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Lcom/android/gallery3d/ui/GLRootView;->setVisibility(I)V
 
     .line 1319
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;

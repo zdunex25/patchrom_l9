@@ -242,7 +242,7 @@
     const/4 v1, 0x0
 
     .line 176
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 78
     iput-boolean v2, p0, Lcom/android/gallery3d/app/PhotoDataAdapter;->mSecure:Z
@@ -762,6 +762,7 @@
 
 .method private executeAndWait(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
     .locals 5
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1158,7 +1159,7 @@
     return-object v1
 
     :cond_0
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v1
 
@@ -1186,7 +1187,7 @@
     return-wide v1
 
     :cond_0
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getDataVersion()J
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getDataVersion()J
 
     move-result-wide v1
 
@@ -1243,14 +1244,14 @@
     if-nez v2, :cond_0
 
     .line 727
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getWidth()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/LocalMediaItem;->getWidth()I
 
     move-result v2
 
     if-eqz v2, :cond_0
 
     .line 728
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getHeight()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/LocalMediaItem;->getHeight()I
 
     move-result v2
 
@@ -1379,7 +1380,7 @@
     invoke-static {v4}, Lcom/android/gallery3d/common/Utils;->assertTrue(Z)V
 
     .line 751
-    invoke-virtual {v1}, Lcom/android/gallery3d/data/MediaObject;->getDataVersion()J
+    invoke-virtual {v1}, Lcom/android/gallery3d/data/MediaItem;->getDataVersion()J
 
     move-result-wide v2
 
@@ -1500,7 +1501,7 @@
 
     if-eqz v4, :cond_8
 
-    invoke-virtual {v1}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
+    invoke-virtual {v1}, Lcom/android/gallery3d/data/MediaItem;->getSupportedOperations()I
 
     move-result v4
 
@@ -1606,7 +1607,7 @@
 
     .line 396
     :cond_2
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v1
 
@@ -1616,6 +1617,7 @@
 .method private updateFullImage(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/util/Future;)V
     .locals 4
     .parameter "path"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1759,7 +1761,7 @@
 
     .line 793
     :cond_1
-    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v4
 
@@ -1819,7 +1821,7 @@
     :cond_3
     iget-wide v7, v0, Lcom/android/gallery3d/app/PhotoDataAdapter$ImageEntry;->requestedScreenNail:J
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaObject;->getDataVersion()J
+    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaItem;->getDataVersion()J
 
     move-result-wide v9
 
@@ -1975,7 +1977,7 @@
     .local v5, item:Lcom/android/gallery3d/data/MediaItem;
     if-eqz v5, :cond_0
 
-    invoke-virtual {v5}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v5}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v8
 
@@ -2117,6 +2119,7 @@
 .method private updateScreenNail(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/util/Future;)V
     .locals 5
     .parameter "path"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2835,7 +2838,7 @@
     :cond_3
     iget-object v3, p0, Lcom/android/gallery3d/app/PhotoDataAdapter;->mImageCache:Ljava/util/HashMap;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v2}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v5
 
@@ -2986,7 +2989,7 @@
     return v1
 
     :cond_1
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getSupportedOperations()I
 
     move-result v2
 
@@ -3071,7 +3074,7 @@
     return v1
 
     :cond_1
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getMediaType()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getMediaType()I
 
     move-result v2
 
@@ -3230,7 +3233,7 @@
     .line 358
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoDataAdapter;->mReloadTask:Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;->start()V
 
     .line 360
     invoke-direct {p0}, Lcom/android/gallery3d/app/PhotoDataAdapter;->fireDataChange()V
@@ -3282,7 +3285,7 @@
     .local v0, item:Lcom/android/gallery3d/data/MediaItem;
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v1
 

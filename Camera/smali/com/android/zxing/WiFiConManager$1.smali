@@ -34,6 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/zxing/WiFiConManager;)V
     .locals 4
+    .parameter
 
     .prologue
     .line 46
@@ -122,7 +123,7 @@
     .line 59
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$1;->mDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
     .line 61
     :cond_0

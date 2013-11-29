@@ -21,7 +21,7 @@
 
     .prologue
     .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 17
     const v0, 0x7f0c001d
@@ -93,7 +93,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RestrictRotateLayout;->setVisibility(I)V
 
     .line 32
     :cond_0
@@ -151,7 +151,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RestrictRotateLayout;->setVisibility(I)V
 
     .line 26
     :cond_0
@@ -198,7 +198,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/camera/ui/SettingsStatusBar;->mColorEffectIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200b3
+    const v1, 0x7f0200b2
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -251,7 +251,7 @@
     .line 43
     iget-object v0, p0, Lcom/android/camera/ui/SettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200c4
+    const v1, 0x7f0200c3
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -279,7 +279,7 @@
     .line 46
     iget-object v0, p0, Lcom/android/camera/ui/SettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200c2
+    const v1, 0x7f0200c1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -307,7 +307,7 @@
     .line 49
     iget-object v0, p0, Lcom/android/camera/ui/SettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200c3
+    const v1, 0x7f0200c2
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -335,7 +335,7 @@
     .line 52
     iget-object v0, p0, Lcom/android/camera/ui/SettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
 
-    const v1, 0x7f0200c1
+    const v1, 0x7f0200c0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
