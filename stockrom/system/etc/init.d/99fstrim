@@ -7,4 +7,3 @@ LOG_FILE=/data/local/fstrim.log
     fi;
 su fstrim -v /cache | tee -a $LOG_FILE;
 su fstrim -v /data | tee -a $LOG_FILE;
-su fstrim -v /system | tee -a $LOG_FILE;
