@@ -9,19 +9,6 @@ SEP_FRAME="framework_ext.jar.out"
 
 if [ $2 = "$BUILD_OUT/framework" ]
 then
-    for file in overlay/framework/*.patch
-    do
-        cp $file out/
-        cd out
-        git.apply `basename $file`
-        cd ..
-        for file2 in `find $2 -name *.rej`
-        do
-            echo "$file2 fail"
-            exit 1
-        done
-    done
-
     # remove all files at out/framework those exist in framework_ext.jar.out
     for file2 in `find framework_ext.jar.out -name *.smali`; do
             file=${file2/framework_ext.jar.out/$BUILD_OUT\/framework}
