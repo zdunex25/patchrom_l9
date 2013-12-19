@@ -34,6 +34,7 @@ then
     #create secondary framework to fix "java.lang.RuntimeException: method index is too large" while compiling
     rm -rf "$BUILD_OUT/framework/smali/com/google/android/mms"
     mkdir -p "$BUILD_OUT/$SEP_FRAME/smali/android"
+    cp -f $PORT_ROOT/android/Editor/* $BUILD_OUT/framework/smali/android/widget
     mv "$BUILD_OUT/framework/smali/android/widget" "$BUILD_OUT/$SEP_FRAME/smali/android"
 fi
 
