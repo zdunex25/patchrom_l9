@@ -57,6 +57,6 @@ fi
 if [ $2 = "$BUILD_OUT/android.policy" ]
 then
     #fix wrong ids on lockscreen
-    sed -i -e 's/60c0283/60c028f/' $BUILD_OUT/android.policy/smali/com/android/internal/policy/impl/MiuiSimPINUnlockScreen.smali
-    sed -i -e 's/60c0286/60c0279/' $BUILD_OUT/android.policy/smali/com/android/internal/policy/impl/MiuiSimPINUnlockScreen.smali
+    #sed -i -e 's/60c0283/60c028f/' $BUILD_OUT/android.policy/smali/com/android/internal/policy/impl/MiuiSimPINUnlockScreen.smali
+    #sed -i -e 's/60c0286/60c0279/' $BUILD_OUT/android.policy/smali/com/android/internal/policy/impl/MiuiSimPINUnlockScreen.smali
 fi
