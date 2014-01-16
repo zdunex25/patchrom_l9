@@ -59,31 +59,6 @@ cd ../../../../l9
 mv out/temp/system/media/theme/default/alarmscreen.zip out/temp/system/media/theme/default/alarmscreen
 mv out/temp/system/media/theme/default/lockscreen.zip out/temp/system/media/theme/default/lockscreen
 
-mv out/temp/system/media/theme/.data/content/clock_2x4/clock.mrc out/temp/system/media/theme/.data/content/clock_2x4/clock.zip
-cp out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip
-cp out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip
-cd ../miuipolska/Polish/extras/clocks
-zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q strings/strings_pl.xml
-zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q strings/strings_pl.xml
-zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q strings/strings_pl.xml
-cd Prawy
-zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock.zip -q manifest.xml
-cd ../Bateria_Srodek
-zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip -q manifest.xml
-cd ../Bateria_Prawy
-zip ../../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip -q manifest.xml
-cd ../../../../../l9
-mv out/temp/system/media/theme/.data/content/clock_2x4/clock.zip out/temp/system/media/theme/.data/content/clock_2x4/clock.mrc
-mv out/temp/system/media/theme/.data/content/clock_2x4/clock_center.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_center.mrc
-mv out/temp/system/media/theme/.data/content/clock_2x4/clock_left.zip out/temp/system/media/theme/.data/content/clock_2x4/clock_left.mrc
-
-mv out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.mrc out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.zip
-cd ../miuipolska/Polish/extras/simple_clock
-zip ../../../../l9/out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.zip -q images_pl/*.png
-cd ../../../../l9
-mv out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.zip out/temp/system/media/theme/.data/content/clock_2x4/simple_clock.mrc
-cp -f ../miuipolska/Polish/extras/system/media/theme/.data/content/clock_2x4/clock_2x4.mrc out/temp/system/media/theme/.data/content/clock_2x4/clock_2x4.mrc
-
 cd out/temp
 
 rm META-INF/CERT.RSA
