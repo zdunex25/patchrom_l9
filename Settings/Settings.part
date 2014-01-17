@@ -99,9 +99,3 @@
  
 @@ -2093,6 +2093,7 @@
  .end method
- 
- .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
-+    return-void
-     .locals 4
-     .parameter "menu"
-     .parameter "inflater"
