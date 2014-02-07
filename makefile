@@ -9,7 +9,7 @@ local-zip-file     := stockrom.zip
 local-out-zip-file := MIUI_P760.zip
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := AGE Camera m7Parts SPN VFX #MiuiUpdater
+local-modified-apps := Camera m7Parts VFX #MiuiUpdater
 
 local-modified-jars := #framework_ext
 
