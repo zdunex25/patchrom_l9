@@ -95,16 +95,6 @@ ro.config.media_sound=FadeIn.ogg
 # Miui version
 ro.miui.ui.version.name=V5
 
-# Updater
-updater.id=miuioptimus-v5-42
-updater.time=20130801-1721
-updater.ver=eng.20130801.172141
-
-# GooManager
-ro.goo.developerid=mikegapinski
-ro.goo.rom=miuioptimus5-42
-ro.goo.version=eng.20130801.172141
-
 #
 # ADDITIONAL_BUILD_PROPERTIES
 #
