@@ -26,16 +26,12 @@ z=${x: -1:1}
 version=$z$y
 time=`date +%c`
 utc=`date +%s`
-ota=`date +%Y%m%d-%H%M`
 
 cp -f other/updater-script-rom out/temp/META-INF/com/google/android/updater-script
 
 sed -i -e "s/ro\.build\.date=.*/ro\.build\.date=$time/g" out/temp/system/build.prop
 sed -i -e "s/ro\.build\.date\.utc=.*/ro\.build\.date\.utc=$utc/g" out/temp/system/build.prop
 sed -i -e "s/ro\.build\.version\.incremental=.*/ro\.build\.version\.incremental=$version/g" out/temp/system/build.prop
-#sed -i -e "s/updater\.time=.*/updater\.time=$ota/g" out/temp/system/build.prop
-#sed -i -e "s/updater\.ver=.*/updater\.ver=$version/g" out/temp/system/build.prop
-#sed -i -e "s/ro\.goo\.version=.*/ro\.goo\.version=$version/g" out/temp/system/build.prop
 sed -i -e "s/ro\.product\.mod_device=.*/ro\.product\.mod_device=p760_z25/g" out/temp/system/build.prop
 
 java -jar 'other/signapk.jar' 'other/testkey.x509.pem' 'other/testkey.pk8' "other/unsigned-LBESEC_MIUI.apk" "other/signed-LBESEC_MIUI.apk"
@@ -77,7 +73,6 @@ echo Signing rom
 java -jar 'other/signapk.jar' 'other/testkey.x509.pem' 'other/testkey.pk8' "unsigned-miuioptimus-v5-p760-$version-4.2.zip" "miuioptimus-v5-p760-$version-4.2.zip"
 rm -r unsigned-miuioptimus-v5-p760-$version-4.2.zip
 
-echo $ota
 md5=`md5sum miuioptimus-v5-p760-$version-4.2.zip | cut -d" " -f1`
 size=`du -sh miuioptimus-v5-p760-$version-4.2.zip | cut -c1-4`
 data=`date +%-d/%-m/%Y`
@@ -88,4 +83,6 @@ MIRROR1_PL="http://goo.im/devs/mikegapinski/miuiv5/4.2.2/p760/miuioptimus-v5-p76
 echo '[dwl producent="'lg'" board="'p760'" tytul="LG&nbsp;Optimus&nbsp;L9" android="'4.2.2'" miui="'$version'" data="'$data'" md5="'$md5'" informacje="'$forum'" status="" link="'$LINK_PL'" rozmiar="'$size'" mirror1="'$MIRROR1_PL'" mirror2="" rodzaj="'pelna'"]
     
     ' >> ../download_v5.txt
+grep -v 'aapt: warning: string*' 'miui_log.log' >> 'miui_log_l9.log'
+rm miui_log.log
 read -p "Done, miuioptimus-v5-p760-$version-4.2.zip has been created in root of l9 directory, copy to sd and flash it!"
