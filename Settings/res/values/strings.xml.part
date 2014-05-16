@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="build_author">Built by</string>
+    <string name="build_author">Developer</string>
     <string name="polish_translation">Polish by</string>
-    <string name="header_category_optimus">OPTIMUS</string>
     <string name="viper_settings">Viper FX</string>
-    <string name="cp_settings">Control panel</string>
+    <string name="optimus_settings">Optimus settings</string>
     <string name="line_breaking_title">Optimize paragraph text</string>
     <string name="line_breaking_summary">Optimize paragraphs wrap effect</string>
     <string name="perm_notice">Security notification</string>
