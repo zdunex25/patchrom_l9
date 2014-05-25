@@ -1,0 +1,6 @@
+#To keep OTA script private
+build_ota_l9.sh
+
+#To avoid pushing base and logs
+miuioptimus-v5-p760*.zip
+*.log

@@ -78,11 +78,18 @@ size=`du -sh miuioptimus-v5-p760-$version-4.2.zip | cut -c1-4`
 data=`date +%-d/%-m/%Y`
 LINK_PL="http://91.205.75.29//zdunex25/$version/miuioptimus-v5-p760-$version-4.2.zip"
 forum="<a href='http://bit.ly/19UDoYQ'>Dyskusja na forum</a>"
-MIRROR1_PL="http://goo.im/devs/mikegapinski/miuiv5/4.2.2/p760/miuioptimus-v5-p760-$version-4.2.zip"
+MIRROR1_PL="https://s.basketbuild.com/devs/ZduneX25/miuiv5/p760/"
 #MIRROR2_PL="http://htcfanboys.com/download/acid/files/MIUIv5/$version/miuioptimus-v5-p760-$version-4.2.zip"
 echo '[dwl producent="'lg'" board="'p760'" tytul="LG&nbsp;Optimus&nbsp;L9" android="'4.2.2'" miui="'$version'" data="'$data'" md5="'$md5'" informacje="'$forum'" status="" link="'$LINK_PL'" rozmiar="'$size'" mirror1="'$MIRROR1_PL'" mirror2="" rodzaj="'pelna'"]
     
     ' >> ../download_v5.txt
+
+if [ -f "miuioptimus-v5-p760-$version-4.2.zip" ];
+then
+echo -e "\nPreparing OTA zip.."
+bash build_ota_l9.sh
+fi
+
 grep -v 'aapt: warning: string*' 'miui_log.log' >> 'miui_log_l9.log'
 rm miui_log.log
 read -p "Done, miuioptimus-v5-p760-$version-4.2.zip has been created in root of l9 directory, copy to sd and flash it!"
