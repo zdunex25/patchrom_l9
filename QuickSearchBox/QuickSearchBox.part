@@ -13,7 +13,7 @@
 
 --- a/QuickSearchBox/smali/com/android/quicksearchbox/ui/SearchActivityView$2.smali
 +++ b/QuickSearchBox/smali/com/android/quicksearchbox/ui/SearchActivityView$2.smali	
-@@ -45,9 +45,9 @@
+@@ -56,9 +56,9 @@
      .line 145
      new-instance v0, Landroid/content/ComponentName;
  

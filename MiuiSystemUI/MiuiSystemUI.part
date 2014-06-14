@@ -1,7 +1,7 @@
 
 --- a/MiuiSystemUI/res/values/public.xml
 +++ b/MiuiSystemUI/res/values/public.xml
-@@ -436,6 +436,14 @@
+@@ -564,6 +564,14 @@
      <public type="layout" name="task_item_view" id="0x7f030032" />
      <public type="layout" name="task_manager" id="0x7f030033" />
      <public type="layout" name="torch_main" id="0x7f030034" />
@@ -19,7 +19,7 @@
 
 --- a/MiuiSystemUI/smali/com/android/systemui/statusbar/phone/PhoneStatusBar.smali
 +++ b/MiuiSystemUI/smali/com/android/systemui/statusbar/phone/PhoneStatusBar.smali
-@@ -2465,6 +2465,47 @@
+@@ -2353,6 +2353,47 @@
      return-object v0
  .end method
  
@@ -67,7 +67,7 @@
  .method private getTabIndicatorPosition(I)I
      .locals 5
      .parameter "tabIndex"
-@@ -9456,6 +9456,10 @@
+@@ -9255,6 +9255,10 @@
      .line 670
      const v0, 0x7f030024
  

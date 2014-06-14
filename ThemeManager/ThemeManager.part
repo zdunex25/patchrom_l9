@@ -1,7 +1,7 @@
 
 --- a/ThemeManager/smali/miui/resourcebrowser/activity/ResourceTabActivity.smali
 +++ b/ThemeManager/smali/miui/resourcebrowser/activity/ResourceTabActivity.smali
-@@ -1140,107 +1140,14 @@
+@@ -1149,107 +1149,14 @@
  .end method
  
  .method protected getPresetPageTabConfig()Lmiui/resourcebrowser/model/PageTabConfig;
