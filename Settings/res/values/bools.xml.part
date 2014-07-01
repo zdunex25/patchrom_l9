@@ -7,5 +7,5 @@
     <bool name="mass_storage_enable">false</bool>
     <bool name="has_volume_wake">false</bool>
     <bool name="emulated_available_internal_memroy">false</bool>
-    <bool name="is_phone_call_noise_suppression_supported">true</bool>
+    <bool name="is_phone_call_noise_suppression_supported">false</bool>
 </resources>
