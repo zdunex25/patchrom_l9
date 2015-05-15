@@ -59,3 +59,4 @@ name="DrmProvider.apk" certificate="build/target/product/security/media.x509.pem
 name="DownloadProvider.apk" certificate="build/target/product/security/media.x509.pem" private_key="build/target/product/security/media.pk8"
 name="framework-res.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
 name="XiaomiAuthenticator.apk" certificate="PRESIGNED" private_key=""
+name="BarcodeScanner.apk" certificate="build/target/product/security/platform.x509.pem" private_key="build/target/product/security/platform.pk8"
